@@ -1,0 +1,54 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4rem;
+  color: #543019;
+  font-size: 15px;
+  font-weight: 300;
+  //   background: red;
+
+  a {
+    color: #543019;
+  }
+
+  .top-level-navigation {
+    // background: green;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid #D1CCCC;
+  }
+
+  .bottom-level-navigation {
+    // background: pink;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    & {
+        color: #543019;
+    }
+  }
+
+  .logo-container {
+    //    background: pink;
+    margin-top: 1.5rem;
+  }
+
+  //   .nav-links-container {
+  //     width: 50%;
+  //     height: 100%;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: flex-end;
+
+  //     .nav-link {
+  //       padding: 10px 15px;
+  //       cursor: pointer;
+  //     }
+  //   }
+}
