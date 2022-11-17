@@ -6,7 +6,7 @@ import './navigation.styles.scss';
 const Navigation = () => {
   return (
     <Fragment>
-      <div className="navigation">
+      <nav className="navigation">
 
         <div className="top-level-navigation">
          
@@ -59,7 +59,7 @@ const Navigation = () => {
           <div>Search</div>
           <div>Phone</div>
         </div>
-      </div>
+      </nav>
       <Outlet />
     </Fragment>
   );

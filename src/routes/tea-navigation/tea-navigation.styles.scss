@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  margin: 4rem 0;
+  padding: 0 4rem;
+
+  .tea-nav-item {
+    flex-grow: 1;
+    flex-basis: 0;
+    img {
+      width: 4rem;
+    }
+
+    p {
+      color: #47160e;
+      font-size: 21px;  
+      font-weight: 300;
+    }
+  }
+}

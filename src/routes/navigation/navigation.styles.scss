@@ -2,27 +2,25 @@
   display: flex;
   flex-direction: column;
   padding: 0 4rem;
+  letter-spacing: 0.8px;
   color: #543019;
   font-size: 15px;
-  font-weight: 300;
-  //   background: red;
+  font-weight: 400;
 
   a {
     color: #543019;
   }
 
   .top-level-navigation {
-    // background: green;
     height: 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    border-bottom: 1px solid #D1CCCC;
+    border-bottom: 1px solid #d1cccc;
   }
 
   .bottom-level-navigation {
-    // background: pink;
     height: 3.5rem;
     display: flex;
     justify-content: space-between;
@@ -30,25 +28,11 @@
     padding: 0 2rem;
 
     & {
-        color: #543019;
+      color: #543019;
     }
   }
 
   .logo-container {
-    //    background: pink;
     margin-top: 1.5rem;
   }
-
-  //   .nav-links-container {
-  //     width: 50%;
-  //     height: 100%;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: flex-end;
-
-  //     .nav-link {
-  //       padding: 10px 15px;
-  //       cursor: pointer;
-  //     }
-  //   }
 }
