@@ -2,7 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
-import Tea from './routes/tea/tea.component';
+import SignIn from './routes/sign-in/sign-in.component';
+import Tea from './components/tea/tea.component';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -62,22 +63,23 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           {/* Paths from the Home page */}
           <Route index element={<Home />} />
-          <Route path="/deals" element={<Deals />} />
-          <Route path="/read" element={<Read />} />
-          <Route path="/franchising" element={<Franchising />} />
-          <Route path="/gifts" element={<Gifts />} />
-          <Route path="/delivery" element={<Delivery />} />
-          <Route path="/coffee" element={<Coffee />} />
+          <Route path="sign-in" element={<SignIn />} />
+          <Route path="deals" element={<Deals />} />
+          <Route path="read" element={<Read />} />
+          <Route path="franchising" element={<Franchising />} />
+          <Route path="gifts" element={<Gifts />} />
+          <Route path="delivery" element={<Delivery />} />
+          <Route path="coffee" element={<Coffee />} />
           <Route path="/tea" element={<Tea />} />
           <Route path="/other-products" element={<OtherProducts />} />
-          <Route path="/stores" element={<Stores />} />
+          <Route path="stores" element={<Stores />} />
 
           {/* Paths of the Tea Navigation */}
-          <Route path="/classic-tea" element={<ClassicTea />} />
-          <Route path="/delicious-tea" element={<DeliciousTea />} />
-          <Route path="/real-life-tea" element={<RealLifeTea />} />
-          <Route path="/curious-tea" element={<CuriousTea />} />
-          <Route path="/relaxing-tea" element={<RelaxingTea />} />
+          <Route path="classic-tea" element={<ClassicTea />} />
+          <Route path="delicious-tea" element={<DeliciousTea />} />
+          <Route path="real-life-tea" element={<RealLifeTea />} />
+          <Route path="curious-tea" element={<CuriousTea />} />
+          <Route path="relaxing-tea" element={<RelaxingTea />} />
         </Route>
       </Routes>
       <Footer />

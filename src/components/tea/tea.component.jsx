@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import TeaNavigation from '../tea-navigation/tea-navigation.component';
+import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 
 import './tea.styles.scss';
 
