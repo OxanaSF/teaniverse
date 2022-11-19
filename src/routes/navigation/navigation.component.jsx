@@ -1,15 +1,23 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+
+import { signOutUser } from '../../utils/firebase/firebase.utils';
+
+import { UserContext } from '../../context/user.context';
+
+import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
+import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
 
 import './navigation.styles.scss';
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <Fragment>
       <nav className="navigation">
-
         <div className="top-level-navigation">
-         
+          <div className="top-level-navigation-left">
             <Link to="/deals">
               <div>Deals</div>
             </Link>
@@ -29,14 +37,21 @@ const Navigation = () => {
             <Link to="/delivery">
               <div>Delivery</div>
             </Link>
+          </div>
 
-            <Link to="/sign-in">
-              <div>Sign in</div>
-            </Link>
-        
-            <div>Favorites</div>
-            <div>Shopping Cart</div>
-          
+          <div className="top-level-navigation-right">
+            {currentUser ? (
+              <span onClick={signOutUser}> Sign Out </span>
+            ) : (
+              <Link to="/auth">Sign in</Link>
+            )}
+            <img
+              src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
+              alt=""
+            />
+
+            <ShoppingCart />
+          </div>
         </div>
 
         <div className="bottom-level-navigation">
@@ -61,7 +76,9 @@ const Navigation = () => {
           <div>Search</div>
           <div>Phone</div>
         </div>
+        <ShoppingCartDropdown />
       </nav>
+      
       <Outlet />
     </Fragment>
   );

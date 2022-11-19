@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "name": "English Gardener",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/956/95622ee59c0e1d36d564a4ba29dd07c7.webp",
+    "consist": ["Blackberry", "Black tea", "heather flowers"],
+    "description": "An absolute favorite of our customers. Tea, the composition of which is called \"brilliant\".",
+    "country": "Russia",
+    "taste": "Floral, Berry",
+    "price": 336
+  },
+  {
+    "id": 2,
+    "name": "Three in a Boat",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/e2c/e2c409df74bd4d7e1724c339da7f6109.webp",
+    "consist": ["Raspberry", "Red currant", "Black currant"],
+    "description": "An unusual combination of black tea, exotic mango and favorite berries creates an atmosphere of adventure.",
+    "country": "Germany",
+    "taste": "Fruity, Berry",
+    "price": 349
+  },
+  {
+    "id": 3,
+    "name": "Cherry Marzipan",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/956/95622ee59c0e1d36d564a4ba29dd07c7.webp",
+    "consist": ["Elder", "Cherry", "Hibiscus"],
+    "description": "Bright and harmonious tea, combining amazing notes.",
+    "country": "Germany",
+    "taste": "Sweet, Berry",
+    "price": 349
+  },
+  {
+    "id": 4,
+    "name": "Cherry Citrus",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/388/38831f129d8dc667b575882f9955abd9.webp",
+    "consist": ["Cherry", "Black Tea", "Safflower"],
+    "description": "According to the results of a blind quality test, this is the best cherry tea on the market!",
+    "country": "Russia",
+    "taste": "Citrus, Berry",
+    "price": 349
+  },
+  {
+    "id": 5,
+    "name": "Honey Loop",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/687/6878f9e5125e357270283d448c7262d4.webp",
+    "consist": ["Black tea", "Mallow", "Mint"],
+    "description": "The tea is richly sweet, with notes of honey, vanilla, caramel. Shades of citrus are born in the leaves of lemongrass.",
+    "country": "Russia",
+    "taste": "Herbal, Floral",
+    "price": 241
+  },
+  {
+    "id": 6,
+    "name": "Catherine Deneuve",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/e09/e0924ec2cb04799a6c0b481f76cf861f.webp",
+    "consist": ["Blackberry", "Red currant", "Black currant"],
+    "description": "One of the most berry blends: with strawberries, red and black currants. Very bright and sparkling.",
+    "country": "Russia",
+    "taste": "Цветочный, Ягодный",
+    "price": 276
+  },
+  {
+    "id": 7,
+    "name": "Milk Oolong",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/822/82223fa217afbe5072093caa8aa3e768.webp",
+    "consist": ["Green tea"],
+    "description": "One of the most popular oolongs in the world with a mild milky aroma that does not overwhelm the taste of tea.",
+    "country": "China",
+    "taste": "Milk, Lilac",
+    "price": 440
+  },
+  {
+    "id": 8,
+    "name": "Saint Petersburg Sky",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/603/603a4238055bf500ecffec28c8370a14.webp",
+    "consist": ["A mixture of vitamins", "Black tea", "Orange"],
+    "description": "Tea that will give strength, cheer you up and help you survive the gloomy autumn days.",
+    "country": "Germany",
+    "taste": "Citrus",
+    "price": 276
+  },
+  {
+    "id": 9,
+    "name": "Earl Gray Classic",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/787/78719b9f05f3c4f9ec4d642af144bd4d.webp",
+    "consist": ["Black Tea", "Bergamot"],
+    "description": "Famous black tea, beloved by the British, with a citrus note of bergamot. Nothing extra.",
+    "country": "Russia",
+    "taste": "Citrus",
+    "price": 303
+  },
+  {
+    "id": 10,
+    "name": "Lady Caramel",
+    "imageUrl": "https://www.chay.info/upload/webp/iblock/a22/a22fb747918192b76af80359ba030476.webp",
+    "consist": ["Cherry", "Black tea", "Caramel"],
+    "description": "Strong black tea balances the viscous sweetness of caramel and brisk cherry sourness.",
+    "country": "Russia",
+    "taste": "Berry",
+    "price": 219
+  }
+]
+
+

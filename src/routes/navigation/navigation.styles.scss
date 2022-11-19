@@ -7,8 +7,10 @@
   font-size: 15px;
   font-weight: 400;
 
-  a {
+  a,
+  img {
     color: #543019;
+    cursor: pointer;
   }
 
   .top-level-navigation {
@@ -18,6 +20,28 @@
     align-items: center;
     padding: 0 2rem;
     border-bottom: 1px solid #d1cccc;
+
+    .top-level-navigation-left {
+      display: flex;
+    }
+
+    .top-level-navigation-left a {
+      padding: 0 2rem;
+    }
+
+    .top-level-navigation-right {
+      display: flex;
+      align-items: center;
+
+      img {
+        padding-left: 2rem;
+        width: 21px;
+      }
+    }
+
+    .top-level-navigation-right :nth-child(3) {
+      padding-bottom: 3.6px;
+    }
   }
 
   .bottom-level-navigation {

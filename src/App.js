@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
-import SignIn from './routes/sign-in/sign-in.component';
-import Tea from './components/tea/tea.component';
+import Authentication from './routes/authentication/authentication.component';
+import Tea from './routes/tea/tea.component';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -50,7 +50,14 @@ const RelaxingTea = () => {
 
 const Footer = () => {
   return (
-    <div>
+    <div
+    style={{
+      background: '#78635F',
+      background: '#785448',
+      height: '300px',
+      color: 'white'
+    }}
+    >
       <h2>I am the Footer Component</h2>
     </div>
   );
@@ -63,7 +70,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           {/* Paths from the Home page */}
           <Route index element={<Home />} />
-          <Route path="sign-in" element={<SignIn />} />
+          <Route path="auth" element={<Authentication />} />
           <Route path="deals" element={<Deals />} />
           <Route path="read" element={<Read />} />
           <Route path="franchising" element={<Franchising />} />

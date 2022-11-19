@@ -1,0 +1,30 @@
+.tea-section {
+  margin-top: 8rem;
+  text-align: center;
+  color: #47160e;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #27160e;
+  }
+
+  .tea-section-catalogue {
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+
+
+@media (min-width: 40rem) {
+  .tea-section-catalogue{
+    width: 50%;
+  }
+}
+
+  }
+}

@@ -1,16 +1,34 @@
-import { Outlet } from 'react-router-dom';
+import { useContext } from 'react';
+
+import { ProductsContext } from '../../context/products.context';
 
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
+
+import ProductCard from '../../components/product-card/product-card.components';
 
 import './tea.styles.scss';
 
 const Tea = () => {
+  const { products } = useContext(ProductsContext);
+
   return (
     <section className="tea-section">
       <h2>Tea</h2>
-      <Outlet />
+      {/* <Outlet /> */}
       <TeaNavigation />
-      <div>Tea catalogue</div>
+      <div>
+  
+
+        <div className='tea-section-catalogue'>
+          {products.map((product) => (
+           <ProductCard 
+              key={product.id}
+              product={product}
+           />
+          ))}
+        </div>
+
+      </div>
       <div>
         <h3>Tea</h3>
       </div>
@@ -21,7 +39,6 @@ const Tea = () => {
         voluptatibus!
       </article>
       <div>Club card</div>
-      
     </section>
   );
 };
