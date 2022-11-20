@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { UserProvider } from './context/user.context';
 import { ProductsProvider } from './context/products.context';
+import { ShoppingCartProvider } from './context/shopping-cart.context';
 
 import './index.scss';
 import App from './App';
@@ -15,11 +16,13 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <ProductsProvider>
-          <App />
+          <ShoppingCartProvider>
+            <App />
+          </ShoppingCartProvider>
         </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
