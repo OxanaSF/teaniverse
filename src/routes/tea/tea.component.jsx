@@ -1,34 +1,38 @@
-import { useContext } from 'react';
+import { useContext, Fragment } from 'react';
 
-import { ProductsContext } from '../../context/products.context';
+import ProductCard from '../../components/product-card/product-card.components'
+
+import { CategoriesContext } from '../../context/categories.context';
 
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 
-import ProductCard from '../../components/product-card/product-card.components';
+
+import TEA_DATA from '../../tea-data';
 
 import './tea.styles.scss';
 
 const Tea = () => {
-  const { products } = useContext(ProductsContext);
+  const { categoriesMap } = useContext(CategoriesContext);
 
   return (
     <section className="tea-section">
       <h2>Tea</h2>
-      {/* <Outlet /> */}
       <TeaNavigation />
-      <div>
-  
 
-        <div className='tea-section-catalogue'>
-          {products.map((product) => (
-           <ProductCard 
-              key={product.id}
-              product={product}
-           />
-          ))}
-        </div>
+      <Fragment>
+      {Object.keys(categoriesMap).map((title) => (
+        <Fragment key={title}>
+          <div className='tea-section-catalogue'>
+            {categoriesMap['tea'].map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </Fragment>
+      ))}
+    </Fragment>
 
-      </div>
+
+
       <div>
         <h3>Tea</h3>
       </div>

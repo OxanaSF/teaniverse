@@ -4,6 +4,7 @@ import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
+import Checkout from './components/checkout/checkout.component';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -52,7 +53,7 @@ const Footer = () => {
   return (
     <div
     style={{
-      background: '#78635F',
+      // background: '#78635F',
       background: '#785448',
       height: '300px',
       color: 'white'
@@ -77,9 +78,10 @@ const App = () => {
           <Route path="gifts" element={<Gifts />} />
           <Route path="delivery" element={<Delivery />} />
           <Route path="coffee" element={<Coffee />} />
-          <Route path="/tea" element={<Tea />} />
-          <Route path="/other-products" element={<OtherProducts />} />
+          <Route path="tea" element={<Tea />} />
+          <Route path="other-products" element={<OtherProducts />} />
           <Route path="stores" element={<Stores />} />
+          <Route path="checkout" element={<Checkout />} />
 
           {/* Paths of the Tea Navigation */}
           <Route path="classic-tea" element={<ClassicTea />} />

@@ -9,6 +9,7 @@ import { useContext } from 'react';
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
+
   const { addItemToCart } = useContext(CartContext);
 
   const addProductToCartHandler = () => {
