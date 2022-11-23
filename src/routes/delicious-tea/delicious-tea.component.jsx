@@ -4,9 +4,9 @@ import ProductCard from '../../components/product-card/product-card.components';
 
 import { CategoriesContext } from '../../context/categories.context';
 
-import './reallife-tea.styles.scss';
+import './delicious-tea.styles.scss';
 
-const RealLifeTea = () => {
+const DeliciousTea = () => {
   const { categoriesMap } = useContext(CategoriesContext);
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
 
@@ -16,21 +16,23 @@ const RealLifeTea = () => {
 
   return (
     <div className="real-life-tea-container">
-      <h2>RealLife</h2>
+      <h2>Delicious</h2>
       <img
-        src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/expensive-tea-icon.webp`}
-        alt="polygon decoration"
+        src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/sweet-tea-icon.webp`}
+        alt="plate of fruits"
       />
       <p>
-        Rich taste. What in bad texts is called "elite". Tea for special
-        occasions, for status gifts, and for every day is suitable. In this
-        selection, the most expensive varieties that are "worth it".
+        Of course, everyone has own "delicious". We noticed that in 95% of cases
+        buyers think of varieties with berry or flower additives, with a
+        sweetish, but not cloying taste and a bright tea base. This is what we
+        recommend here!
       </p>
 
       <div
-        className="real-life-page-bg"
+        className="delicious-page-bg"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/real-life-bg.webp)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/fruit-tea-bg.jpg)`,
+          //   backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/fruit-tea-bg.webp)`,
         }}
       >
         <div className="gradient-styled"></div>
@@ -46,4 +48,4 @@ const RealLifeTea = () => {
   );
 };
 
-export default RealLifeTea;
+export default DeliciousTea;

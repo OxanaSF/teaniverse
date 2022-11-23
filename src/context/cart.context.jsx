@@ -49,6 +49,28 @@ export const CartContext = createContext({
   cartTotal: 0,
 });
 
+const cartReducer = (state, action) => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case 'SETCART_ITEMS':
+      return {
+        ...state,
+        ...payload,
+      };
+
+    default:
+      throw new Error(`Error in ${type} in cartReducer`);
+  }
+};
+
+const INITIAL_STATE = {
+  isCartOpen: false,
+  cartItems: [],
+  cartCount: 0,
+  cartTotal: 0,
+};
+
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
@@ -71,11 +93,13 @@ export const CartProvider = ({ children }) => {
     setCartTotal(newCartTotal);
   }, [cartItems]);
 
+  const updateCartItemsReducer = (newCartItems) => {};
+
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
   };
 
-  const removeItemFromCart = (cartItemToRemove) => {
+  const removeItemToCart = (cartItemToRemove) => {
     setCartItems(removeCartItem(cartItems, cartItemToRemove));
   };
 
@@ -87,7 +111,7 @@ export const CartProvider = ({ children }) => {
     isCartOpen,
     setIsCartOpen,
     addItemToCart,
-    removeItemFromCart,
+    removeItemToCart,
     clearItemFromCart,
     cartItems,
     cartCount,

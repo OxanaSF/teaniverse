@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { UserContext } from '../../context/user.context';
 
 import { CartContext } from '../../context/cart.context';
@@ -10,20 +12,38 @@ import { useContext } from 'react';
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
 
-  const { addItemToCart } = useContext(CartContext);
+  const {
+    addItemToCart,
+    favoriteItems,
+    addFavoriteToCart,
+    removeFavoriteItem,
+  } = useContext(CartContext);
+
+  const [heartToggle, setHeartToggle] = useState(true);
 
   const addProductToCartHandler = () => {
     console.log('product is added');
     addItemToCart(product);
+    console.log(product);
   };
+
+  const addFavoriteToCartHandler = () => {
+    setHeartToggle(!heartToggle);
+    console.log(heartToggle)
+  };
+
 
   return (
     <div className="product-card-container">
       <div className="product-card-header">
-        <img
-          src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
-          alt=""
-        />
+        <button onClick={addFavoriteToCartHandler}
+        className='heart-btn'
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
+            alt=""
+          />
+        </button>
 
         <div className="product-card-header-icons-container">
           <img

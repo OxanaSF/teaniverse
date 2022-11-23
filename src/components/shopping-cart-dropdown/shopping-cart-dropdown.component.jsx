@@ -18,15 +18,32 @@ const CartDropdown = () => {
   };
 
   return (
-    <div className="cart-dropdown-container">
-      <div className="cart-items">
-        {cartItems.map((item) => (
-          <ShoppingCartItem key={item.id} shoppingCartItem={item} />
-        ))}
-      </div>
-      <div>Total: ${cartTotal}</div>
-      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
-    </div>
+    <>
+      <>
+        {cartTotal === 0 && (
+          <div className="cart-dropdown-container empty-container">
+            <div>You Cart is Empty.</div>
+          </div>
+        )}
+      </>
+
+      {
+        <>
+          {cartTotal !== 0 && (
+            <div className="cart-dropdown-container">
+              <div className="cart-items">
+                {cartItems.map((item) => (
+                  <ShoppingCartItem key={item.id} shoppingCartItem={item} />
+                ))}
+              </div>
+              <div>Total: ${cartTotal}</div>
+
+              <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
+            </div>
+          )}
+        </>
+      }
+    </>
   );
 };
 

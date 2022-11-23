@@ -5,14 +5,16 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  //   border: 1px solid black;
   background-color: white;
-
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
   top: 122px;
   right: 40px;
   z-index: 5;
+
+  img {
+    width: 30%;
+    margin: auto;
+  }
 
   .cart-items {
     height: 240px;
@@ -24,4 +26,10 @@
   button {
     margin-top: auto;
   }
+}
+
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

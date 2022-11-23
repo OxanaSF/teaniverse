@@ -6,6 +6,8 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 import { UserContext } from '../../context/user.context';
 import { CartContext } from '../../context/cart.context';
 
+import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
+
 import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
 import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
 
@@ -47,12 +49,10 @@ const Navigation = () => {
             ) : (
               <Link to="/auth">Sign in</Link>
             )}
-            <img
-              src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
-              alt=""
-            />
+            <FavoriteIcon />
 
             <ShoppingCart />
+            
           </div>
         </div>
 
@@ -75,12 +75,12 @@ const Navigation = () => {
           </Link>
 
           <div className="bottom-level-navigation-right">
-            <div className='stores-search'>
-            <Link to="/stores">
-              <div>Stores</div>
-            </Link>
+            <div className="stores-search">
+              <Link to="/stores">
+                <div>Stores</div>
+              </Link>
 
-            <div>Search</div>
+              <div>Search</div>
             </div>
             <div className="app-icons-container">
               <a href="https://web.whatsapp.com/" target="_blank">

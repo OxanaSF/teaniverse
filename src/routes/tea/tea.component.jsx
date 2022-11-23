@@ -5,26 +5,42 @@ import ProductCard from '../../components/product-card/product-card.components';
 import { CategoriesContext } from '../../context/categories.context';
 
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
+import Filter from '../../components/filter/filter.component';
 
 import './tea.styles.scss';
 
 const Tea = () => {
   const { categoriesMap } = useContext(CategoriesContext);
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
+  const [filteredTea, setFilteredTea] = useState(categoriesMap['tea']);
+  const [activeFilterBtn, setActiveFilterBtn] = useState('all');
 
   useEffect(() => {
     setTeaProducts(categoriesMap['tea']);
+    setFilteredTea(categoriesMap['tea']);
   }, [categoriesMap]);
+
+console.log(filteredTea)
 
   return (
     <section className="tea-section">
       <h2>Tea</h2>
+
       <TeaNavigation />
+
+      <Filter 
+       teaProducts={teaProducts}
+       setFilteredTea={setFilteredTea}
+       activeFilterBtn={activeFilterBtn}
+       setActiveFilterBtn={setActiveFilterBtn}
+      />
+
+   
 
       <Fragment>
         <div className="tea-section-catalogue">
-          {teaProducts &&
-            teaProducts.map((product) => (
+          {filteredTea &&
+            filteredTea.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
         </div>

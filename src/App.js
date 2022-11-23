@@ -5,7 +5,11 @@ import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
-import RealLifeTea from './routes/reallife-tea/reallife-tea';
+import WishList from './routes/wish-list/wish-list.component';
+import LuxuryTea from './routes/luxury-tea/luxury-tea.component'
+import DeliciousTea from './routes/delicious-tea/delicious-tea.component';
+import ClassicTea from './routes/classic-tea/classic-tea.componet';
+
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -34,12 +38,7 @@ const Stores = () => {
   return <h2>I am the Stores page</h2>;
 };
 
-const ClassicTea = () => {
-  return <h2>I am the Classic Tea page</h2>;
-};
-const DeliciousTea = () => {
-  return <h2>I am the Delicious Tea page</h2>;
-};
+
 
 const CuriousTea = () => {
   return <h2>I am the Curious Tea page</h2>;
@@ -80,11 +79,12 @@ const App = () => {
           <Route path="other-products" element={<OtherProducts />} />
           <Route path="stores" element={<Stores />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="wish-list" element={<WishList />} />
 
           {/* Paths of the Tea Navigation */}
           <Route path="classic-tea" element={<ClassicTea />} />
           <Route path="delicious-tea" element={<DeliciousTea />} />
-          <Route path="real-life-tea" element={<RealLifeTea />} />
+          <Route path="real-life-tea" element={<LuxuryTea />} />
           <Route path="curious-tea" element={<CuriousTea />} />
           <Route path="relaxing-tea" element={<RelaxingTea />} />
         </Route>
