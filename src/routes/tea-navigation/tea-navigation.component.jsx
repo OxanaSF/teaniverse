@@ -10,7 +10,7 @@ const TeaNavigation = () => {
           src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/classic-tea-icon.webp`}
           alt=""
         />
-        <p>Classic</p>
+        <p>Breakfast club</p>
       </Link>
 
       <Link to="/delicious-tea" className="tea-nav-item">

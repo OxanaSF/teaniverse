@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 2rem 0 0;
     border-bottom: 1px solid #d1cccc;
 
     .top-level-navigation-left {
@@ -54,9 +54,44 @@
     & {
       color: #543019;
     }
+
+    .bottom-level-navigation-left {
+      display: flex;
+    }
+
+    .bottom-level-navigation-left :nth-child(2),
+    .bottom-level-navigation-left :nth-child(3) {
+      padding-left: 2rem;
+    }
+
+    .bottom-level-navigation-right {
+      display: flex;
+
+      .stores-search {
+        display: flex;
+      }
+
+      .stores-search :nth-child(2) {
+        padding-left: 2rem;
+      }
+    }
   }
 
   .logo-container {
     margin-top: 1.5rem;
+    padding-left: 5.6rem;
+  }
+
+  .app-icons-container {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 21px;
+    }
+
+    .app-icon {
+      padding-left: 1rem;
+    }
   }
 }

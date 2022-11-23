@@ -1,18 +1,20 @@
-import { useContext, Fragment } from 'react';
+import { useState, useContext, Fragment, useEffect } from 'react';
 
-import ProductCard from '../../components/product-card/product-card.components'
+import ProductCard from '../../components/product-card/product-card.components';
 
 import { CategoriesContext } from '../../context/categories.context';
 
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 
-
-import TEA_DATA from '../../tea-data';
-
 import './tea.styles.scss';
 
 const Tea = () => {
   const { categoriesMap } = useContext(CategoriesContext);
+  const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
+
+  useEffect(() => {
+    setTeaProducts(categoriesMap['tea']);
+  }, [categoriesMap]);
 
   return (
     <section className="tea-section">
@@ -20,7 +22,14 @@ const Tea = () => {
       <TeaNavigation />
 
       <Fragment>
-      {Object.keys(categoriesMap).map((title) => (
+        <div className="tea-section-catalogue">
+          {teaProducts &&
+            teaProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+        </div>
+
+        {/* {Object.keys(categoriesMap).map((title) => (
         <Fragment key={title}>
           <div className='tea-section-catalogue'>
             {categoriesMap['tea'].map((product) => (
@@ -28,10 +37,8 @@ const Tea = () => {
             ))}
           </div>
         </Fragment>
-      ))}
-    </Fragment>
-
-
+      ))} */}
+      </Fragment>
 
       <div>
         <h3>Tea</h3>

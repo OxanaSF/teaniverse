@@ -17,14 +17,14 @@
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    display: flex;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
 
-
-
-@media (min-width: 40rem) {
-  .tea-section-catalogue{
-    width: 50%;
-  }
-}
-
+    @media (min-width: 40rem) {
+      .tea-section-catalogue {
+        width: 50%;
+      }
+    }
   }
 }

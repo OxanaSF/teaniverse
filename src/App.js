@@ -5,6 +5,7 @@ import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
+import RealLifeTea from './routes/reallife-tea/reallife-tea';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -39,9 +40,7 @@ const ClassicTea = () => {
 const DeliciousTea = () => {
   return <h2>I am the Delicious Tea page</h2>;
 };
-const RealLifeTea = () => {
-  return <h2>I am the RealLife Tea page</h2>;
-};
+
 const CuriousTea = () => {
   return <h2>I am the Curious Tea page</h2>;
 };
@@ -53,7 +52,6 @@ const Footer = () => {
   return (
     <div
     style={{
-      // background: '#78635F',
       background: '#785448',
       height: '300px',
       color: 'white'

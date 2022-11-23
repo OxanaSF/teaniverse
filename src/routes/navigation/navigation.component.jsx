@@ -57,26 +57,50 @@ const Navigation = () => {
         </div>
 
         <div className="bottom-level-navigation">
-          <Link to="/tea">
-            <div>Tea</div>
-          </Link>
-          <Link to="/coffee">
-            <div>Coffee</div>
-          </Link>
+          <div className="bottom-level-navigation-left">
+            <Link to="/tea">
+              <div>Tea</div>
+            </Link>
+            <Link to="/coffee">
+              <div>Coffee</div>
+            </Link>
 
-          <Link to="/other-products">
-            <div>Other products</div>
-          </Link>
+            <Link to="/other-products">
+              <div>Other products</div>
+            </Link>
+          </div>
 
           <Link className="logo-container" to="/">
             <img src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="logo" />
           </Link>
-          <Link to="/stores">
-            <div>Stores</div>
-          </Link>
 
-          <div>Search</div>
-          <div>Phone</div>
+          <div className="bottom-level-navigation-right">
+            <div className='stores-search'>
+            <Link to="/stores">
+              <div>Stores</div>
+            </Link>
+
+            <div>Search</div>
+            </div>
+            <div className="app-icons-container">
+              <a href="https://web.whatsapp.com/" target="_blank">
+                <img
+                  className="app-icon"
+                  src={`${process.env.PUBLIC_URL}/images/whatsapp.png`}
+                  alt="telegram logo"
+                />
+              </a>
+              <a href="https://t.me/teaounce_bot" target="_blank">
+                <img
+                  className="app-icon"
+                  src={`${process.env.PUBLIC_URL}/images/telegram.png`}
+                  alt="telegram logo"
+                />
+              </a>
+
+              <div className="app-icon">1 800 555 77 88</div>
+            </div>
+          </div>
         </div>
         {isCartOpen && <ShoppingCartDropdown />}
       </nav>
