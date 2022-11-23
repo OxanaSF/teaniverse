@@ -5,7 +5,7 @@ import { CartContext } from '../../context/cart.context';
 import './shopping-cart.styles.scss';
 
 const ShoppingCart = () => {
-  const { isCartOpen, setIsCartOpen, itemCount } =
+  const { isCartOpen, setIsCartOpen, cartCount } =
     useContext(CartContext);
 
   const toggleIsShoppingCartOpen = () =>
@@ -17,7 +17,7 @@ const ShoppingCart = () => {
         src={`${process.env.PUBLIC_URL}/images/shopping-bag-brown.png`}
         alt="shopping bag icon"
       />
-      <span className="item-count">{itemCount}</span>
+      <span className="item-count">{cartCount}</span>
     </div>
   );
 };
