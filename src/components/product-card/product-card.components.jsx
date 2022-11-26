@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 
-import { UserContext } from '../../context/user.context';
+import { useNavigate } from 'react-router-dom';
+
 
 import { CartContext } from '../../context/cart.context';
 
-import Button from '../button/button.component';
 
 import './product-card.styles.scss';
 import { useContext } from 'react';
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
+
+  const navigate = useNavigate()
 
   const {
     addItemToCart,
@@ -21,24 +23,28 @@ const ProductCard = ({ product }) => {
 
   const [heartToggle, setHeartToggle] = useState(true);
 
-  const addProductToCartHandler = () => {
+  const addProductToCartHandler = (event) => {
     console.log('product is added');
     addItemToCart(product);
     console.log(product);
+
+    event.stopPropagation()
   };
 
   const addFavoriteToCartHandler = () => {
     setHeartToggle(!heartToggle);
-    console.log(heartToggle)
+    console.log(heartToggle);
   };
 
 
+  const navigateHandler = () => {
+    navigate(`picked-tea/${name}`)
+  }
+
   return (
-    <div className="product-card-container">
+    <div onClick={navigateHandler} className="product-card-container">
       <div className="product-card-header">
-        <button onClick={addFavoriteToCartHandler}
-        className='heart-btn'
-        >
+        <button onClick={addFavoriteToCartHandler} className="heart-btn">
           <img
             src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
             alt=""

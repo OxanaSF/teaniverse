@@ -7,7 +7,7 @@ const TeaNavigation = () => {
     <nav>
       <Link to="/classic-tea" className="tea-nav-item">
         <img
-          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/classic-tea-icon.webp`}
+          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/breakfast-bg.png`}
           alt=""
         />
         <p>Breakfast club</p>

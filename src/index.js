@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import { UserProvider } from './context/user.context';
-import { CategoriesProvider } from './context/categories.context';
+import { store } from './store/store';
+
 import { CartProvider } from './context/cart.context';
 
 import './index.scss';
@@ -13,16 +14,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
-    <UserProvider>
-      <CategoriesProvider>
+    <Provider store={store}>
+      <BrowserRouter>
         <CartProvider>
           <App />
         </CartProvider>
-      </CategoriesProvider>
-    </UserProvider>
-  </BrowserRouter>
-</React.StrictMode>,
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

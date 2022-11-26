@@ -1,0 +1,19 @@
+.picked-tea {
+  margin-top: 8rem;
+  text-align: center;
+  color: #47160e;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #27160e;
+  }
+
+  .picked-tea-container {
+    display: grid;
+    grid-template-columns: 2.3fr 2fr 1.3fr;
+    min-height: 30rem;
+
+  }
+}

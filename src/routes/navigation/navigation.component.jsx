@@ -1,9 +1,12 @@
 import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from '../../store/user/user.selector';
+
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { UserContext } from '../../context/user.context';
+
 import { CartContext } from '../../context/cart.context';
 
 import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
@@ -14,7 +17,7 @@ import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shoppi
 import './navigation.styles.scss';
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser)
   const { isCartOpen } = useContext(CartContext);
 
   return (
@@ -45,7 +48,7 @@ const Navigation = () => {
 
           <div className="top-level-navigation-right">
             {currentUser ? (
-              <span onClick={signOutUser}> Sign Out </span>
+              <Link as span onClick={signOutUser}> Sign Out </Link>
             ) : (
               <Link to="/auth">Sign in</Link>
             )}

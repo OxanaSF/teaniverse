@@ -1,16 +1,16 @@
-import { useState, useContext, Fragment, useEffect } from 'react';
+import { useState, Fragment, useEffect } from 'react';
+import { useSelector } from 'react-redux'
+
+import { selectCategoriesMap } from '../../store/categories/category.selector'
 
 import ProductCard from '../../components/product-card/product-card.components';
-
-import { CategoriesContext } from '../../context/categories.context';
-
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 import Filter from '../../components/filter/filter.component';
 
 import './tea.styles.scss';
 
 const Tea = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
+  const categoriesMap = useSelector(selectCategoriesMap);
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
   const [filteredTea, setFilteredTea] = useState(categoriesMap['tea']);
   const [activeFilterBtn, setActiveFilterBtn] = useState('all');
@@ -21,6 +21,7 @@ const Tea = () => {
   }, [categoriesMap]);
 
 console.log(filteredTea)
+
 
   return (
     <section className="tea-section">
@@ -44,6 +45,13 @@ console.log(filteredTea)
               <ProductCard key={product.id} product={product} />
             ))}
         </div>
+
+{/* {Object.keys(categoriesMap).map((title) => {
+        const products = categoriesMap['tea'];
+        return (
+          <ProductCard  key={title} title={title} products={products} />
+        );
+      })} */}
 
         {/* {Object.keys(categoriesMap).map((title) => (
         <Fragment key={title}>

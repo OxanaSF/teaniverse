@@ -1,3 +1,16 @@
+import { useEffect } from 'react';
+
+import {
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth,
+
+  getCategoriesAndDocuments
+} from './utils/firebase/firebase.utils';
+
+import { setCurrentUser } from './store/user/user.action';
+import { setCategoriesMap } from './store/categories/category.action';
+import { useDispatch } from 'react-redux';
+
 import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './routes/navigation/navigation.component';
@@ -6,10 +19,12 @@ import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
 import WishList from './routes/wish-list/wish-list.component';
-import LuxuryTea from './routes/luxury-tea/luxury-tea.component'
+import LuxuryTea from './routes/luxury-tea/luxury-tea.component';
 import DeliciousTea from './routes/delicious-tea/delicious-tea.component';
-import ClassicTea from './routes/classic-tea/classic-tea.componet';
-
+import ClassicTea from './routes/classic-tea/classic-tea.component';
+import PickedTea from './routes/picked-tea/picked-tea.component';
+import CuriousTea from './routes/curious-tea/curious-tea.component';
+import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -38,23 +53,14 @@ const Stores = () => {
   return <h2>I am the Stores page</h2>;
 };
 
-
-
-const CuriousTea = () => {
-  return <h2>I am the Curious Tea page</h2>;
-};
-const RelaxingTea = () => {
-  return <h2>I am the Relaxing Tea page</h2>;
-};
-
 const Footer = () => {
   return (
     <div
-    style={{
-      background: '#785448',
-      height: '300px',
-      color: 'white'
-    }}
+      style={{
+        background: '#785448',
+        height: '300px',
+        color: 'white',
+      }}
     >
       <h2>I am the Footer Component</h2>
     </div>
@@ -62,6 +68,33 @@ const Footer = () => {
 };
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user);
+      }
+
+      dispatch(setCurrentUser(user));
+    });
+
+    return unsubscribe;
+  }, [dispatch]);
+
+
+
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+      const categoryMap = await getCategoriesAndDocuments('categories');
+      dispatch(setCategoriesMap(categoryMap))
+    };
+
+    getCategoriesMap();
+  }, [dispatch]);
+
+  
+
   return (
     <div>
       <Routes>
@@ -76,6 +109,9 @@ const App = () => {
           <Route path="delivery" element={<Delivery />} />
           <Route path="coffee" element={<Coffee />} />
           <Route path="tea" element={<Tea />} />
+
+          <Route path="tea/picked-tea/:name" element={<PickedTea />} />
+
           <Route path="other-products" element={<OtherProducts />} />
           <Route path="stores" element={<Stores />} />
           <Route path="checkout" element={<Checkout />} />
