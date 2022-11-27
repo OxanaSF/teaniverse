@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 import { useContext } from 'react';
 
-import { CartContext } from '../../context/cart.context';
+// import { CartContext } from '../../context/cart.context';
 
 import './favorite-icon.styles.scss';
 
 const FavoriteIcon = () => {
-  const { heartCount } =
-    useContext(CartContext);
+  // const { heartCount } =
+  //   useContext(CartContext);
 
   return (
     <div className="heart-container">
@@ -20,7 +20,7 @@ const FavoriteIcon = () => {
       </Link>
 
 {
-   heartCount > 0 && <span className="item-count">{heartCount}</span>
+  //  heartCount > 0 && <span className="item-count">{heartCount}</span>
 }
       
     </div>

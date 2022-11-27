@@ -8,7 +8,7 @@ import {
 } from './utils/firebase/firebase.utils';
 
 import { setCurrentUser } from './store/user/user.action';
-import { setCategoriesMap } from './store/categories/category.action';
+import { setCategories } from './store/categories/category.action';
 import { useDispatch } from 'react-redux';
 
 import { Routes, Route } from 'react-router-dom';
@@ -86,8 +86,8 @@ const App = () => {
 
   useEffect(() => {
     const getCategoriesMap = async () => {
-      const categoryMap = await getCategoriesAndDocuments('categories');
-      dispatch(setCategoriesMap(categoryMap))
+      const categoriesArray = await getCategoriesAndDocuments('categories');
+      dispatch(setCategories(categoriesArray))
     };
 
     getCategoriesMap();

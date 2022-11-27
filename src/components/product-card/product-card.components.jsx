@@ -1,39 +1,29 @@
-import { useState, useEffect } from 'react';
-
+// import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
 
 
-import { CartContext } from '../../context/cart.context';
-
+import { selectCartItems } from '../../store/cart/cart.selector';
+import { addItemToCart } from '../../store/cart/cart.action';
 
 import './product-card.styles.scss';
-import { useContext } from 'react';
+
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
+  const cartItems = useSelector(selectCartItems)
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  const {
-    addItemToCart,
-    favoriteItems,
-    addFavoriteToCart,
-    removeFavoriteItem,
-  } = useContext(CartContext);
 
-  const [heartToggle, setHeartToggle] = useState(true);
 
   const addProductToCartHandler = (event) => {
     console.log('product is added');
-    addItemToCart(product);
+    dispatch(addItemToCart(cartItems, product))
     console.log(product);
 
     event.stopPropagation()
-  };
-
-  const addFavoriteToCartHandler = () => {
-    setHeartToggle(!heartToggle);
-    console.log(heartToggle);
   };
 
 
@@ -43,8 +33,9 @@ const ProductCard = ({ product }) => {
 
   return (
     <div onClick={navigateHandler} className="product-card-container">
+    {/* <div className="product-card-container"> */}
       <div className="product-card-header">
-        <button onClick={addFavoriteToCartHandler} className="heart-btn">
+        <button className="heart-btn">
           <img
             src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
             alt=""
