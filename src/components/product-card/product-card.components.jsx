@@ -9,7 +9,7 @@ import { addItemToCart } from '../../store/cart/cart.action';
 import './product-card.styles.scss';
 
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, setTeaNameHandler }) => {
   const { name, imageUrl, description, price } = product;
   const cartItems = useSelector(selectCartItems)
 
@@ -29,6 +29,7 @@ const ProductCard = ({ product }) => {
 
   const navigateHandler = () => {
     navigate(`picked-tea/${name}`)
+    
   }
 
   return (

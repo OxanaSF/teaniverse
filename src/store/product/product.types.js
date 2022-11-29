@@ -1,0 +1,4 @@
+export const PRODUCT_ACTION_TYPES = {
+    SET_CURRENT_PRODUCT: 'product/SET_CURRENT_PRODUCT',
+  };
+  

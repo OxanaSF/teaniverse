@@ -1,23 +1,35 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react';
 
-import {  selectCartCount, selectIsCartOpen } from '../../store/cart/cart.selector'
-import { setIsCartOpen } from '../../store/cart/cart.action'
+import { useSelector, useDispatch } from 'react-redux';
 
-
+import {
+  selectCartCount,
+  selectIsCartOpen,
+} from '../../store/cart/cart.selector';
+import { setIsCartOpen } from '../../store/cart/cart.action';
 
 import './shopping-cart.styles.scss';
 
 const ShoppingCart = () => {
-  const cartCount = useSelector(selectCartCount)
-  const isCartOpen = useSelector(selectIsCartOpen)
+  const cartCount = useSelector(selectCartCount);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
-  const dispatch = useDispatch()
+  // const [isShown, setIsShown] = useState(false);
 
-  const toggleIsShoppingCartOpen = () =>
-    dispatch(setIsCartOpen(!isCartOpen))
+
+
+  const dispatch = useDispatch();
+
+  const toggleIsShoppingCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
   return (
-    <div className="cart-icon-container" onClick={toggleIsShoppingCartOpen}>
+    <div
+      className="cart-icon-container"
+      onClick={toggleIsShoppingCartOpen}
+
+      // onMouseEnter={toggleIsShoppingCartOpen}
+      // onMouseLeave={toggleIsShoppingCartOpen}
+    >
       <img
         src={`${process.env.PUBLIC_URL}/images/shopping-bag-brown.png`}
         alt="shopping bag icon"

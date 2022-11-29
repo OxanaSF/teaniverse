@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 
+
+import { loadStripe } from "@stripe/stripe-js";
+
+
 import {
   onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-
-  getCategoriesAndDocuments
+  createUserDocumentFromAuth
 } from './utils/firebase/firebase.utils';
 
 import { setCurrentUser } from './store/user/user.action';
-import { setCategories } from './store/categories/category.action';
+import { fetchCategoriesAsync} from './store/categories/category.action';
 import { useDispatch } from 'react-redux';
 
 import { Routes, Route } from 'react-router-dom';
@@ -85,12 +87,7 @@ const App = () => {
 
 
   useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoriesArray = await getCategoriesAndDocuments('categories');
-      dispatch(setCategories(categoriesArray))
-    };
-
-    getCategoriesMap();
+      dispatch(fetchCategoriesAsync())
   }, [dispatch]);
 
   

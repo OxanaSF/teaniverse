@@ -1,7 +1,6 @@
 .picked-tea {
-  margin-top: 8rem;
   text-align: center;
-  color: #47160e;
+  margin: 0 2rem;
 
   h2 {
     font-size: 2.5rem;
@@ -12,8 +11,120 @@
 
   .picked-tea-container {
     display: grid;
-    grid-template-columns: 2.3fr 2fr 1.3fr;
-    min-height: 30rem;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 30px;
+    // background: red;
 
+    .slider-wrapper {
+      // background: red;
+    }
+
+    .axis-horizontal {
+      // background: pink;
+      height: 30rem;
+      width: 30rem;
+    }
+
+    .thumbs-wrapper {
+      // background: green;
+      width: 80%;
+      margin: auto;
+      display: flex;
+    }
+
+    .control-arrow {
+      // background: green;
+      display: none;
+    }
+
+    .carousel {
+      // background: red;
+
+      .thumbs {
+        // background: red;
+        display: flex;
+
+        .thumb {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // background: yellow;
+          height: 4.6rem;
+        }
+
+        .selected {
+          // background: green;
+          border: 1px solid #d1cccc;
+          border: 1px solid #785448;
+
+          img {
+            height: 100%;
+          }
+        }
+
+        .previous {
+          background: blue;
+        }
+
+        .selected:hover {
+          // border: 1px solid #785448;
+        }
+      }
+    }
+
+    .picked-tea-right-col {
+      // background: red;
+      display: flex;
+
+      .picked-tea-description {
+        padding: 0 0px;
+        text-align: left;
+        color: #544241;
+        letter-spacing: 0.8px;
+        font-size: 15px;
+        // background: blue;
+        // width: 100%;
+
+        p {
+          width: 85%;
+          line-height: 1.7;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #e1e1e1;
+        }
+
+        .picked-tea-consist {
+          width: 100%;
+
+          .picked-tea-consist-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 3rem;
+            column-gap: 4rem;
+            .picked-tea-consist-item {
+              margin-top: 30px;
+              width: 5rem;
+              height: 5rem;
+              // background: green;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .picked-tea-right-col :nth-child(1) {
+      width: 50%;
+    }
+    .picked-tea-right-col :nth-child(2) {
+      width: 50%;
+    }
   }
 }

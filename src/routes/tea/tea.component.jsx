@@ -1,16 +1,22 @@
 import { useState, Fragment, useEffect } from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
-import { selectCategoriesMap } from '../../store/categories/category.selector'
+import {
+  selectCategoriesMap,
+  selectIsLoading ,
+} from '../../store/categories/category.selector';
 
 import ProductCard from '../../components/product-card/product-card.components';
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 import Filter from '../../components/filter/filter.component';
+import Spinner from '../../components/spinner/spinner.component';
 
 import './tea.styles.scss';
 
 const Tea = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
+  const isLoading = useSelector(selectIsLoading);
+
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
   const [filteredTea, setFilteredTea] = useState(categoriesMap['tea']);
   const [activeFilterBtn, setActiveFilterBtn] = useState('all');
@@ -20,8 +26,7 @@ const Tea = () => {
     setFilteredTea(categoriesMap['tea']);
   }, [categoriesMap]);
 
-console.log(filteredTea)
-
+  console.log(filteredTea);
 
   return (
     <section className="tea-section">
@@ -29,24 +34,26 @@ console.log(filteredTea)
 
       <TeaNavigation />
 
-      <Filter 
-       teaProducts={teaProducts}
-       setFilteredTea={setFilteredTea}
-       activeFilterBtn={activeFilterBtn}
-       setActiveFilterBtn={setActiveFilterBtn}
+      <Filter
+        teaProducts={teaProducts}
+        setFilteredTea={setFilteredTea}
+        activeFilterBtn={activeFilterBtn}
+        setActiveFilterBtn={setActiveFilterBtn}
       />
 
-   
-
       <Fragment>
-        <div className="tea-section-catalogue">
-          {filteredTea &&
-            filteredTea.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-        </div>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <div className="tea-section-catalogue">
+            {filteredTea &&
+              filteredTea.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+          </div>
+        )}
 
-{/* {Object.keys(categoriesMap).map((title) => {
+        {/* {Object.keys(categoriesMap).map((title) => {
         const products = categoriesMap['tea'];
         return (
           <ProductCard  key={title} title={title} products={products} />
