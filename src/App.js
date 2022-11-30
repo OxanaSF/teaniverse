@@ -27,6 +27,7 @@ import ClassicTea from './routes/classic-tea/classic-tea.component';
 import PickedTea from './routes/picked-tea/picked-tea.component';
 import CuriousTea from './routes/curious-tea/curious-tea.component';
 import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
+import Footer from './components/footer/footer.component';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -55,19 +56,6 @@ const Stores = () => {
   return <h2>I am the Stores page</h2>;
 };
 
-const Footer = () => {
-  return (
-    <div
-      style={{
-        background: '#785448',
-        height: '300px',
-        color: 'white',
-      }}
-    >
-      <h2>I am the Footer Component</h2>
-    </div>
-  );
-};
 
 const App = () => {
   const dispatch = useDispatch();

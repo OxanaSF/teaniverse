@@ -4,7 +4,10 @@ const WISH_LIST_INITIAL_STATE = {
   wishListItems: [],
 };
 
-export const wishListReducer = (state = WISH_LIST_INITIAL_STATE, action = {}) => {
+export const wishListReducer = (
+  state = WISH_LIST_INITIAL_STATE,
+  action = {}
+) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -13,11 +16,7 @@ export const wishListReducer = (state = WISH_LIST_INITIAL_STATE, action = {}) =>
         ...state,
         wishListItems: payload,
       };
-    // case CART_ACTION_TYPES.SET_IS_CART_OPEN:
-    //   return {
-    //     ...state,
-    //     isCartOpen: payload,
-    //   };
+
     default:
       return state;
   }
