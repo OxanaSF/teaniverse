@@ -4,13 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 
 //Category
 import {
-  selectCategoriesMap,
-  selectIsLoading,
+  selectCategoriesMap
 } from '../../store/categories/category.selector';
 
-//Param
-import { selectCurrentParam } from '../../store/param/param.selector';
-import { setCurrentParam } from '../../store/param/param.action';
+
 
 // Product
 import { selectCurrentProduct } from '../../store/product/product.selector';
@@ -27,52 +24,37 @@ import { Carousel } from 'react-responsive-carousel';
 import './picked-tea.styles.scss';
 
 const PickedTea = () => {
-  const currentParam = useSelector(selectCurrentParam);
+  //Selectors
   const currentProduct = useSelector(selectCurrentProduct);
-
   const categoriesMap = useSelector(selectCategoriesMap);
 
+
+  //States
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
-  const [pickedTea, setPickedTea] = useState(categoriesMap['tea']);
 
   const dispatch = useDispatch();
 
   const { name } = useParams();
 
-  // useEffect(() => {
-  //   dispatch(setCurrentParam(name));
-  // }, [name, dispatch]);
-
   useEffect(() => {
     setTeaProducts(categoriesMap['tea']);
   }, [categoriesMap]);
 
-  console.log('currentParam', currentParam);
 
 
   useEffect(() => {
-    console.log(teaProducts)
-    if(teaProducts && teaProducts.length !== 0) {
+    console.log(teaProducts);
+    if (teaProducts && teaProducts.length !== 0) {
       const filteredTea = teaProducts.filter((tea) => tea.name === name);
-      // setPickedTea(filteredTea[0]);
-      console.log('filteredTea[0]', filteredTea[0])
       dispatch(setCurrentProduct(filteredTea[0]));
     }
-    
-   
-   
-  }, [name, dispatch, teaProducts, currentParam]);
+  }, [name, dispatch, teaProducts]);
 
-  // console.log('NOW', { teaProducts });
-  // console.log('NOW pickedTea', pickedTea);
-  console.log('NOW currentProduct', currentProduct);
+  // console.log('NOW currentProduct', currentProduct);
 
-  // name, imageUrl, description, price
-
-if (!currentProduct) {
-  return <Spinner />
-}
-
+  if (!currentProduct) {
+    return <Spinner />;
+  }
 
   return (
     <div className="picked-tea">
@@ -81,7 +63,9 @@ if (!currentProduct) {
       <div className="picked-tea-container">
         <div className="picked-tea-left-col">
           <Carousel className="carousel" autoPlay={true} infiniteLoop={true}>
-            {currentProduct.imageUrl && <img src={currentProduct.imageUrl} alt="tea" />}
+            {currentProduct.imageUrl && (
+              <img src={currentProduct.imageUrl} alt="tea" />
+            )}
             {currentProduct.images &&
               currentProduct.images.map((img, index) => (
                 <img key={index} className="carousel-img" src={img} alt="tea" />
@@ -108,8 +92,8 @@ if (!currentProduct) {
           </div>
 
           <CheckoutForm />
-        </div> 
-      </div> 
+        </div>
+      </div>
     </div>
   );
 };

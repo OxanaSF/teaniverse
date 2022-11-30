@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 
-import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 
-// import { CartContext } from '../../context/cart.context';
+import { selectWishListCount } from '../../store/wish-list/wish-list.selection';
 
 import './favorite-icon.styles.scss';
 
 const FavoriteIcon = () => {
-  // const { heartCount } =
-  //   useContext(CartContext);
+  const wishListCount = useSelector(selectWishListCount)
 
   return (
     <div className="heart-container">
@@ -17,6 +16,7 @@ const FavoriteIcon = () => {
           src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
           alt="heart icon"
         />
+         <span className="item-count">{wishListCount}</span>
       </Link>
 
 {

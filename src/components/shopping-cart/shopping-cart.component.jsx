@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
@@ -14,22 +12,12 @@ const ShoppingCart = () => {
   const cartCount = useSelector(selectCartCount);
   const isCartOpen = useSelector(selectIsCartOpen);
 
-  // const [isShown, setIsShown] = useState(false);
-
-
-
   const dispatch = useDispatch();
 
   const toggleIsShoppingCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
   return (
-    <div
-      className="cart-icon-container"
-      onClick={toggleIsShoppingCartOpen}
-
-      // onMouseEnter={toggleIsShoppingCartOpen}
-      // onMouseLeave={toggleIsShoppingCartOpen}
-    >
+    <div className="cart-icon-container" onClick={toggleIsShoppingCartOpen}>
       <img
         src={`${process.env.PUBLIC_URL}/images/shopping-bag-brown.png`}
         alt="shopping bag icon"

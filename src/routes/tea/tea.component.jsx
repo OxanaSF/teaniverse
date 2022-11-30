@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import {
   selectCategoriesMap,
-  selectIsLoading ,
+  selectIsLoading,
 } from '../../store/categories/category.selector';
 
 import ProductCard from '../../components/product-card/product-card.components';
@@ -27,6 +27,7 @@ const Tea = () => {
   }, [categoriesMap]);
 
   console.log(filteredTea);
+  console.log('isLoading', isLoading);
 
   return (
     <section className="tea-section">
@@ -47,28 +48,11 @@ const Tea = () => {
         ) : (
           <div className="tea-section-catalogue">
             {filteredTea &&
-              filteredTea.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              filteredTea.map((product, index) => (
+                <ProductCard key={index} product={product} />
               ))}
           </div>
         )}
-
-        {/* {Object.keys(categoriesMap).map((title) => {
-        const products = categoriesMap['tea'];
-        return (
-          <ProductCard  key={title} title={title} products={products} />
-        );
-      })} */}
-
-        {/* {Object.keys(categoriesMap).map((title) => (
-        <Fragment key={title}>
-          <div className='tea-section-catalogue'>
-            {categoriesMap['tea'].map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </Fragment>
-      ))} */}
       </Fragment>
 
       <div>

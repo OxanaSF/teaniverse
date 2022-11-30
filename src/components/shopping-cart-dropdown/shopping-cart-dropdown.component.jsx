@@ -1,10 +1,11 @@
-
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 
-import { selectCartItems, selectCartTotal } from '../../store/cart/cart.selector';
+import {
+  selectCartItems,
+  selectCartTotal,
+} from '../../store/cart/cart.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
-
 
 import Button from '../button/button.component';
 import ShoppingCartItem from '../shopping-cart-item/shopping-cart-item.component';
@@ -14,7 +15,7 @@ import './shopping-cart-dropdown.styles.scss';
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
-  const cartTotal = useSelector(selectCartTotal )
+  const cartTotal = useSelector(selectCartTotal);
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const dispatch = useDispatch();
@@ -22,12 +23,14 @@ const CartDropdown = () => {
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
-    dispatch(setIsCartOpen(!isCartOpen))
+    dispatch(setIsCartOpen(!isCartOpen));
     navigate('/checkout');
   };
 
+  const toggleIsShoppingCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
+
   return (
-    <>
+    <div onMouseLeave={toggleIsShoppingCartOpen}>
       <>
         {cartTotal === 0 && (
           <div className="cart-dropdown-container empty-container">
@@ -45,14 +48,14 @@ const CartDropdown = () => {
                   <ShoppingCartItem key={item.id} shoppingCartItem={item} />
                 ))}
               </div>
-              <div className='cart-dropdown-total'>Total: ${cartTotal}</div>
+              <div className="cart-dropdown-total">Total: ${cartTotal}</div>
 
               <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
             </div>
           )}
         </>
       }
-    </>
+    </div>
   );
 };
 
