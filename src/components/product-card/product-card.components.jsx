@@ -23,17 +23,15 @@ const ProductCard = ({ product }) => {
 
   //Start Functions
   const addProductToWishList = (event) => {
-    alert('Added to wish list');
     dispatch(addItemToWishList(wishListItems, product));
     console.log('product added to wish list', product);
 
-    event.stopPropagation('wishListItems just updated', wishListItems);
+    event.stopPropagation();
   };
 
   console.log();
 
   const addProductToCartHandler = (event) => {
-    console.log('product is added');
     dispatch(addItemToCart(cartItems, product));
     console.log(product);
 

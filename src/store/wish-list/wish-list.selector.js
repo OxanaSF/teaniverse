@@ -10,5 +10,5 @@ export const selectWishListItems = createSelector(
 
 
 export const selectWishListCount = createSelector([selectWishListItems], (wishListItems) =>
-wishListItems?.reduce((total, wishListItem) => total + wishListItem.quantity, 0)
+wishListItems.reduce((total, wishListItem) => total + wishListItem.quantity, 0)
 );

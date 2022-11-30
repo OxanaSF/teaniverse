@@ -12,8 +12,16 @@ nav {
 
     p {
       color: #47160e;
-      font-size: 21px;  
+      font-size: 21px;
       font-weight: 300;
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 }

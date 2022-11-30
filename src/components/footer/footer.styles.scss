@@ -1,7 +1,7 @@
 footer {
   background: #785448;
   background: #fafafa;
-  height: 50rem;
+  margin-top: 50rem;
   padding: 2rem;
   color: #27160e;
   letter-spacing: 0.8px;
@@ -22,13 +22,16 @@ footer {
   }
 
   li:hover {
-    color: #A53501;
+    color: #a53501;
+    font-weight: 500;
+    cursor: pointer;
   }
 
   .real-life-page-bg {
-    height: 100%;
+    // height: 100%;
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: 105.5% 110%;
+    background-position: bottom left;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -62,6 +65,20 @@ footer {
 
     .div7 {
       grid-area: 4 / 10 / 7 / 13;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+
+    .real-life-page-bg {
+      display: block;
     }
   }
 }

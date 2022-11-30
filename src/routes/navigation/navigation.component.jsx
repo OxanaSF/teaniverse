@@ -89,14 +89,14 @@ const Navigation = () => {
             <img src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="logo" />
           </Link>
 
-          {/* <div className="bottom-level-navigation-right-with-heart-and-bag"> */}
-          <div className="bottom-level-navigation-right-with-heart">
+          <div className="bottom-level-navigation-right-with-heart-and-bag">
+          {/* <div className="bottom-level-navigation-right-with-heart"> */}
             <FavoriteIcon />
-            </div>
-            <div className="bottom-level-navigation-right-with-bag">
+            {/* </div> */}
+            {/* <div className="bottom-level-navigation-right-with-bag"> */}
             <ShoppingCart />
-            </div>
-          {/* </div> */}
+            {/* </div> */}
+          </div>
 
           <div className="bottom-level-navigation-right">
             <div className="stores-search">
