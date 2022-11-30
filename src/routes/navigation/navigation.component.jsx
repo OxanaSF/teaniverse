@@ -1,24 +1,28 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selector';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-
-import { selectIsCartOpen } from '../../store/cart/cart.selector'
+import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
 import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
 
 import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
 import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
 
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+
 import './navigation.styles.scss';
 
 const Navigation = () => {
-  const currentUser = useSelector(selectCurrentUser)
-  const isCartOpen = useSelector(selectIsCartOpen)
+  const currentUser = useSelector(selectCurrentUser);
+  const isCartOpen = useSelector(selectIsCartOpen);
+
+  const [nav, setNav] = useState(false);
+
 
   return (
     <Fragment>
@@ -48,18 +52,26 @@ const Navigation = () => {
 
           <div className="top-level-navigation-right">
             {currentUser ? (
-              <Link as span onClick={signOutUser}> Sign Out </Link>
+              <Link as span onClick={signOutUser}>
+                {' '}
+                Sign Out{' '}
+              </Link>
             ) : (
               <Link to="/auth">Sign in</Link>
             )}
             <FavoriteIcon />
 
             <ShoppingCart />
-            
           </div>
         </div>
 
         <div className="bottom-level-navigation">
+          
+          
+          <div onClick={() => setNav(!nav)} className="mobile_btn">
+            {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={35} />}
+          </div>
+
           <div className="bottom-level-navigation-left">
             <Link to="/tea">
               <div>Tea</div>
@@ -76,6 +88,15 @@ const Navigation = () => {
           <Link className="logo-container" to="/">
             <img src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="logo" />
           </Link>
+
+          {/* <div className="bottom-level-navigation-right-with-heart-and-bag"> */}
+          <div className="bottom-level-navigation-right-with-heart">
+            <FavoriteIcon />
+            </div>
+            <div className="bottom-level-navigation-right-with-bag">
+            <ShoppingCart />
+            </div>
+          {/* </div> */}
 
           <div className="bottom-level-navigation-right">
             <div className="stores-search">

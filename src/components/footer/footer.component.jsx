@@ -9,7 +9,7 @@ const Footer = () => {
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bicycle.png)`,
         }}
       >
-        <div class="div1">
+        <div className="div1">
           <h3>Tea</h3>
           <ul>
             <li> View all</li>
@@ -30,7 +30,7 @@ const Footer = () => {
             <li>Tea sets</li>
           </ul>
         </div>
-        <div class="div2">
+        <div className="div2">
           <h3>Coffee</h3>
           <ul>
             <li>View all</li>
@@ -42,7 +42,7 @@ const Footer = () => {
             <li>Pound coffee, -40%</li>
           </ul>
         </div>
-        <div class="div3">
+        <div className="div3">
           <h3>Sweets</h3>
           <ul>
             <li>View all</li>
@@ -56,7 +56,7 @@ const Footer = () => {
             <li>Chocolate</li>
           </ul>
         </div>
-        <div class="div4">
+        <div className="div4">
           <h3>Present</h3>
           <ul>
             <li>View all</li>
@@ -71,7 +71,7 @@ const Footer = () => {
             <li>Black tea with additives</li>
           </ul>
         </div>
-        <div class="div5">
+        <div className="div5">
           <h3>Teaniverse academy </h3>
           <ul>
             <li>View all</li>
@@ -79,7 +79,7 @@ const Footer = () => {
             <li>Coffee academy</li>
           </ul>
         </div>
-        <div class="div6">
+        <div className="div6">
           <h3>Tableware</h3>
           <ul>
             <li>View all</li>
@@ -93,14 +93,14 @@ const Footer = () => {
             <li>Ethnic dishes</li>
           </ul>
         </div>
-        <div class="div7">
-            <h3>Package</h3>
-            <ul>
-                <li>View all</li>
-                <li>Baskets, chests, caskets, pallets</li>
-                <li>Boxes</li>
-                <li>Bags</li>
-            </ul>
+        <div className="div7">
+          <h3>Package</h3>
+          <ul>
+            <li>View all</li>
+            <li>Baskets, chests, caskets, pallets</li>
+            <li>Boxes</li>
+            <li>Bags</li>
+          </ul>
         </div>
       </div>
     </footer>

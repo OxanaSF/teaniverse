@@ -7,7 +7,7 @@ import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
 
 //Wish List
-import { selectWishListItems } from '../../store/wish-list/wish-list.selection';
+import { selectWishListItems } from '../../store/wish-list/wish-list.selector';
 import { addItemToWishList } from '../../store/wish-list/wish-list.action';
 
 import './product-card.styles.scss';

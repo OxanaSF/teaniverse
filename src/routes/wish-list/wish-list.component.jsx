@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectWishListItems } from '../../store/wish-list/wish-list.selection';
+import { selectWishListItems } from '../../store/wish-list/wish-list.selector';
 
 import Spinner from '../../components/spinner/spinner.component';
 import ProductCard from '../../components/product-card/product-card.components';
