@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-// import { selectWishListCount } from '../../store/wish-list/wish-list.selector';
+import { selectWishListCount } from '../../store/wish-list/wish-list.selector';
 
 import './favorite-icon.styles.scss';
 

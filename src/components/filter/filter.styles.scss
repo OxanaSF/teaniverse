@@ -1,0 +1,59 @@
+.tea-selectors-btn {
+  // text-align: left;
+  display: flex;
+
+  justify-content: left;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    aspect-ratio: 8;
+    background: #785448;
+    background: #47160e;;
+    border: 1px solid #785448;
+
+    button {
+      border: none;
+      color: white;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      padding: 5px;
+      margin: 0 15px;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 2px;
+
+      &:hover {
+        background: white;
+        color: #785448;
+      }
+    }
+  }
+  .mask {
+    -webkit-mask: radial-gradient(circle 12px at top left, #0000 98%, #000) top
+        left,
+      radial-gradient(circle 12px at top right, #0000 98%, #000) top right,
+      radial-gradient(circle 12px at bottom left, #0000 98%, #000) bottom left,
+      radial-gradient(circle 12px at bottom right, #0000 98%, #000) bottom right;
+    -webkit-mask-size: 51% 51%;
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .tea-selectors-btn {
+        .box {
+            width: 80%;
+            margin: auto;
+        }
+    }
+}

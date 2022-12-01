@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 
+import Button from '../../components/button/button.component'
+import './filter.styles.scss'
+
 const Filter = ({
   teaProducts,
   setFilteredTea,
@@ -17,10 +20,12 @@ const Filter = ({
   }, [activeFilterBtn, setFilteredTea, teaProducts]);
 
   return (
-    <div>
+    <div className='tea-selectors-btn'>
+      <div className='box mask'>
       <button onClick={() => setActiveFilterBtn('all')}>All</button>
       <button onClick={() => setActiveFilterBtn('black')}>Black Tea</button>
       <button onClick={() => setActiveFilterBtn('green')}>Green Tea</button>
+    </div>
     </div>
   );
 };
