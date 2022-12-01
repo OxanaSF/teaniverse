@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectWishListItems } from '../../store/wish-list/wish-list.selector';
+import { selectWishItems } from '../../store/wish/wish.selector';
 
 import Spinner from '../../components/spinner/spinner.component';
 import ProductCard from '../../components/product-card/product-card.components';
@@ -10,7 +10,7 @@ import ProductCard from '../../components/product-card/product-card.components';
 import './wish-list.styles.scss';
 
 const WishList = () => {
-  const wishList = useSelector(selectWishListItems);
+  const wishList = useSelector(selectWishItems);
 
   const [wishListItems, setWishListItems] = useState([]);
 

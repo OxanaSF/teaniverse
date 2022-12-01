@@ -4,12 +4,12 @@ import { userReducer } from './user/user.reducer';
 import { categoriesReducer } from './categories/category.reducer';
 import { cartReducer } from './cart/cart.reducer';
 import { productReducer } from './product/product.reducer';
-import { wishListReducer } from './wish-list/wish-list.reducer';
+import { wishReducer } from './wish/wish.reducer'
 
 export const rootReducer = combineReducers({
   user: userReducer,
   categories: categoriesReducer,
   cart: cartReducer,
   product: productReducer,
-  wishList: wishListReducer 
+  wishCart: wishReducer 
 });

@@ -1,0 +1,3 @@
+export const WISH_ACTION_TYPES = {
+  SET_WISH_ITEMS: 'SET_WISH_ITEMS',
+};

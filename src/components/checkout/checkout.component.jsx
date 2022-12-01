@@ -27,11 +27,11 @@ const Checkout = () => {
 
         <div className="checkout-process">
           <div className="checkout-process-container">
-            <div className='checkout-process-subtotal'>
-            <div> Subtotal: </div>
-            <div className="checkout-process-dollar"> ${cartTotal}</div>
+            <div className="checkout-process-subtotal">
+              <div> Subtotal: </div>
+              <div className="checkout-process-dollar"> ${cartTotal}</div>
 
-            <p>Promotions</p>
+              <p>Promotions</p>
             </div>
             <div className="coupon-input-container">
               <input type="Enter Coupon" />

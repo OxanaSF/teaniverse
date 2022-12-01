@@ -31,50 +31,45 @@ const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
   };
 
   return (
-  
-      <div className="cart-item-container-bag">
-        <div className="cart-item-bag-description">
-          <img src={imageUrl} alt={name} />
+    <div className="cart-item-container-bag">
+      <div className="cart-item-bag-description">
+        <img src={imageUrl} alt={name} />
 
-          <div className="item-info">
-          
-              <h3>{name}</h3>
-          
-            <span className="item-name"> {description}</span>
-            <p>
-              {' '}
-              <span className="item-taste"> Taste: </span> {taste}
-            </p>
+        <div className="item-info">
+          <h3>{name}</h3>
 
-            <div className="quantity-total">
-              <div className="quantity-increase-decrease">
-                <button onClick={removeItemFromCartHandler}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/minus.png`}
-                    alt="minus"
-                  />
-                </button>
-                <span className="quantity-num"> {quantity} </span>
-                <button onClick={addItemToCartHandler}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/plus.png`}
-                    alt="plus"
-                  />
-                </button>
-              </div>
-              <div className="item-price">
-                 ${quantity * price}
-              </div>
+          <span className="item-name"> {description}</span>
+          <p>
+            {' '}
+            <span className="item-taste"> Taste: </span> {taste}
+          </p>
+
+          <div className="quantity-total">
+            <div className="quantity-increase-decrease">
+              <button onClick={removeItemFromCartHandler}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/minus.png`}
+                  alt="minus"
+                />
+              </button>
+              <span className="quantity-num"> {quantity} </span>
+              <button onClick={addItemToCartHandler}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/plus.png`}
+                  alt="plus"
+                />
+              </button>
             </div>
+            <div className="item-price">${quantity * price}</div>
           </div>
         </div>
-        <div className="btn-close">
-          <button onClick={clearItemFromCartHandler}>
-            <AiOutlineClose size={22} color={'#979797'} />
-          </button>
-        </div>
       </div>
-   
+      <div className="btn-close">
+        <button onClick={clearItemFromCartHandler}>
+          <AiOutlineClose size={22} color={'#979797'} />
+        </button>
+      </div>
+    </div>
   );
 };
 

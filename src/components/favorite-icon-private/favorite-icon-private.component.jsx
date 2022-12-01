@@ -4,22 +4,24 @@ import { useSelector } from 'react-redux';
 
 import { selectWishCount } from '../../store/wish/wish.selector';
 
-import './favorite-icon.styles.scss';
+import './favorite-icon-private.styles.scss';
 
-const FavoriteIcon = () => {
-  const wishListCount = useSelector(selectWishCount);
+
+
+const FavoriteIconPrivate = ({toggleHeartIcon}) => {
+//   const wishListCount = useSelector(selectWishCount);
 
   return (
-    <div className="heart-container">
+    <div className="heart-container" onClick={toggleHeartIcon}>
       <Link to="/wish-list" className="heart-container">
         <img
           src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
           alt="heart icon"
         />
-        <span className="item-count">{wishListCount}</span>
+      
       </Link>
     </div>
   );
 };
 
-export default FavoriteIcon;
+export default FavoriteIconPrivate;

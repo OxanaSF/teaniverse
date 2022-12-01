@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -7,31 +7,43 @@ import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
 
 //Wish List
-import { selectWishListItems } from '../../store/wish-list/wish-list.selector';
-import { addItemToWishList } from '../../store/wish-list/wish-list.action';
+import { selectWishItems } from '../../store/wish/wish.selector';
+import { addRemoveWish } from '../../store/wish/wish.action';
+
+// import FavoriteIconPrivate from '../favorite-icon-private/favorite-icon-private.component';
 
 import './product-card.styles.scss';
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
 
+
+
+  // const [heartIcon, setHeartIcon] = useState(true);
+
   const cartItems = useSelector(selectCartItems);
-  const wishListItems = useSelector(selectWishListItems);
+  const wishListItems = useSelector(selectWishItems);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   //Start Functions
-  const addProductToWishList = (event) => {
-    dispatch(addItemToWishList(wishListItems, product));
-    console.log('product added to wish list', product);
+
+
+  const addWishHandler = (event) => {
+    console.log('wishListItems HANDLER', wishListItems, product)
+    dispatch(addRemoveWish(wishListItems, product));
 
     event.stopPropagation();
   };
 
-  console.log();
+
+  console.log('wishListItems', wishListItems)
+
+
 
   const addProductToCartHandler = (event) => {
+    console.log('product is added');
     dispatch(addItemToCart(cartItems, product));
     console.log(product);
 
@@ -45,14 +57,15 @@ const ProductCard = ({ product }) => {
 
   return (
     <div onClick={navigateHandler} className="product-card-container">
-
       <div className="product-card-header">
-        <button className="heart-btn" onClick={addProductToWishList}>
+        <button className="heart-btn" onClick={addWishHandler}>
           <img
             src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
             alt=""
           />
         </button>
+
+        {/* <FavoriteIconPrivate toggleHeartIcon={toggleHeartIcon} /> */}
 
         <div className="product-card-header-icons-container">
           <img

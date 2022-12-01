@@ -53,8 +53,7 @@ const Navigation = () => {
           <div className="top-level-navigation-right">
             {currentUser ? (
               <Link as span onClick={signOutUser}>
-                {' '}
-                Sign Out{' '}
+                Sign Out
               </Link>
             ) : (
               <Link to="/auth">Sign in</Link>
