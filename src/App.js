@@ -101,14 +101,20 @@ const App = () => {
           <Route path="other-products" element={<OtherProducts />} />
           <Route path="stores" element={<Stores />} />
 
-          {isLoggedIn && <Route path="checkout" element={<Checkout />} />}
+          {/* {isLoggedIn && <Route path="checkout" element={<Checkout />} />} */}
+<Route path="checkout" element={<Checkout />} />
 
-          {isLoggedIn && <Route path="checkout" element={<Checkout />} />}
 
+          {/* {isLoggedIn && <Route path="checkout" element={<Checkout />} />} */}
+          <Route path="checkout" element={<Checkout />} />
 
+{/* 
           {isLoggedIn && (
             <Route path="checkout/order/:order" element={<Order />} />
-          )}
+          )} */}
+         
+            <Route path="checkout/order/:order" element={<Order />} />
+        
           
 
           {isLoggedIn && <Route path="wish-list" element={<WishList />} />}

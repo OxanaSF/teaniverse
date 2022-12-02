@@ -8,7 +8,7 @@ import {
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
 import Button from '../button/button.component';
-import ShoppingCartItem from '../shopping-cart-item/shopping-cart-item.component';
+import ShoppingCartItemDropdown from '../shopping-cart-item-dropdown/shopping-cart-item-dropdown.component';
 import { setIsCartOpen } from '../../store/cart/cart.action';
 
 import './shopping-cart-dropdown.styles.scss';
@@ -45,7 +45,10 @@ const CartDropdown = () => {
             <div className="cart-dropdown-container">
               <div className="cart-items">
                 {cartItems.map((item) => (
-                  <ShoppingCartItem key={item.id} shoppingCartItem={item} />
+                  <ShoppingCartItemDropdown
+                    key={item.id}
+                    shoppingCartItem={item}
+                  />
                 ))}
               </div>
               <div className="cart-dropdown-total">Total: ${cartTotal}</div>

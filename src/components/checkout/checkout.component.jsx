@@ -7,7 +7,7 @@ import {
   selectCartTotal,
 } from '../../store/cart/cart.selector';
 
-import ShoppingCartItemInBag from '../shopping-cart-item-bag/shopping-cart-item-bag.component';
+import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
 import Button from '../../components/button/button.component';
 
 import './checkout.styles.scss';
@@ -23,7 +23,7 @@ const Checkout = () => {
       <div className="checkout-bag-container">
         <div className="cart-items">
           {cartItems.map((item, index) => (
-            <ShoppingCartItemInBag key={index} shoppingCartItem={item} />
+            <ShoppingCartItemInOrder key={index} shoppingCartItem={item} />
           ))}
         </div>
 
