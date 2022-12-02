@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -17,8 +17,6 @@ import './product-card.styles.scss';
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
 
-
-
   // const [heartIcon, setHeartIcon] = useState(true);
 
   const cartItems = useSelector(selectCartItems);
@@ -29,26 +27,26 @@ const ProductCard = ({ product }) => {
 
   //Start Functions
 
-
-  const addWishHandler = (event) => {
-    console.log('wishListItems HANDLER', wishListItems, product)
-    dispatch(addRemoveWish(wishListItems, product));
-
-    event.stopPropagation();
-  };
-
-
-  console.log('wishListItems', wishListItems)
-
-
-
   const addProductToCartHandler = (event) => {
-    console.log('product is added');
     dispatch(addItemToCart(cartItems, product));
     console.log(product);
+    console.log(cartItems);
 
     event.stopPropagation();
   };
+
+
+  const addWishHandler = (event) => {
+    dispatch(addRemoveWish(wishListItems, product));
+    console.log(product);
+    console.log(wishListItems);
+
+    event.stopPropagation();
+  };
+
+
+
+  // console.log('wishListItems', wishListItems);
 
   const navigateHandler = () => {
     navigate(`picked-tea/${name}`);
@@ -58,10 +56,13 @@ const ProductCard = ({ product }) => {
   return (
     <div onClick={navigateHandler} className="product-card-container">
       <div className="product-card-header">
+
+
+
         <button className="heart-btn" onClick={addWishHandler}>
           <img
             src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
-            alt=""
+            alt="heart"
           />
         </button>
 

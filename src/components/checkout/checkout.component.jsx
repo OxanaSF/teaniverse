@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
 import {
   selectCartItems,
   selectCartTotal,
@@ -38,7 +40,11 @@ const Checkout = () => {
               <button>Apply</button>
             </div>
             <br />
-            <button>Checkout </button>
+            <Link to={`order/${cartTotal}`} className="heart-container">
+        
+              Checkout
+            </Link>
+
             <img
               src={`${process.env.PUBLIC_URL}/images/bg/balloon.png`}
               alt="balloon"

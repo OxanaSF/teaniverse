@@ -1,0 +1,6 @@
+export const AUTH_ACTION_TYPES = {
+    SET_IS_LOGGED_IN: 'SET_IS_LOGGED_IN',
+    SET_IS_LOGGED_OUT: 'SET_IS_LOGGED_OUT',
+
+  };
+  

@@ -1,17 +1,25 @@
 import { Fragment, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selector';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
+import { selectIsLoggedIn } from '../../store/auth/auth.selector';
+import { setIsLoggedOut } from '../../store/auth/auth.action'
+
+
+
 import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
 
 import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
 import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
+
+
+
 
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
@@ -22,6 +30,16 @@ const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const [nav, setNav] = useState(false);
+
+
+
+
+  const dispatch = useDispatch();
+
+  const signOutUserHandler = () => {
+    signOutUser()
+    dispatch(setIsLoggedOut ());
+  }
 
 
   return (
@@ -52,7 +70,7 @@ const Navigation = () => {
 
           <div className="top-level-navigation-right">
             {currentUser ? (
-              <Link as span onClick={signOutUser}>
+              <Link as span onClick={signOutUserHandler}>
                 Sign Out
               </Link>
             ) : (

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -12,6 +13,10 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
+
+import { selectIsLoggedIn } from '../../store/auth/auth.selector';
+import { setIsLoggedIn } from '../../store/auth/auth.action'
+
 import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
@@ -23,7 +28,11 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  // const isLoggedIn = useSelector(selectIsLoggedIn)
+
   const navigate = useNavigate()
+
+  const dispatch = useDispatch();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -31,6 +40,7 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
+    dispatch(setIsLoggedIn());
     navigate('/')
   };
 
@@ -40,6 +50,7 @@ const SignInForm = () => {
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
+      dispatch(setIsLoggedIn());
       navigate('/')
 
     } catch (error) {

@@ -1,17 +1,19 @@
 import { useEffect } from 'react';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { selectIsLoggedIn } from './store/auth/auth.selector';
 
-import { loadStripe } from "@stripe/stripe-js";
+import { Navigate } from 'react-router-dom';
 
+import { loadStripe } from '@stripe/stripe-js';
 
 import {
   onAuthStateChangedListener,
-  createUserDocumentFromAuth
+  createUserDocumentFromAuth,
 } from './utils/firebase/firebase.utils';
 
 import { setCurrentUser } from './store/user/user.action';
-import { fetchCategoriesAsync} from './store/categories/category.action';
-import { useDispatch } from 'react-redux';
+import { fetchCategoriesAsync } from './store/categories/category.action';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -20,6 +22,7 @@ import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
+import Order from './components/order/order.component';
 import WishList from './routes/wish-list/wish-list.component';
 import LuxuryTea from './routes/luxury-tea/luxury-tea.component';
 import DeliciousTea from './routes/delicious-tea/delicious-tea.component';
@@ -28,6 +31,8 @@ import PickedTea from './routes/picked-tea/picked-tea.component';
 import CuriousTea from './routes/curious-tea/curious-tea.component';
 import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 import Footer from './components/footer/footer.component';
+
+import { selectAuthReducer } from './store/auth/auth.selector';
 
 const Deals = () => {
   return <h2>I am the DEALS page</h2>;
@@ -56,8 +61,8 @@ const Stores = () => {
   return <h2>I am the Stores page</h2>;
 };
 
-
 const App = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -72,13 +77,9 @@ const App = () => {
     return unsubscribe;
   }, [dispatch]);
 
-
-
   useEffect(() => {
-      dispatch(fetchCategoriesAsync())
+    dispatch(fetchCategoriesAsync());
   }, [dispatch]);
-
-  
 
   return (
     <div>
@@ -99,8 +100,18 @@ const App = () => {
 
           <Route path="other-products" element={<OtherProducts />} />
           <Route path="stores" element={<Stores />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="wish-list" element={<WishList />} />
+
+          {isLoggedIn && <Route path="checkout" element={<Checkout />} />}
+
+          {isLoggedIn && <Route path="checkout" element={<Checkout />} />}
+
+
+          {isLoggedIn && (
+            <Route path="checkout/order/:order" element={<Order />} />
+          )}
+          
+
+          {isLoggedIn && <Route path="wish-list" element={<WishList />} />}
 
           {/* Paths of the Tea Navigation */}
           <Route path="classic-tea" element={<ClassicTea />} />
@@ -109,6 +120,7 @@ const App = () => {
           <Route path="curious-tea" element={<CuriousTea />} />
           <Route path="relaxing-tea" element={<RelaxingTea />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </div>

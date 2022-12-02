@@ -12,14 +12,9 @@ import './wish-list.styles.scss';
 const WishList = () => {
   const wishList = useSelector(selectWishItems);
 
-  const [wishListItems, setWishListItems] = useState([]);
-
-  useEffect(() => {
-    setWishListItems(wishList)
-  },[wishList])
 
 
-  console.log('wishListItems', wishListItems)
+  console.log('wishListItems', wishList)
 
   // if (!wishList) {
   //   return <Spinner />;
@@ -27,8 +22,8 @@ const WishList = () => {
 
   return (
     <div>
-      {wishListItems &&
-        wishListItems.map((product, index) => (
+      {wishList &&
+        wishList.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
     </div>
