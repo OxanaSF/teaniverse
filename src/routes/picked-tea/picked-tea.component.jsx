@@ -1,15 +1,11 @@
-// import { useState, useContext, useEffect } from 'react';
+//import { useState, useContext, useEffect } from 'react';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 //Category
-import {
-  selectCategoriesMap
-} from '../../store/categories/category.selector';
+import { selectCategoriesMap } from '../../store/categories/category.selector';
 
-
-
-// Product
+//Product
 import { selectCurrentProduct } from '../../store/product/product.selector';
 import { setCurrentProduct } from '../../store/product/product.action';
 
@@ -18,6 +14,7 @@ import { useParams } from 'react-router-dom';
 import CheckoutForm from '../../components/checkout-form/checkout-form.component';
 import Spinner from '../../components/spinner/spinner.component';
 
+//Carousel
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
@@ -27,7 +24,6 @@ const PickedTea = () => {
   //Selectors
   const currentProduct = useSelector(selectCurrentProduct);
   const categoriesMap = useSelector(selectCategoriesMap);
-
 
   //States
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
@@ -39,8 +35,6 @@ const PickedTea = () => {
   useEffect(() => {
     setTeaProducts(categoriesMap['tea']);
   }, [categoriesMap]);
-
-
 
   useEffect(() => {
     console.log(teaProducts);
@@ -62,7 +56,7 @@ const PickedTea = () => {
 
       <div className="picked-tea-container">
         <div className="picked-tea-left-col">
-          <Carousel className="carousel" autoPlay={true} infiniteLoop={true}>
+          <Carousel className="carousel" autoPlay={true} infiniteLoop={true} showStatus={false}>
             {currentProduct.imageUrl && (
               <img src={currentProduct.imageUrl} alt="tea" />
             )}

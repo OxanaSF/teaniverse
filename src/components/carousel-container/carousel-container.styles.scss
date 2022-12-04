@@ -1,0 +1,15 @@
+.img-carousel-bg-container {
+  margin: 10rem 2rem;
+  height: 38rem;
+  // background: #0a2a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .carousel {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+}

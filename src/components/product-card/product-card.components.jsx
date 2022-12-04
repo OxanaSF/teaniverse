@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -6,8 +7,12 @@ import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
 
 //Wish List
-import { selectWishItems } from '../../store/wish/wish.selector';
+import {
+  selectWishItems,
+  // selectIsWishClicked,
+} from '../../store/wish/wish.selector';
 import { addRemoveWish } from '../../store/wish/wish.action';
+// import { addRemoveWish, isWishClicked } from '../../store/wish/wish.action';
 
 import FavoriteIconPrivate from '../favorite-icon-private/favorite-icon-private.component';
 
@@ -16,10 +21,11 @@ import './product-card.styles.scss';
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
 
-  // const [heartIcon, setHeartIcon] = useState(true);
+
 
   const cartItems = useSelector(selectCartItems);
   const wishListItems = useSelector(selectWishItems);
+  // const wishClicked = useSelector(selectIsWishClicked);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,23 +34,21 @@ const ProductCard = ({ product }) => {
 
   const addProductToCartHandler = (event) => {
     dispatch(addItemToCart(cartItems, product));
+
     console.log(product);
     console.log(cartItems);
 
     event.stopPropagation();
   };
 
-  const addWishHandler = (event) => {
-    dispatch(addRemoveWish(wishListItems, product));
-    console.log(product);
-    console.log(wishListItems);
-
-    event.stopPropagation();
-  };
 
   const navigateHandler = () => {
     navigate(`picked-tea/${name}`);
   };
+
+  // useEffect(() => {
+    // dispatch(isWishClicked(wishListItems, product));
+  // }, [dispatch, product, wishListItems]);
   //End Functions
 
   return (

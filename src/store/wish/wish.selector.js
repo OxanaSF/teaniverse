@@ -11,3 +11,12 @@ export const selectWishCount = createSelector(
   [selectWishReducer],
   (wishCart) => wishCart.wishItems.length
 );
+
+export const selectIsWishClicked = createSelector(
+  [selectWishReducer],
+  (wishCart) => wishCart.wishItems.isWishChecked
+);
+
+
+
+

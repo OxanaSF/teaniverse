@@ -1,0 +1,138 @@
+.mobile_btn {
+    display: none;
+  }
+  
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem;
+    letter-spacing: 0.8px;
+    color: #543019;
+    font-size: 15px;
+    font-weight: 400;
+  
+    a,
+    img {
+      color: #543019;
+      cursor: pointer;
+    }
+  
+    .top-level-navigation {
+      height: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem 0 0;
+      border-bottom: 1px solid #d1cccc;
+  
+      .top-level-navigation-left {
+        display: flex;
+      }
+  
+      .top-level-navigation-left a {
+        padding: 0 2rem;
+      }
+  
+      .top-level-navigation-right {
+        display: flex;
+        align-items: center;
+  
+        img {
+          padding-left: 2rem;
+          width: 21px;
+        }
+      }
+  
+      .top-level-navigation-right :nth-child(3) {
+        padding-bottom: 3.6px;
+      }
+    }
+  
+    .bottom-level-navigation {
+      // background: red;
+      height: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      // background: pink;
+  
+      & {
+        color: #543019;
+      }
+  
+      .mobile_btn {
+        display: none;
+      }
+  
+      .bottom-level-navigation-left {
+        display: flex;
+      }
+  
+      .bottom-level-navigation-left :nth-child(2),
+      .bottom-level-navigation-left :nth-child(3) {
+        padding-left: 2rem;
+      }
+  
+      .bottom-level-navigation-right {
+        // background: blue;
+  
+        display: flex;
+  
+        .stores-search {
+          display: flex;
+        }
+  
+        .stores-search :nth-child(2) {
+          padding-left: 2rem;
+        }
+      }
+  
+      .bottom-level-navigation-right-with-heart-and-bag {
+        display: none;
+      }
+    }
+  
+    .logo-container {
+      margin-top: 1.5rem;
+      padding-left: 5.6rem;
+    }
+  
+    .app-icons-container {
+      display: flex;
+      justify-content: space-between;
+  
+      img {
+        width: 21px;
+      }
+  
+      .app-icon {
+        padding-left: 1rem;
+      }
+    }
+  }
+  
+  // Mobile
+  
+  @media screen and (max-width: 1010px) {
+    .mobile_btn {
+      display: block;
+      position: absolute;
+      left: 1rem;
+      cursor: pointer;
+      z-index: 10;
+      position: fixed;
+    }
+  
+    .active {
+      top: 0;
+    }
+  
+    .navigation {
+      .bottom-level-navigation {
+        .logo-container {
+        }
+      }
+    }
+  }
+  

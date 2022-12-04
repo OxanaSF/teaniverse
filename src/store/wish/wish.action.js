@@ -10,10 +10,28 @@ const addRemoveWishItem = (wishItems, productToAdd) => {
   console.log('ACTION wishItems', wishItems);
 
   if (!existingWishItem) {
-    return [...wishItems, productToAdd];
+    return [...wishItems, {...productToAdd, clicked: true}];
   }
+
   return wishItems.filter((wishItem) => wishItem.id !== productToAdd.id);
 };
+
+
+
+const isWishClickedItem = (wishItems, wishToCheck) => {
+  const existingWishItem = wishItems.find(
+    (wishItem) => wishItem.id === wishToCheck.id
+  );
+console.log('existingWishItem', existingWishItem)
+
+  if (existingWishItem) {
+    console.log('existingWishItem.clicked', existingWishItem.clicked)
+    return existingWishItem.clicked
+  }
+  return false
+}
+
+
 
 export const addRemoveWish = (wishItems, productToAdd) => {
   const newWishItems = addRemoveWishItem(wishItems, productToAdd);
@@ -21,3 +39,13 @@ export const addRemoveWish = (wishItems, productToAdd) => {
   console.log('newWishItems', newWishItems);
   return createAction(WISH_ACTION_TYPES.SET_WISH_ITEMS, newWishItems);
 };
+
+
+export const isWishClicked = (wishItems, wishToCheck) => {
+  const newWishItems = isWishClickedItem(wishItems, wishToCheck);
+
+  console.log('isWishClickedItem', newWishItems);
+  return createAction(WISH_ACTION_TYPES.SET_WISH_IS_CLICKED, newWishItems);
+};
+
+

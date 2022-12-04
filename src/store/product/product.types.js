@@ -1,4 +1,6 @@
 export const PRODUCT_ACTION_TYPES = {
     SET_CURRENT_PRODUCT: 'product/SET_CURRENT_PRODUCT',
+    SET_IS_PRODUCT_PICKED: 'product/SET_IS_PRODUCT_PICKED'
   };
   
+
