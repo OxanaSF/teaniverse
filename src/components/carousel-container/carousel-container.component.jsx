@@ -42,7 +42,9 @@ const CarouselContainer = () => {
           {slides.map((slide, index) => (
             <div className="carousel-img">
               <img key={index} src={slide.url} alt="tea" />
+       
               <h1>{slide.heroHeader}</h1>
+           
               <p>{slide.heroText}</p>
             </div>
           ))}

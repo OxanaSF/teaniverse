@@ -7,7 +7,7 @@ const Footer = () => {
         className="real-life-page-bg"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bicycle.png)`,
-          opacity: '0.5'
+          // opacity: '0.5'
         }}
       >
         <div className="div1">

@@ -1,0 +1,35 @@
+.hover-slideshow-container {
+  margin-top: 10rem;
+  background: #dad7a7;
+  background: #E2E2AE;
+  //   border: 1px solid brown;
+
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .hover-slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    color: #543019;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: 'IBM Plex Serif', serif;
+  }
+}
