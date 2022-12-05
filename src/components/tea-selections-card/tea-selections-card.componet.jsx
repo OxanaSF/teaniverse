@@ -1,9 +1,9 @@
-import './tea-selections-card.styles.scss'
+import './tea-selections-card.styles.scss';
 
 const TeaSelectionsCard = ({ item }) => {
   return (
     <div className="selections-item-container">
-       <div
+      <div
         className="selection-card-bg"
         style={{
           backgroundImage: `url(${item.url})`,
@@ -11,7 +11,7 @@ const TeaSelectionsCard = ({ item }) => {
       ></div>
       <h3>{item.h3}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default TeaSelectionsCard
+export default TeaSelectionsCard;
