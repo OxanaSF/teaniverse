@@ -2,22 +2,26 @@
   margin-top: 8rem;
   text-align: center;
   color: #47160e;
+  max-width: 1300px;
+  margin: auto;
 
   h2 {
     font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
     color: #27160e;
+    margin-top: 10rem;
   }
 
   .tea-section-catalogue {
+    // background: red;
     padding: 0 4rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    // display: flex;
+    // justify-content: center;
+    // flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    display: flex;
+    // display: flex;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 

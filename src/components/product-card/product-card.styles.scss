@@ -3,7 +3,8 @@ button {
 }
 
 .product-card-container {
-  min-height: 470px;
+  // background: pink;
+  // min-height: 470px;
   display: flex;
   flex-direction: column;
 
@@ -90,6 +91,7 @@ button {
     h2 {
       font-weight: 300;
       font-size: 23px;
+      margin: 0;
     }
 
     h3 {
