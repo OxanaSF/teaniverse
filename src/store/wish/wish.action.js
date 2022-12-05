@@ -10,7 +10,8 @@ const addRemoveWishItem = (wishItems, productToAdd) => {
   console.log('ACTION wishItems', wishItems);
 
   if (!existingWishItem) {
-    return [...wishItems, {...productToAdd, clicked: true}];
+    // return [...wishItems, {...productToAdd, clicked: true}];
+    return [...wishItems, productToAdd ];
   }
 
   return wishItems.filter((wishItem) => wishItem.id !== productToAdd.id);
@@ -42,10 +43,10 @@ export const addRemoveWish = (wishItems, productToAdd) => {
 
 
 export const isWishClicked = (wishItems, wishToCheck) => {
-  const newWishItems = isWishClickedItem(wishItems, wishToCheck);
+  const wishPickedBoolean = isWishClickedItem(wishItems, wishToCheck);
 
-  console.log('isWishClickedItem', newWishItems);
-  return createAction(WISH_ACTION_TYPES.SET_WISH_IS_CLICKED, newWishItems);
+  console.log('isWishClickedItem', wishPickedBoolean);
+  return createAction(WISH_ACTION_TYPES.SET_WISH_IS_CLICKED, wishPickedBoolean);
 };
 
 

@@ -8,7 +8,6 @@ import {
 } from '../../store/cart/cart.selector';
 
 import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
-import Button from '../../components/button/button.component';
 
 import './checkout.styles.scss';
 
@@ -22,7 +21,7 @@ const Checkout = () => {
 
       {cartItems.length === 0 ? (
         <div className="checkout-bag-container-empty">
-          <div className='checkout-bag-wrapper'>
+          <div className="checkout-bag-wrapper">
             <div
               className="checkout-bag-empty-bg"
               style={{

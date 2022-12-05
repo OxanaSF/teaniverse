@@ -74,7 +74,7 @@ const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
       </div>
 
       <div className="cart-item-bag-heart-container">
-        <FavoriteIconPrivate />
+        <FavoriteIconPrivate product={shoppingCartItem}/>
       </div>
     </div>
   );

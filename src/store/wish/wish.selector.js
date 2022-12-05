@@ -12,10 +12,10 @@ export const selectWishCount = createSelector(
   (wishCart) => wishCart.wishItems.length
 );
 
-export const selectIsWishClicked = createSelector(
-  [selectWishReducer],
-  (wishCart) => wishCart.wishItems.isWishChecked
-);
+// export const selectIsWishClicked = createSelector(
+//   [selectWishReducer],
+//   (wishCart) => wishCart.wishItems.isWishChecked
+// );
 
 
 

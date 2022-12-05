@@ -1,18 +1,9 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 //Cart
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
-
-//Wish List
-import {
-  selectWishItems,
-  // selectIsWishClicked,
-} from '../../store/wish/wish.selector';
-import { addRemoveWish } from '../../store/wish/wish.action';
-// import { addRemoveWish, isWishClicked } from '../../store/wish/wish.action';
 
 import FavoriteIconPrivate from '../favorite-icon-private/favorite-icon-private.component';
 
@@ -22,22 +13,17 @@ const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
 
   const cartItems = useSelector(selectCartItems);
-  const wishListItems = useSelector(selectWishItems);
-  // const wishClicked = useSelector(selectIsWishClicked);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  //Start Functions
-
+ 
   const addProductToCartHandler = (event) => {
     dispatch(addItemToCart(cartItems, product));
-
-    console.log(product);
-    console.log(cartItems);
-
     event.stopPropagation();
   };
+
+
 
   const navigateHandler = () => {
     navigate(`picked-tea/${name}`);
