@@ -18,7 +18,7 @@ const CarouselContainer = () => {
     {
       url: `https://www.chay.info/upload/iblock/59b/59b3d5e272287f94fcea8607bf33b56b.webp`,
       heroHeader: 'Tea Deals',
-      heroText: 'Аor large volumes',
+      heroText: 'For large volumes',
     },
     {
       url: `https://www.chay.info/upload/webp/iblock/e12/me0ie611hthyay9rv9up38nulltv0gip.webp`,
@@ -38,6 +38,7 @@ const CarouselContainer = () => {
           showArrows={false}
           showStatus={false}
           interval={4000}
+          showThumbs={false}
         >
           {slides.map((slide, index) => (
             <div className="carousel-img">

@@ -4,7 +4,7 @@ import ProductCard from '../../components/product-card/product-card.components';
 
 // import { CategoriesContext } from '../../context/categories.context';
 
-import './relaxing-tea.styles.scss'
+import './relaxing-tea.styles.scss';
 
 const RelaxingTea = () => {
   // const { categoriesMap } = useContext(CategoriesContext);
@@ -22,17 +22,14 @@ const RelaxingTea = () => {
         alt="plate of fruits"
       />
       <p>
-   
-      In this selection, there are teas with ingredients that have a slight 
-      sedative effect. Valerian, chamomile, lemon balm. Everything 
-      you need to calm down and sleep well.
+        In this selection, there are teas with ingredients that have a slight
+        sedative effect. Valerian, chamomile, lemon balm. Everything you need to
+        calm down and sleep well.
       </p>
 
       <div
-        className="delicious-page-bg"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/relaxing-tea.jpeg)`,
-        
         }}
       >
         <div className="gradient-styled"></div>

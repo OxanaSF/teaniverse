@@ -1,8 +1,8 @@
-import Button from '../../components/button/button.component';
+import Button from '../button/button.component';
 
-import './actions-section.styles.scss';
+import './bonus-cards-section.styles.scss';
 
-const ActionsSection = () => {
+const BonusCardsSection = () => {
   return (
     <section className="action-section">
       <div className="action-section-text">
@@ -30,4 +30,4 @@ const ActionsSection = () => {
   );
 };
 
-export default ActionsSection;
+export default BonusCardsSection;

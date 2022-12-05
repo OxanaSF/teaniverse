@@ -2,8 +2,11 @@ import { Outlet } from 'react-router-dom';
 
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 import CarouselContainer from '../../components/carousel-container/carousel-container.component';
+import HomeTextIntro from '../../components/home-text-intro/home-text-intro.component';
+import BonusCardsSection from '../../components/bonus-cards-section/bonus-cards-section.component';
 import SlideShowHover from '../../components/slide-show-hover/slide-show-hover.component';
-import ActionsSection from '../../components/actions-section/actions-section.component';
+import Promotions from '../../components/promotions/promotions.component';
+
 
 import './home.styles.scss';
 
@@ -12,8 +15,10 @@ const Home = () => {
     <main>
       <CarouselContainer />
       <TeaNavigation />
-      <ActionsSection />
+      <HomeTextIntro />
+      <BonusCardsSection />
       <SlideShowHover />
+      <Promotions />
 
       <Outlet />
     </main>
