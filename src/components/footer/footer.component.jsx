@@ -7,7 +7,6 @@ const Footer = () => {
         className="real-life-page-bg"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bicycle.png)`,
-          // opacity: '0.5'
         }}
       >
         <div className="div1">
@@ -73,7 +72,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="div5">
-          <h3>Teaniverse academy </h3>
+          <h3>Tea academy </h3>
           <ul>
             <li>View all</li>
             <li>Tea academy</li>

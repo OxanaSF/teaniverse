@@ -21,8 +21,6 @@ import './product-card.styles.scss';
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
 
-
-
   const cartItems = useSelector(selectCartItems);
   const wishListItems = useSelector(selectWishItems);
   // const wishClicked = useSelector(selectIsWishClicked);
@@ -41,15 +39,9 @@ const ProductCard = ({ product }) => {
     event.stopPropagation();
   };
 
-
   const navigateHandler = () => {
     navigate(`picked-tea/${name}`);
   };
-
-  // useEffect(() => {
-    // dispatch(isWishClicked(wishListItems, product));
-  // }, [dispatch, product, wishListItems]);
-  //End Functions
 
   return (
     <div onClick={navigateHandler} className="product-card-container">

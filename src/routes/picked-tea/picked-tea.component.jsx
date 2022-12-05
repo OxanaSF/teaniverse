@@ -14,14 +14,21 @@ import { useParams } from 'react-router-dom';
 import CheckoutForm from '../../components/checkout-form/checkout-form.component';
 import Spinner from '../../components/spinner/spinner.component';
 
+//Cart
+import { selectCartItems } from '../../store/cart/cart.selector';
+import { addItemToCart } from '../../store/cart/cart.action';
+
 //Carousel
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from 'react-responsive-carousel/lib/js/components/Carousel/index';
+
+import Button from '../../components/button/button.component';
 
 import './picked-tea.styles.scss';
 
 const PickedTea = () => {
   //Selectors
+  const cartItems = useSelector(selectCartItems);
   const currentProduct = useSelector(selectCurrentProduct);
   const categoriesMap = useSelector(selectCategoriesMap);
 
@@ -44,6 +51,12 @@ const PickedTea = () => {
     }
   }, [name, dispatch, teaProducts]);
 
+  const addProductToCartHandler = () => {
+    dispatch(addItemToCart(cartItems, currentProduct));
+
+    // event.stopPropagation();
+  };
+
   // console.log('NOW currentProduct', currentProduct);
 
   if (!currentProduct) {
@@ -56,7 +69,12 @@ const PickedTea = () => {
 
       <div className="picked-tea-container">
         <div className="picked-tea-left-col">
-          <Carousel className="carousel" autoPlay={true} infiniteLoop={true} showStatus={false}>
+          <Carousel
+            className="carousel"
+            autoPlay={true}
+            infiniteLoop={true}
+            showStatus={false}
+          >
             {currentProduct.imageUrl && (
               <img src={currentProduct.imageUrl} alt="tea" />
             )}
@@ -85,7 +103,14 @@ const PickedTea = () => {
             </div>
           </div>
 
-          <CheckoutForm />
+          <div className="product-card-footer">
+          <button onClick={addProductToCartHandler}>
+            <img
+              src={`${process.env.PUBLIC_URL}/images/shopping-bag.png`}
+              alt="shopping bag icon"
+            />
+          </button>
+          </div>
         </div>
       </div>
     </div>

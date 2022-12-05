@@ -21,21 +21,21 @@ const promotions = [
     url: 'https://www.chay.info/upload/iblock/804/80465a180330041fd286ba27b5c7daa0.webp',
     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum',
   },
-//   {
-//     h1: 'A birthday present',
-//     url: 'https://www.chay.info/upload/iblock/b3e/b3e9cf96077c6b03de16592649857f4a.webp',
-//     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum voluptatem unde saepe cum ut vitae cumque nisi iste, esse nemo velit!',
-//   },
-//   {
-//     h1: 'Discount for every fifth ounce',
-//     url: 'https://www.chay.info/upload/iblock/b3e/b3e9cf96077c6b03de16592649857f4a.webp',
-//     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum voluptatem unde saepe cum ut vitae cumque nisi iste, esse nemo velit!',
-//   },
-//   {
-//     h1: 'A pound of coffee',
-//     url: 'https://www.chay.info/upload/iblock/974/97419450e7590d4b1291fc9a37af7e69.webp',
-//     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum voluptatem unde saepe cum ut vitae cumque nisi iste, esse nemo velit!',
-//   },
+  //   {
+  //     h1: 'A birthday present',
+  //     url: 'https://www.chay.info/upload/iblock/b3e/b3e9cf96077c6b03de16592649857f4a.webp',
+  //     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum voluptatem unde saepe cum ut vitae cumque nisi iste, esse nemo velit!',
+  //   },
+  //   {
+  //     h1: 'Discount for every fifth ounce',
+  //     url: 'https://www.chay.info/upload/iblock/b3e/b3e9cf96077c6b03de16592649857f4a.webp',
+  //     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum voluptatem unde saepe cum ut vitae cumque nisi iste, esse nemo velit!',
+  //   },
+  //   {
+  //     h1: 'A pound of coffee',
+  //     url: 'https://www.chay.info/upload/iblock/974/97419450e7590d4b1291fc9a37af7e69.webp',
+  //     text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam quisquam, repellendus corrupti atque voluptas cupiditate quaerat ipsum voluptatem unde saepe cum ut vitae cumque nisi iste, esse nemo velit!',
+  //   },
 ];
 
 const Promotions = () => {
@@ -47,23 +47,10 @@ const Promotions = () => {
         <div className="line"></div>
       </header>
 
-      {/* <Carousel
-        className="carousel"
-        autoPlay={true}
-        infiniteLoop={true}
-        //   animationHandler="fade"
-        showArrows={false}
-        showStatus={false}
-        interval={4000}
-        selectedItem={3}
-      > */}
-      <div className='home-promotions-cards'>
-
-
+      <div className="home-promotions-cards">
         {promotions.map((item, index) => (
           <PromotionsItem key={index} item={item} />
         ))}
-      {/* </Carousel> */}
       </div>
     </section>
   );

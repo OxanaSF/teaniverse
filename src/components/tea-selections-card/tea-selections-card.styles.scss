@@ -1,0 +1,28 @@
+.selections-item-container {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  //   justify-content: center;
+
+  position: relative;
+  //   text-align: center;
+  color: white;
+
+  .selection-card-bg {
+    height: 100%;
+    width: 100%;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  h3 {
+    position: absolute;
+    width: 50%;
+    padding: 0 4rem;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: 'IBM Plex Serif', serif;
+  }
+}

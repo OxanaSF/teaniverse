@@ -6,7 +6,7 @@ import HomeTextIntro from '../../components/home-text-intro/home-text-intro.comp
 import BonusCardsSection from '../../components/bonus-cards-section/bonus-cards-section.component';
 import SlideShowHover from '../../components/slide-show-hover/slide-show-hover.component';
 import Promotions from '../../components/promotions/promotions.component';
-
+import TeaSelections from '../../components/bonus-cards-section/tea-selections/tea-selections.component';
 
 import './home.styles.scss';
 
@@ -18,6 +18,7 @@ const Home = () => {
       <HomeTextIntro />
       <BonusCardsSection />
       <SlideShowHover />
+      <TeaSelections />
       <Promotions />
 
       <Outlet />

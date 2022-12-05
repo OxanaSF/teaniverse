@@ -77,6 +77,25 @@
       // background: red;
       display: flex;
 
+      .product-card-footer {
+        height: 100%;
+        width: 100%;
+        // background: red;
+        margin-top: 30px;
+
+        button {
+          background-color: #47160e;
+          // background: #785448;
+          border: none;
+          cursor: pointer;
+
+          img {
+            width: 20px;
+            padding: 18px 30px;
+          }
+        }
+      }
+
       .picked-tea-description {
         padding: 0 0px;
         text-align: left;

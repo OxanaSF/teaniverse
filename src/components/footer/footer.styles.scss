@@ -19,7 +19,7 @@ footer {
 
   li {
     list-style-type: none;
-    color: #27160E;
+    color: #27160e;
     font-weight: 300;
     font-size: 13.5px;
   }
@@ -31,10 +31,9 @@ footer {
   }
 
   .real-life-page-bg {
-    // height: 100%;
     background-repeat: no-repeat;
     background-position: 105.5% 110%;
-    background-position: bottom left;
+    background-position: bottom right;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);

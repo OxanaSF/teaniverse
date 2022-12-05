@@ -17,13 +17,13 @@ const CarouselContainer = () => {
     },
     {
       url: `https://www.chay.info/upload/iblock/59b/59b3d5e272287f94fcea8607bf33b56b.webp`,
-      heroHeader: 'Tea Deals',
+      heroHeader: 'Tea deals and actions',
       heroText: 'For large volumes',
     },
     {
       url: `https://www.chay.info/upload/webp/iblock/e12/me0ie611hthyay9rv9up38nulltv0gip.webp`,
       heroHeader: 'International delivery',
-      heroText: 'Us a consultant for details',
+      heroText: 'Ask a consultant for details',
     },
   ];
 
@@ -43,9 +43,13 @@ const CarouselContainer = () => {
           {slides.map((slide, index) => (
             <div className="carousel-img">
               <img key={index} src={slide.url} alt="tea" />
-       
-              <h1>{slide.heroHeader}</h1>
-           
+
+              <div className="h1-container">
+                <div className="line"></div>
+                <h1>{slide.heroHeader}</h1>
+                <div className="line"></div>
+              </div>
+
               <p>{slide.heroText}</p>
             </div>
           ))}
