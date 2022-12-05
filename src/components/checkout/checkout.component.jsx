@@ -22,14 +22,17 @@ const Checkout = () => {
 
       {cartItems.length === 0 ? (
         <div className="checkout-bag-container-empty">
-          <div>
-          <div
-            className="checkout-bag-empty-bg"
-            style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/images/empty_cart.png)`,
-            }}
-          ></div>
-          <button>Return to catalogue</button>
+          <div className='checkout-bag-wrapper'>
+            <div
+              className="checkout-bag-empty-bg"
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/empty_cart.png)`,
+              }}
+            ></div>
+
+            <Link to="/tea">
+              <button>Return to catalogue</button>
+            </Link>
           </div>
         </div>
       ) : (

@@ -118,32 +118,37 @@
   .checkout-bag-container-empty {
     display: flex;
     justify-content: center;
-    // align-items: center;
 
-    .checkout-bag-empty-bg {
-      height: 300px;
-      width: 300px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    button {
-      border: none;
-      background: #552f1c;
-      color: white;
-      font-family: 'IBM Plex Serif', serif;
-      letter-spacing: 2px;
+    .checkout-bag-wrapper {
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px 35px 20px 35px;
-      font-size: 13px;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      font-weight: 300;
-      font-family: 'Poppins', sans-serif;
+      flex-direction: column;
+      justify-content: center;
+      .checkout-bag-empty-bg {
+        height: 300px;
+        width: 300px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      button {
+        border: none;
+        background: #552f1c;
+        color: white;
+        font-family: 'IBM Plex Serif', serif;
+        letter-spacing: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 35px 20px 35px;
+        font-size: 13px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        font-weight: 300;
+        font-family: 'Poppins', sans-serif;
+      }
     }
   }
 }
