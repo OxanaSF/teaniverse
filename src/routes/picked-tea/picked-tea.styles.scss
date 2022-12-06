@@ -74,16 +74,19 @@
 
     .picked-tea-right-col {
       display: flex;
+      // justify-content: center;
+      align-items: center;
 
       .product-card-footer {
         border: 1px solid #e1e1e1;
         width: 300px;
+        height: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         .product-card-footer-price {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
           font-weight: 300;
           margin-bottom: 3rem;
         }
@@ -95,6 +98,12 @@
           cursor: pointer;
           width: 80%;
           margin: 0 auto;
+
+          &:hover {
+            background-color: #785448;
+            color: black;
+            border: 1px solid #532c12;
+          }
 
           img {
             width: 20px;

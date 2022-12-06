@@ -77,6 +77,7 @@ const NavDesktop = () => {
           ) : (
             <Link to="/auth">Sign in</Link>
           )}
+          
           <FavoriteIcon />
 
           <ShoppingCart />

@@ -1,6 +1,17 @@
 .authentication-container {
-    display: flex;
-    width: 900px;
-    justify-content: space-between;
-    margin: 30px auto;
+  width: 900px;
+  margin: 10rem auto 5rem auto;
+  text-align: center;
+
+  .switch-account {
+    margin-top: 1rem;
+    font-size: 12px;
+
+    button {
+      padding: 0.3rem;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
   }
+}

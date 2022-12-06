@@ -16,11 +16,11 @@ const FilterByPrice = ({
       setFilteredTea(teaProducts);
       return;
     }
-else if(activeFilterBtn === '400'){
-    const filtered = teaProducts.filter((tea) => tea.price < 350);
+else if(activeFilterBtn === '200'){
+    const filtered = teaProducts.filter((tea) => tea.price <= 200);
     setFilteredTea(filtered);
 } else{
-    const filtered = teaProducts.filter((tea) => tea.price < 250);
+    const filtered = teaProducts.filter((tea) => tea.price > 200 && tea.price < 300);
     setFilteredTea(filtered);
 }
  
@@ -30,8 +30,8 @@ else if(activeFilterBtn === '400'){
     <div className="tea-selectors-btn">
       <div className="box mask">
         <button onClick={() => setActiveFilterBtn('all')}>All Prices</button>
-        <button onClick={() => setActiveFilterBtn('400')}>less than 350</button>
-        <button onClick={() => setActiveFilterBtn('300')}>less than 250</button>
+        <button onClick={() => setActiveFilterBtn('200')}>$1 - $200</button>
+        <button onClick={() => setActiveFilterBtn('300')}>$200 - $300</button>
   
       </div>
     </div>

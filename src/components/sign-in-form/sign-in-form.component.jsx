@@ -6,16 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
-
 import {
   signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
-
 import { selectIsLoggedIn } from '../../store/auth/auth.selector';
-import { setIsLoggedIn } from '../../store/auth/auth.action'
+import { setIsLoggedIn } from '../../store/auth/auth.action';
 
 import './sign-in-form.styles.scss';
 
@@ -30,7 +28,7 @@ const SignInForm = () => {
 
   // const isLoggedIn = useSelector(selectIsLoggedIn)
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -41,7 +39,7 @@ const SignInForm = () => {
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
     dispatch(setIsLoggedIn());
-    navigate('/')
+    navigate('/');
   };
 
   const handleSubmit = async (event) => {
@@ -51,8 +49,7 @@ const SignInForm = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
       dispatch(setIsLoggedIn());
-      navigate('/')
-
+      navigate('/');
     } catch (error) {
       console.log('user sign in failed', error);
     }
@@ -88,10 +85,7 @@ const SignInForm = () => {
         />
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button 
-              buttonType="google" 
-              onClick={signInWithGoogle}
-              >
+          <Button buttonType="google" onClick={signInWithGoogle}>
             Google sign in
           </Button>
         </div>
