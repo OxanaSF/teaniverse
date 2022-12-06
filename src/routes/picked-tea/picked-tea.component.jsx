@@ -112,7 +112,7 @@ const PickedTea = () => {
           </div>
 
           <div className="product-card-footer">
-            <p className='product-card-footer-price'>${currentProduct.price}</p>
+            <p className="product-card-footer-price">${currentProduct.price}</p>
             <button onClick={addProductToCartHandler} className="bag-button">
               <img
                 src={`${process.env.PUBLIC_URL}/images/shopping-bag.png`}

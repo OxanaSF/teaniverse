@@ -1,5 +1,8 @@
 .checkout-bag {
   margin-top: 5rem;
+  max-width: 1300px;
+  margin: auto;
+  margin-bottom: 5rem;
 
   h2 {
     margin: 5rem 0;
@@ -14,6 +17,7 @@
     grid-template-columns: 60% 35%;
     grid-template-columns: 2fr 1fr;
     column-gap: 5%;
+
     margin-right: 2rem;
 
     .checkout-bag-empty-bg {
@@ -27,7 +31,7 @@
     .checkout-process {
       padding: 2.5rem;
       height: 30rem;
-      // background: red;
+
       border: 1px solid rgb(225, 225, 225);
       display: flex;
       justify-content: center;
@@ -111,7 +115,7 @@
     }
 
     .cart-items {
-      border-bottom: 1px solid rgb(225, 225, 225);
+      // border-bottom: 1px solid rgb(225, 225, 225);
     }
   }
 
