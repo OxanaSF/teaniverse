@@ -10,6 +10,7 @@ import ProductCard from '../../components/product-card/product-card.components';
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 import Filter from '../../components/filter/filter.component';
 import Spinner from '../../components/spinner/spinner.component';
+import BonusCardsSection from '../../components/bonus-cards-section/bonus-cards-section.component'
 
 import './tea.styles.scss';
 
@@ -55,16 +56,36 @@ const Tea = () => {
         )}
       </Fragment>
 
-      <div>
+      <div className="tea-section-bottom-text">
+        <div className="line"></div>
         <h3>Tea</h3>
+        <div className="line"></div>
       </div>
-      <article>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eaque,
-        mollitia nihil corporis iure labore dolor. Consectetur itaque harum
-        fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab nulla
-        voluptatibus!
-      </article>
-      <div>Club card</div>
+      <div className="article-container">
+        <h4>We buy tea wisely!</h4>
+        <article>
+          <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eaque,
+          mollitia nihil corporis iure labore dolor. Consectetur itaque harum
+          fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab nulla
+          voluptatibus! Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Porro eaque, mollitia nihil corporis iure labore dolor.
+          Consectetur itaque harum fugiat voluptatum quis, facilis saepe id
+          voluptatem tenetur ab nulla voluptatibus!
+          </p>
+          <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eaque,
+src/routes/tea/tea.styles.scss          mollitia nihil corporis iure labore dolor. Consectetur itaque harum
+          fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab nulla
+          voluptatibus! Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Porro eaque, mollitia nihil corporis iure labore dolor.
+          Consectetur itaque harum fugiat voluptatum quis, facilis saepe id
+          voluptatem tenetur ab nulla voluptatibus!
+          </p>
+        </article>
+      </div>
+
+      <BonusCardsSection />
     </section>
   );
 };

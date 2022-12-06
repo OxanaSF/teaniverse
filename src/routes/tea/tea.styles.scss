@@ -31,4 +31,46 @@
       }
     }
   }
+
+  .tea-section-bottom-text {
+    // background: red;
+    margin: 8rem 0 5rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-align: center;
+      color: #27160e;
+      padding: 0 3rem;
+    }
+
+    .line {
+      height: 1.4px;
+      width: 20rem;
+      background-color: #9b9b9b;
+    }
+  }
+
+  .article-container {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    font-size: 13px;
+    color: #191919;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    h4 {
+      margin-bottom: 1.1rem;
+      font-size: 19px;
+      font-weight: 600;
+    }
+  }
+  .article-container :nth-child(1) {
+    margin-bottom: 1.5rem;
+  }
 }
