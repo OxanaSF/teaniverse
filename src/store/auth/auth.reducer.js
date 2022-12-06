@@ -18,7 +18,7 @@ export const authReducer = (state = AUTH_INITIAL_STATE, action = {}) => {
       case AUTH_ACTION_TYPES.SET_IS_LOGGED_OUT:
         return {
           ...state,
-          isLoggedOun: payload,
+          isLoggedOut: payload,
         };
     default:
       return state;

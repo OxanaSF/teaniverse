@@ -13,6 +13,7 @@ import {
 } from './utils/firebase/firebase.utils';
 
 import { setCurrentUser } from './store/user/user.action';
+import { selectCurrentUser } from './store/user/user.selector';
 import { fetchCategoriesAsync } from './store/categories/category.action';
 
 import { Routes, Route } from 'react-router-dom';
@@ -31,12 +32,14 @@ import PickedTea from './routes/picked-tea/picked-tea.component';
 import CuriousTea from './routes/curious-tea/curious-tea.component';
 import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 import Footer from './components/footer/footer.component';
+import PersonalAccount from './routes/personal-account/personal-account.component';
 
 import { selectAuthReducer } from './store/auth/auth.selector';
 
-const Deals = () => {
-  return <h2>I am the DEALS page</h2>;
-};
+
+import Deals from './components/placeholders/deals/deals.component';
+
+
 
 const Read = () => {
   return <h2>I am the READ page</h2>;
@@ -63,6 +66,7 @@ const Stores = () => {
 
 const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -101,23 +105,21 @@ const App = () => {
           <Route path="other-products" element={<OtherProducts />} />
           <Route path="stores" element={<Stores />} />
 
-          {/* {isLoggedIn && <Route path="checkout" element={<Checkout />} />} */}
-<Route path="checkout" element={<Checkout />} />
+          {currentUser && <Route path="checkout" element={<Checkout />} />}
 
+          {/* <Route path="checkout" element={<Checkout />} /> */}
 
-          {/* {isLoggedIn && <Route path="checkout" element={<Checkout />} />} */}
-          <Route path="checkout" element={<Checkout />} />
+          {currentUser && <Route path="account" element={<PersonalAccount />} />}
+          {/* <Route path="account" element={<PersonalAccount />}  /> */}
 
-{/* 
+          {/* 
           {isLoggedIn && (
             <Route path="checkout/order/:order" element={<Order />} />
           )} */}
-         
-            <Route path="checkout/order/:order" element={<Order />} />
-        
-          
 
-          {isLoggedIn && <Route path="wish-list" element={<WishList />} />}
+          {/* <Route path="checkout/order/:order" element={<Order />} /> */}
+
+          {currentUser && <Route path="account" element={<WishList />} />}
 
           {/* Paths of the Tea Navigation */}
           <Route path="classic-tea" element={<ClassicTea />} />

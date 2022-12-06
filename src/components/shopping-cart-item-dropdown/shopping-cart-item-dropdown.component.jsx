@@ -1,4 +1,4 @@
-import './shopping-cart-item-dropdown.styles.scss';
+import './shopping-cart-item-dropdown.styles.scss'
 
 const ShoppingCartItem = ({ shoppingCartItem }) => {
   const { name, imageUrl, price, quantity } = shoppingCartItem;

@@ -49,7 +49,7 @@ const SignInForm = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
       dispatch(setIsLoggedIn());
-      navigate('/');
+      navigate('/account');
     } catch (error) {
       console.log('user sign in failed', error);
     }

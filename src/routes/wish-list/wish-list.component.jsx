@@ -5,7 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectWishItems } from '../../store/wish/wish.selector';
 
 import Spinner from '../../components/spinner/spinner.component';
-import ProductCard from '../../components/product-card/product-card.components';
+// import ProductCard from '../../components/product-card/product-card.components';
+import WishListItem from '../../components/wish-list-item/wish-list-item.component';
 
 import './wish-list.styles.scss';
 
@@ -24,7 +25,7 @@ const WishList = () => {
     <div>
       {wishList &&
         wishList.map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <WishListItem key={index} wishListItem={product} />
         ))}
     </div>
   );

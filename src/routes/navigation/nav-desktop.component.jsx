@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selector';
@@ -16,8 +16,6 @@ import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component
 import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
 import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
 
-
-
 import './nav-desktop.styles.scss';
 
 const NavDesktop = () => {
@@ -26,11 +24,15 @@ const NavDesktop = () => {
 
   const [nav, setNav] = useState(false);
 
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const signOutUserHandler = () => {
+    // navigate('/')
     signOutUser();
-    dispatch(setIsLoggedOut());
+    navigate('/');
+    // dispatch(setIsLoggedOut());
   };
 
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1100);
@@ -45,7 +47,7 @@ const NavDesktop = () => {
   });
 
   return (
-    <nav className='navigation'>
+    <nav className="navigation">
       <div className="top-level-navigation">
         <div className="top-level-navigation-left">
           <Link to="/deals">
@@ -71,13 +73,17 @@ const NavDesktop = () => {
 
         <div className="top-level-navigation-right">
           {currentUser ? (
-            <Link as span onClick={signOutUserHandler}>
-              Sign Out
+            // <Link as span onClick={signOutUserHandler} className="user-icon">
+            <Link  to="/account">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/user.png`}
+                alt="user icon"
+              />
             </Link>
           ) : (
             <Link to="/auth">Sign in</Link>
           )}
-          
+
           <FavoriteIcon />
 
           <ShoppingCart />

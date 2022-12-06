@@ -11,7 +11,7 @@ const FavoriteIcon = () => {
 
   return (
     <div className="heart-container">
-      <Link to="/wish-list" className="heart-container">
+      <Link to="/account" className="heart-container">
         <img
           src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
           alt="heart icon"

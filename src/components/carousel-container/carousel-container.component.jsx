@@ -42,7 +42,7 @@ const CarouselContainer = () => {
         >
           {slides.map((slide, index) => (
             <div className="carousel-img">
-              <img key={index} src={slide.url} alt="tea" />
+              <img key={slide.url} src={slide.url} alt="tea" />
 
               <div className="h1-container">
                 <div className="line"></div>
