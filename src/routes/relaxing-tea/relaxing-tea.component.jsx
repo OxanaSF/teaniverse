@@ -28,6 +28,7 @@ const RelaxingTea = () => {
       </p>
 
       <div
+      className='relaxing-tea-page-bg'
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/relaxing-tea.jpeg)`,
         }}

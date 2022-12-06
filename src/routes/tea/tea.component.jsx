@@ -9,6 +9,7 @@ import {
 import ProductCard from '../../components/product-card/product-card.components';
 import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component';
 import Filter from '../../components/filter/filter.component';
+import FilterByPrice from '../../components/filter-by-price/filter-by-price.component';
 import Spinner from '../../components/spinner/spinner.component';
 import BonusCardsSection from '../../components/bonus-cards-section/bonus-cards-section.component'
 
@@ -41,6 +42,13 @@ const Tea = () => {
         setFilteredTea={setFilteredTea}
         activeFilterBtn={activeFilterBtn}
         setActiveFilterBtn={setActiveFilterBtn}
+      />
+
+      <FilterByPrice 
+       teaProducts={teaProducts}
+       setFilteredTea={setFilteredTea}
+       activeFilterBtn={activeFilterBtn}
+       setActiveFilterBtn={setActiveFilterBtn}
       />
 
       <Fragment>
