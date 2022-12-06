@@ -11,7 +11,6 @@ import { setCurrentProduct } from '../../store/product/product.action';
 
 import { useParams } from 'react-router-dom';
 
-import CheckoutForm from '../../components/checkout-form/checkout-form.component';
 import Spinner from '../../components/spinner/spinner.component';
 
 //Cart
@@ -22,7 +21,7 @@ import { addItemToCart } from '../../store/cart/cart.action';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Carousel from 'react-responsive-carousel/lib/js/components/Carousel/index';
 
-import Button from '../../components/button/button.component';
+import FavoriteIconPrivate from '../../components/favorite-icon-private/favorite-icon-private.component';
 
 import './picked-tea.styles.scss';
 
@@ -53,11 +52,7 @@ const PickedTea = () => {
 
   const addProductToCartHandler = () => {
     dispatch(addItemToCart(cartItems, currentProduct));
-
-    // event.stopPropagation();
   };
-
-  // console.log('NOW currentProduct', currentProduct);
 
   if (!currentProduct) {
     return <Spinner />;
@@ -65,7 +60,12 @@ const PickedTea = () => {
 
   return (
     <div className="picked-tea">
-      <h2>{currentProduct.name}</h2>
+      <div className="picked-tea-title-container">
+        <h2>{currentProduct.name}</h2>
+        <div className="picked-tea-heart">
+          <FavoriteIconPrivate product={currentProduct} />
+        </div>
+      </div>
 
       <div className="picked-tea-container">
         <div className="picked-tea-left-col">
@@ -90,7 +90,9 @@ const PickedTea = () => {
             <p>{currentProduct.description}</p>
 
             <div className="picked-tea-consist">
-              <div>Mix</div>
+              <div>
+                <h4>Mix</h4>
+              </div>
               <div className="picked-tea-consist-items">
                 {currentProduct.consist &&
                   currentProduct.consist.map((el, index) => (
@@ -101,15 +103,24 @@ const PickedTea = () => {
                   ))}
               </div>
             </div>
+            <div className="picked-tea-taste">
+              <div>
+                <h4>Taste:</h4>
+                <span> {currentProduct.consist && currentProduct.taste}</span>
+              </div>
+            </div>
           </div>
 
           <div className="product-card-footer">
-          <button onClick={addProductToCartHandler}>
-            <img
-              src={`${process.env.PUBLIC_URL}/images/shopping-bag.png`}
-              alt="shopping bag icon"
-            />
-          </button>
+            <p className='product-card-footer-price'>${currentProduct.price}</p>
+            <button onClick={addProductToCartHandler} className="bag-button">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/shopping-bag.png`}
+                alt="shopping bag icon"
+              />
+            </button>
+
+            <div className="favorite-icon-private-container"></div>
           </div>
         </div>
       </div>

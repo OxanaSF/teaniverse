@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import Button from '../../components/button/button.component'
+
 import './filter.styles.scss'
 
 const Filter = ({

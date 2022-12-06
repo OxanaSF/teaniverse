@@ -37,7 +37,12 @@ const FavoriteIconPrivate = ({ product }) => {
         />
       )}
 
-      {pickedProduct && <div>Clicked</div>}
+      {pickedProduct && (
+        <img
+          src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart-active.png`}
+          alt="heart icon"
+        />
+      )}
     </button>
   );
 };
