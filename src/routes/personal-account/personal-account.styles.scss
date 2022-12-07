@@ -26,7 +26,6 @@
 
     .personal-account-navigation {
       flex: 30%;
-      //   background: pink;
       border: 1px solid rgb(225, 225, 225);
       justify-self: flex-start;
       width: 100%;
@@ -50,6 +49,11 @@
           font-weight: 300;
           color: #27160e;
         }
+
+        .order-history-btn-active {
+          color: #fff;
+          border-bottom: 2px solid rgb(225, 225, 225);
+        }
       }
 
       ul :nth-child(3) {
@@ -63,12 +67,16 @@
     }
 
     .personal-account-display {
-      //   background-color: green;
       padding: 2rem;
       border: 1px solid rgb(225, 225, 225);
       flex: 70%;
       overflow: scroll;
       height: 25rem;
+
+      a {
+        color: gray;
+        font-size: 15px;
+      }
     }
   }
 }

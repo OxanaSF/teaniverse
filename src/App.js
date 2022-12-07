@@ -33,7 +33,6 @@ import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 import Footer from './components/footer/footer.component';
 import PersonalAccount from './routes/personal-account/personal-account.component';
 
-
 import Deals from './components/placeholders/deals/deals.component';
 import Read from './components/placeholders/read/read.component';
 import Franchising from './components/placeholders/franchising/franchising.component';
@@ -43,11 +42,7 @@ import Coffee from './components/placeholders/coffee/coffee.component';
 import OtherProducts from './components/placeholders/other-products/other-products.component';
 import Stores from './components/placeholders/stores/stores.component';
 
-
-
-
 const App = () => {
-
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
@@ -73,6 +68,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           {/* Paths from the Home page */}
           <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route path="auth" element={<Authentication />} />
           <Route path="deals" element={<Deals />} />
           <Route path="read" element={<Read />} />
@@ -89,8 +85,9 @@ const App = () => {
 
           {currentUser && <Route path="checkout" element={<Checkout />} />}
 
-          {currentUser && <Route path="account" element={<PersonalAccount />} />}
-
+          {currentUser && (
+            <Route path="account" element={<PersonalAccount />} />
+          )}
 
           {/* 
           {isLoggedIn && (

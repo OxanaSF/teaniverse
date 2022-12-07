@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 
-import { Link, useNavigate } from 'react-router-dom';
-
-import { getAuth } from 'firebase/auth';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
-import { setCurrentUserName } from '../../store/user/user.action';
 
 import WishList from '../wish-list/wish-list.component';
 import Greeting from '../../components/greeting/greeting.component';
@@ -19,39 +16,45 @@ import './personal-account.styles.scss';
 const PersonalAccount = () => {
   const currentUserName = useSelector(selectCurrentUserName);
 
-  // const [userName, setUserName] = useState(currentUserName);
+  const [activeBtn, setActiveBtn] = useState(false);
+  // const [wishListBtn, setWishListBtn] = useState(true);
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   const signOutUserHandler = () => {
     signOutUser();
     navigate('/');
   };
 
-  // useEffect(() => {
-  //   dispatch(setCurrentUserName);
-  // }, [dispatch]);
-
-  // useEffect(() => {
-  //   setUserName(currentUserName)
-  // }, [currentUserName]);
+  const activateOrderBtnHandler = () => {
+    setActiveBtn(!activeBtn);
+    // setWishListBtn(!wishListBtn);
+  };
 
   return (
     <section className="personal-account-container">
       <h2>Your Account</h2>
 
-      <h3><Greeting /></h3>
-      <h3>Hello, {currentUserName}</h3>
+      <h3>
+        <Greeting />
+      </h3>
+      <h3>{currentUserName}</h3>
 
       <div className="personal-account-wrapper">
         <div className="personal-account-navigation">
           <ul>
+            <button
+              className={activeBtn ? 'order-history-btn-active' : ''}
+              onClick={activateOrderBtnHandler}
+            >
+              <li>
+                <button>Order history</button>
+              </li>
+            </button>
             <li>
-              <button>Order history</button>
-            </li>
-            <li>
-              <button>Wish list</button>
+              <button className={activeBtn ? '' : 'order-history-btn-active'}>
+                <button onClick={activateOrderBtnHandler}>Wish list</button>
+              </button>
             </li>
             <li>
               <Link onClick={signOutUserHandler}>Log out</Link>
@@ -59,15 +62,17 @@ const PersonalAccount = () => {
           </ul>
         </div>
 
-        {/* <Link as span onClick={signOutUserHandler} className="user-icon">
-              <img
-                src={`${process.env.PUBLIC_URL}/images/user.png`}
-                alt="user icon"
-              />
-            </Link> */}
-
         <div className="personal-account-display">
-          <WishList />
+          {activeBtn &&(
+            <> 
+              <div>No order history yet</div> 
+              <Link className='return-to-catalogue' to="/tea">Return to catalogue</Link>
+            </>
+          ) }
+          
+          
+          
+          {!activeBtn && <WishList />}
         </div>
       </div>
     </section>
