@@ -4,6 +4,7 @@ import { USER_ACTION_TYPES } from "./user.types";
 
   const INITIAL_STATE = {
     currentUser: null,
+    currentUserName: null
  
   };
   
@@ -13,6 +14,9 @@ import { USER_ACTION_TYPES } from "./user.types";
     switch (type) {
       case USER_ACTION_TYPES.SET_CURRENT_USER:
         return { ...state, currentUser: payload };
+
+      case USER_ACTION_TYPES.SET_CURRENT_USER_NAME:
+        return { ...state, currentUserName: payload };
 
       
       

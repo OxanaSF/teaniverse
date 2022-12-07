@@ -1,18 +1,18 @@
 import { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectIsLoggedIn } from './store/auth/auth.selector';
 
 import { Navigate } from 'react-router-dom';
 
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
 } from './utils/firebase/firebase.utils';
 
-import { setCurrentUser } from './store/user/user.action';
+import { setCurrentUser, setCurrentUserName } from './store/user/user.action';
+
 import { selectCurrentUser } from './store/user/user.selector';
 import { fetchCategoriesAsync } from './store/categories/category.action';
 
@@ -23,7 +23,6 @@ import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
-import Order from './components/order/order.component';
 import WishList from './routes/wish-list/wish-list.component';
 import LuxuryTea from './routes/luxury-tea/luxury-tea.component';
 import DeliciousTea from './routes/delicious-tea/delicious-tea.component';
@@ -34,38 +33,21 @@ import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 import Footer from './components/footer/footer.component';
 import PersonalAccount from './routes/personal-account/personal-account.component';
 
-import { selectAuthReducer } from './store/auth/auth.selector';
-
 
 import Deals from './components/placeholders/deals/deals.component';
+import Read from './components/placeholders/read/read.component';
+import Franchising from './components/placeholders/franchising/franchising.component';
+import Gifts from './components/placeholders/gifts/gifts.component';
+import Delivery from './components/placeholders/delivery/delivery.component';
+import Coffee from './components/placeholders/coffee/coffee.component';
+import OtherProducts from './components/placeholders/other-products/other-products.component';
+import Stores from './components/placeholders/stores/stores.component';
 
 
 
-const Read = () => {
-  return <h2>I am the READ page</h2>;
-};
-const Franchising = () => {
-  return <h2>I am the Franchising page</h2>;
-};
-const Gifts = () => {
-  return <h2>I am the Gifts page</h2>;
-};
-const Delivery = () => {
-  return <h2>I am the Delivery page</h2>;
-};
-
-const Coffee = () => {
-  return <h2>I am the Coffee page</h2>;
-};
-const OtherProducts = () => {
-  return <h2>I am the Other products page</h2>;
-};
-const Stores = () => {
-  return <h2>I am the Stores page</h2>;
-};
 
 const App = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
@@ -107,10 +89,8 @@ const App = () => {
 
           {currentUser && <Route path="checkout" element={<Checkout />} />}
 
-          {/* <Route path="checkout" element={<Checkout />} /> */}
-
           {currentUser && <Route path="account" element={<PersonalAccount />} />}
-          {/* <Route path="account" element={<PersonalAccount />}  /> */}
+
 
           {/* 
           {isLoggedIn && (
