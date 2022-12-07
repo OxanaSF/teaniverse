@@ -1,21 +1,16 @@
 .tea-selectors-btn {
-  // text-align: left;
   display: flex;
-  margin-top: 5rem;
 
-  justify-content: left;
-  justify-content: center;
-  margin-bottom: 2rem;
-  margin-left: 2rem;
+  // background: red;
 
   .box {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 100%;
     aspect-ratio: 8;
     background: #785448;
-    background: #47160e;;
+    background: #47160e;
     border: 1px solid #785448;
 
     button {
@@ -48,13 +43,11 @@
   }
 }
 
-
-
 @media screen and (max-width: 1024px) {
-    .tea-selectors-btn {
-        .box {
-            width: 80%;
-            margin: auto;
-        }
+  .tea-selectors-btn {
+    .box {
+      width: 80%;
+      margin: auto;
     }
+  }
 }

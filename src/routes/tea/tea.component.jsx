@@ -11,13 +11,15 @@ import TeaNavigation from '../../routes/tea-navigation/tea-navigation.component'
 import Filter from '../../components/filter/filter.component';
 import FilterByPrice from '../../components/filter-by-price/filter-by-price.component';
 import Spinner from '../../components/spinner/spinner.component';
-import BonusCardsSection from '../../components/bonus-cards-section/bonus-cards-section.component'
+import BonusCardsSection from '../../components/bonus-cards-section/bonus-cards-section.component';
 
 import './tea.styles.scss';
 
 const Tea = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectIsLoading);
+  const [sortByTypeBtn, setSortByTypeBtn] = useState(false);
+  const [sortByPriceBtn, setSortByPriceBtn] = useState(true);
 
   const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
   const [filteredTea, setFilteredTea] = useState(categoriesMap['tea']);
@@ -28,8 +30,15 @@ const Tea = () => {
     setFilteredTea(categoriesMap['tea']);
   }, [categoriesMap]);
 
-  console.log(filteredTea);
-  console.log('isLoading', isLoading);
+  const toggleSortByTypeHandler = () => {
+    setSortByTypeBtn(true);
+    setSortByPriceBtn(false);
+  };
+
+  const toggleSortByPriceHandler = () => {
+    setSortByTypeBtn(false);
+    setSortByPriceBtn(true);
+  };
 
   return (
     <section className="tea-section">
@@ -37,19 +46,33 @@ const Tea = () => {
 
       <TeaNavigation />
 
-      <Filter
-        teaProducts={teaProducts}
-        setFilteredTea={setFilteredTea}
-        activeFilterBtn={activeFilterBtn}
-        setActiveFilterBtn={setActiveFilterBtn}
-      />
+      <div className="filter-container">
+        
+        <div className='filter-container-buttons'>
+          
+          <button onClick={toggleSortByTypeHandler}>sort by type</button>
+          <button onClick={toggleSortByPriceHandler}>sort by price</button>
+        </div>
+        <div>
+          {sortByTypeBtn && (
+            <Filter
+              teaProducts={teaProducts}
+              setFilteredTea={setFilteredTea}
+              activeFilterBtn={activeFilterBtn}
+              setActiveFilterBtn={setActiveFilterBtn}
+            />
+          )}
 
-      <FilterByPrice 
-       teaProducts={teaProducts}
-       setFilteredTea={setFilteredTea}
-       activeFilterBtn={activeFilterBtn}
-       setActiveFilterBtn={setActiveFilterBtn}
-      />
+          {sortByPriceBtn && (
+            <FilterByPrice
+              teaProducts={teaProducts}
+              setFilteredTea={setFilteredTea}
+              activeFilterBtn={activeFilterBtn}
+              setActiveFilterBtn={setActiveFilterBtn}
+            />
+          )}
+        </div>
+      </div>
 
       <Fragment>
         {isLoading ? (
@@ -73,22 +96,23 @@ const Tea = () => {
         <h4>We buy tea wisely!</h4>
         <article>
           <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eaque,
-          mollitia nihil corporis iure labore dolor. Consectetur itaque harum
-          fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab nulla
-          voluptatibus! Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Porro eaque, mollitia nihil corporis iure labore dolor.
-          Consectetur itaque harum fugiat voluptatum quis, facilis saepe id
-          voluptatem tenetur ab nulla voluptatibus!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
+            eaque, mollitia nihil corporis iure labore dolor. Consectetur itaque
+            harum fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab
+            nulla voluptatibus! Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Porro eaque, mollitia nihil corporis iure labore
+            dolor. Consectetur itaque harum fugiat voluptatum quis, facilis
+            saepe id voluptatem tenetur ab nulla voluptatibus!
           </p>
           <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eaque,
-src/routes/tea/tea.styles.scss          mollitia nihil corporis iure labore dolor. Consectetur itaque harum
-          fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab nulla
-          voluptatibus! Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Porro eaque, mollitia nihil corporis iure labore dolor.
-          Consectetur itaque harum fugiat voluptatum quis, facilis saepe id
-          voluptatem tenetur ab nulla voluptatibus!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
+            eaque, src/routes/tea/tea.styles.scss mollitia nihil corporis iure
+            labore dolor. Consectetur itaque harum fugiat voluptatum quis,
+            facilis saepe id voluptatem tenetur ab nulla voluptatibus! Lorem,
+            ipsum dolor sit amet consectetur adipisicing elit. Porro eaque,
+            mollitia nihil corporis iure labore dolor. Consectetur itaque harum
+            fugiat voluptatum quis, facilis saepe id voluptatem tenetur ab nulla
+            voluptatibus!
           </p>
         </article>
       </div>

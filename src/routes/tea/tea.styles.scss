@@ -4,6 +4,7 @@
   color: #47160e;
   max-width: 1300px;
   margin: auto;
+   
 
   h2 {
     font-size: 2.5rem;
@@ -30,6 +31,30 @@
         width: 50%;
       }
     }
+  }
+
+
+  .filter-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5rem 0 2rem 0;
+
+  
+  }
+
+  .filter-container-buttons{
+    // background: red;
+  //  flex: 50%
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+   button {
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+    font-size: 14px;
+    color: #47160E;
+   }
   }
 
   .tea-section-bottom-text {

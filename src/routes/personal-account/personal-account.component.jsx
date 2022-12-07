@@ -4,7 +4,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
 
@@ -17,7 +17,6 @@ const PersonalAccount = () => {
   const currentUserName = useSelector(selectCurrentUserName);
 
   const [activeBtn, setActiveBtn] = useState(false);
-  // const [wishListBtn, setWishListBtn] = useState(true);
 
   const navigate = useNavigate();
 
@@ -63,15 +62,15 @@ const PersonalAccount = () => {
         </div>
 
         <div className="personal-account-display">
-          {activeBtn &&(
-            <> 
-              <div>No order history yet</div> 
-              <Link className='return-to-catalogue' to="/tea">Return to catalogue</Link>
+          {activeBtn && (
+            <>
+              <div>No order history yet</div>
+              <Link className="return-to-catalogue" to="/tea">
+                Return to catalogue
+              </Link>
             </>
-          ) }
-          
-          
-          
+          )}
+
           {!activeBtn && <WishList />}
         </div>
       </div>
