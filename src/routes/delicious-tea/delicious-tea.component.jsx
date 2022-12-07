@@ -1,19 +1,6 @@
-import { useState, useContext, useEffect } from 'react';
-
-import ProductCard from '../../components/product-card/product-card.components';
-
-// import { CategoriesContext } from '../../context/categories.context';
-
 import './delicious-tea.styles.scss';
 
 const DeliciousTea = () => {
-  // const { categoriesMap } = useContext(CategoriesContext);
-  // const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
-
-  // useEffect(() => {
-  //   setTeaProducts(categoriesMap['tea']);
-  // }, [categoriesMap]);
-
   return (
     <div className="real-life-tea-container">
       <h2>Delicious</h2>
@@ -32,18 +19,10 @@ const DeliciousTea = () => {
         className="delicious-page-bg"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/delicious-tea-bg.jpeg)`,
-        
         }}
       >
         <div className="gradient-styled"></div>
       </div>
-
-      {/* <div className="tea-section-catalogue">
-        {teaProducts &&
-          teaProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </div> */}
     </div>
   );
 };

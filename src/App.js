@@ -11,7 +11,7 @@ import {
   createUserDocumentFromAuth,
 } from './utils/firebase/firebase.utils';
 
-import { setCurrentUser, setCurrentUserName } from './store/user/user.action';
+import { setCurrentUser } from './store/user/user.action';
 
 import { selectCurrentUser } from './store/user/user.selector';
 import { fetchCategoriesAsync } from './store/categories/category.action';

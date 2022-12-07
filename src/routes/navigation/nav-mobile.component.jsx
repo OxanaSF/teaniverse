@@ -6,25 +6,25 @@ import { selectCurrentUser } from '../../store/user/user.selector';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { selectIsCartOpen } from '../../store/cart/cart.selector';
+// import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
-import { selectIsLoggedIn } from '../../store/auth/auth.selector';
+// import { selectIsLoggedIn } from '../../store/auth/auth.selector';
 import { setIsLoggedOut } from '../../store/auth/auth.action';
 
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+// import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
-import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
+// import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
 
-import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
-import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
+// import ShoppingCart from '../../components/shopping-cart/shopping-cart.component';
+// import ShoppingCartDropdown from '../../components/shopping-cart-dropdown/shopping-cart-dropdown.component';
 
 import './nav-mobile.styles.scss';
 
 const NavMobile = () => {
   const currentUser = useSelector(selectCurrentUser);
-  const isCartOpen = useSelector(selectIsCartOpen);
+  // const isCartOpen = useSelector(selectIsCartOpen);
 
-  const [nav, setNav] = useState(false);
+  // const [nav, setNav] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -33,6 +33,7 @@ const NavMobile = () => {
     dispatch(setIsLoggedOut());
   };
 
+  // eslint-disable-next-line
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1100);
 
   const updateMedia = () => {
@@ -83,14 +84,14 @@ const NavMobile = () => {
                 </li>
                 <li>
                   <div className="contacts">
-                    <a href="https://web.whatsapp.com/" target="_blank">
+                    <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer">
                       <img
                         className="app-icon"
                         src={`${process.env.PUBLIC_URL}/images/whatsapp.png`}
                         alt="telegram logo"
                       />
                     </a>
-                    <a href="https://t.me/teaounce_bot" target="_blank">
+                    <a href="https://t.me/teaounce_bot" target="_blank" rel="noreferrer">
                       <img
                         className="app-icon"
                         src={`${process.env.PUBLIC_URL}/images/telegram.png`}

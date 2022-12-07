@@ -1,5 +1,3 @@
-import Button from '../button/button.component';
-
 import './bonus-cards-section.styles.scss';
 
 const BonusCardsSection = () => {
@@ -9,7 +7,7 @@ const BonusCardsSection = () => {
         <h2>Bonus card</h2>
         <p>Get discounts, bonuses and more with the Teaniverse Bonus Card</p>
       </div>
-      
+
       <div className="cardfan">
         <img
           src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card1.webp`}
@@ -25,7 +23,7 @@ const BonusCardsSection = () => {
         />
       </div>
 
-      <button className='btn'>Learn more</button>
+      <button className="btn">Learn more</button>
     </section>
   );
 };

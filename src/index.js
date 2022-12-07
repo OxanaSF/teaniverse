@@ -10,6 +10,8 @@ import { store, persistor } from './store/store';
 import { loadStripe} from '@stripe/stripe-js';
 
 
+
+
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

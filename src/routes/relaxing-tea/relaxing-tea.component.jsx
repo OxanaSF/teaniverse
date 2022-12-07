@@ -1,6 +1,6 @@
-import { useState, useContext, useEffect } from 'react';
+// import { useState, useContext, useEffect } from 'react';
 
-import ProductCard from '../../components/product-card/product-card.components';
+// import ProductCard from '../../components/product-card/product-card.components';
 
 // import { CategoriesContext } from '../../context/categories.context';
 

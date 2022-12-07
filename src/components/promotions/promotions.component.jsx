@@ -1,5 +1,4 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Carousel from 'react-responsive-carousel/lib/js/components/Carousel/index';
 
 import PromotionsItem from '../promotions-item/promotions-item.component';
 
