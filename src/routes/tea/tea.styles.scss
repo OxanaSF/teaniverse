@@ -4,7 +4,6 @@
   color: #47160e;
   max-width: 1300px;
   margin: auto;
-   
 
   h2 {
     font-size: 2.5rem;
@@ -15,14 +14,9 @@
   }
 
   .tea-section-catalogue {
-    // background: red;
     padding: 0 4rem;
-    // display: flex;
-    // justify-content: center;
-    // flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    // display: flex;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
@@ -33,32 +27,24 @@
     }
   }
 
-
   .filter-container {
     display: flex;
     justify-content: flex-start;
     margin: 5rem 0 2rem 0;
-
-  
   }
 
-  .filter-container-buttons{
-    // background: red;
-  //  flex: 50%
+  .filter-container-buttons {
     display: flex;
-    // justify-content: center;
-    // align-items: center;
-   button {
-    border: none;
-    margin-right: 1rem;
-    cursor: pointer;
-    font-size: 14px;
-    color: #47160E;
-   }
+    button {
+      border: none;
+      margin-right: 1rem;
+      cursor: pointer;
+      font-size: 14px;
+      color: #47160e;
+    }
   }
 
   .tea-section-bottom-text {
-    // background: red;
     margin: 8rem 0 5rem 0;
 
     display: flex;

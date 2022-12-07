@@ -8,22 +8,32 @@ import { addItemToCart } from '../../store/cart/cart.action';
 import FavoriteIconPrivate from '../favorite-icon-private/favorite-icon-private.component';
 
 import './product-card.styles.scss';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, description, price } = product;
+
+  const [styles, setStyles] = useState(false);
 
   const cartItems = useSelector(selectCartItems);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
- 
   const addProductToCartHandler = (event) => {
     dispatch(addItemToCart(cartItems, product));
+    setStyles(true);
     event.stopPropagation();
   };
 
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStyles(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+   
+  }, [styles]);
 
   const navigateHandler = () => {
     navigate(`picked-tea/${name}`);
@@ -58,7 +68,11 @@ const ProductCard = ({ product }) => {
       <div className="product-card-main">
         <div className="img-anime-container">
           <img className="img1" src={imageUrl} alt={name} />
-          <img className="img2" src={imageUrl} alt={name} />
+          <img
+            className={styles ? 'img2 slide-out-top' : 'img2 '}
+            src={imageUrl}
+            alt={name}
+          />
         </div>
         <h2>{name}</h2>
         <h3>{price}</h3>
