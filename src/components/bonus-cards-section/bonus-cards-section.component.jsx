@@ -8,7 +8,7 @@ const BonusCardsSection = () => {
         <p>Get discounts, bonuses and more with the Teaniverse Bonus Card</p>
       </div>
 
-      <div className="cardfan">
+      <div className="card-fan">
         <img
           src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card1.webp`}
           alt="bonus card one"

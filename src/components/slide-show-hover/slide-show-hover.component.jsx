@@ -3,6 +3,7 @@
 import './slide-show-hover.styles.scss';
 
 const SlideShowHover = () => {
+  // eslint-disable-next-line
   const imageURLs = [
     // 'https://www.chay.info/upload/iblock/97d/97d96fedf2ab072d541ca7059c90d63a.webp',
     'https://www.chay.info/upload/iblock/71a/71af611d62d44bb1f1aba467d4507f86.webp',
