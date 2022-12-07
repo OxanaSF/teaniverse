@@ -32,6 +32,7 @@ import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 import Footer from './components/footer/footer.component';
 import PersonalAccount from './routes/personal-account/personal-account.component';
 import Success from './routes/success/Success.component';
+import Cancel from './routes/cancel/cancel.component';
 
 import Deals from './components/placeholders/deals/deals.component';
 import Read from './components/placeholders/read/read.component';
@@ -90,6 +91,7 @@ const App = () => {
           )}
 
 <Route path="success" element={<Success />} />
+<Route path="cancel" element={<Cancel />} />
 
           {/* 
           {isLoggedIn && (
