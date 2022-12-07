@@ -23,7 +23,6 @@ import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
-import WishList from './routes/wish-list/wish-list.component';
 import LuxuryTea from './routes/luxury-tea/luxury-tea.component';
 import DeliciousTea from './routes/delicious-tea/delicious-tea.component';
 import ClassicTea from './routes/classic-tea/classic-tea.component';
@@ -32,6 +31,7 @@ import CuriousTea from './routes/curious-tea/curious-tea.component';
 import RelaxingTea from './routes/relaxing-tea/relaxing-tea.component';
 import Footer from './components/footer/footer.component';
 import PersonalAccount from './routes/personal-account/personal-account.component';
+import Success from './routes/success/Success.component';
 
 import Deals from './components/placeholders/deals/deals.component';
 import Read from './components/placeholders/read/read.component';
@@ -89,6 +89,8 @@ const App = () => {
             <Route path="account" element={<PersonalAccount />} />
           )}
 
+<Route path="success" element={<Success />} />
+
           {/* 
           {isLoggedIn && (
             <Route path="checkout/order/:order" element={<Order />} />
@@ -96,7 +98,7 @@ const App = () => {
 
           {/* <Route path="checkout/order/:order" element={<Order />} /> */}
 
-          {currentUser && <Route path="account" element={<WishList />} />}
+          {/* {currentUser && <Route path="account" element={<WishList />} />} */}
 
           {/* Paths of the Tea Navigation */}
           <Route path="classic-tea" element={<ClassicTea />} />

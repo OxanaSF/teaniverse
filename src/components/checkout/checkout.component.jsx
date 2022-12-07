@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 
+
 import { Link } from 'react-router-dom';
 
 import {
@@ -8,15 +9,36 @@ import {
 } from '../../store/cart/cart.selector';
 
 import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
+// import PaymentForm from '../payment-form/payment-form.component';
+
+import Modal from '../modal/modal.component';
 
 import './checkout.styles.scss';
+
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 
+  const purcheseHandler = async () => {
+    await fetch('http://localhost:4000/checkout', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({items: cartItems})
+        }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            if(response.url) {
+                window.location.assign(response.url); // Forwarding user to Stripe
+            }
+        });
+  };
+
   return (
     <div className="checkout-bag">
+      {/* <Modal /> */}
       <h2>{cartItems.length === 0 ? 'Your Cart is Empty' : 'Your Cart'}</h2>
 
       {cartItems.length === 0 ? (
@@ -55,9 +77,13 @@ const Checkout = () => {
                 <button>Apply</button>
               </div>
               <br />
-              <Link to={`order/${cartTotal}`} className="heart-container">
-                Checkout
-              </Link>
+
+              {/* <PaymentForm /> */}
+
+              {/* <Link to={`order/${cartTotal}`} className="heart-container">
+                Purchase
+              </Link> */}
+              <button onClick={purcheseHandler}>Purchase</button>
 
               <img
                 src={`${process.env.PUBLIC_URL}/images/bg/balloon.png`}

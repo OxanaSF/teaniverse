@@ -7,7 +7,8 @@ import { Elements } from '@stripe/react-stripe-js';
 
 import { store, persistor } from './store/store';
 
-import { loadStripe} from '@stripe/stripe-js';
+// import { loadStripe} from '@stripe/stripe-js';
+import { stripePromise } from './utils/stripe/stripe.utils';
 
 
 
@@ -16,7 +17,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

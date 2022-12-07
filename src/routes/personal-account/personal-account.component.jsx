@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
 
-import WishList from '../wish-list/wish-list.component';
+import WishList from '../../components/wish-list/wish-list.component';
 import Greeting from '../../components/greeting/greeting.component';
 
 import './personal-account.styles.scss';
@@ -27,7 +27,6 @@ const PersonalAccount = () => {
 
   const activateOrderBtnHandler = () => {
     setActiveBtn(!activeBtn);
-    // setWishListBtn(!wishListBtn);
   };
 
   return (

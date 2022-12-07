@@ -116,3 +116,5 @@ export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+export const checkoutButton = document.getElementById('checkout-button')

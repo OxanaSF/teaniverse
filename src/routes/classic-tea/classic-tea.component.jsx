@@ -22,13 +22,6 @@ const ClassicTea = () => {
       >
         <div className="gradient-styled"></div>
       </div>
-
-      {/* <div className="tea-section-catalogue">
-        {teaProducts &&
-          teaProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </div> */}
     </div>
   );
 };

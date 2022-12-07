@@ -4,7 +4,7 @@ import { selectWishItems } from '../../store/wish/wish.selector';
 
 // import Spinner from '../../components/spinner/spinner.component';
 
-import WishListItem from '../../components/wish-list-item/wish-list-item.component';
+import WishListItem from '../wish-list-item/wish-list-item.component';
 
 import './wish-list.styles.scss';
 
