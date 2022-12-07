@@ -1,0 +1,26 @@
+.success-container {
+  width: 50%;
+  margin: 7rem auto;
+  position: relative;
+  text-align: center;
+
+  img {
+    height: 80%;
+    width: 600px;
+    padding: 5px;
+    border: 1px solid #532c12;
+  }
+
+  h1 {
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: 'IBM Plex Serif', serif;
+  }
+}
