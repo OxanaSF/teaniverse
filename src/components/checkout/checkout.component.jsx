@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
@@ -8,37 +7,39 @@ import {
   selectCartTotal,
 } from '../../store/cart/cart.selector';
 
-import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
-// import PaymentForm from '../payment-form/payment-form.component';
+import { clearWholeCart } from '../../store/cart/cart.action';
 
-import Modal from '../modal/modal.component';
+import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
 
 import './checkout.styles.scss';
-
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 
+  const dispatch = useDispatch()
+
   const purcheseHandler = async () => {
     await fetch('http://localhost:4000/checkout', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({items: cartItems})
-        }).then((response) => {
-            return response.json();
-        }).then((response) => {
-            if(response.url) {
-                window.location.assign(response.url); // Forwarding user to Stripe
-            }
-        });
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ items: cartItems }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        if (response.url) {
+          dispatch(clearWholeCart(cartItems))
+          window.location.assign(response.url);
+        }
+      });
   };
 
   return (
     <div className="checkout-bag">
-      {/* <Modal /> */}
       <h2>{cartItems.length === 0 ? 'Your Cart is Empty' : 'Your Cart'}</h2>
 
       {cartItems.length === 0 ? (
