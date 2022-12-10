@@ -8,10 +8,12 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  // initializeAuth
 } from 'firebase/auth';
 import {
   getFirestore,
   doc,
+  addDoc,
   getDoc,
   setDoc,
   collection,
@@ -19,6 +21,8 @@ import {
   query,
   getDocs,
 } from 'firebase/firestore';
+
+import { v4 as uuid } from 'uuid';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBuRJHCHSH-6sJo3klHujYH3_7dLVSTNU0',
@@ -39,6 +43,7 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
+
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 export const signInWithGoogleRedirect = () =>
@@ -66,6 +71,14 @@ export const addCollectionAndDocuments = async (
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, 'categories');
   const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map((doc) => doc.data());
+};
+
+export const getOrders = async () => {
+  const ordersRef = collection(db, 'orders');
+  const q = query(ordersRef);
 
   const querySnapshot = await getDocs(q);
   return querySnapshot.docs.map((doc) => doc.data());
@@ -100,6 +113,34 @@ export const createUserDocumentFromAuth = async (
   return userDocRef;
 };
 
+
+
+
+
+export const createOrder = async (items) => {
+  const date=new Date()
+  const receipt=uuid()
+  try {
+    await addDoc(collection(db, 'orders'), {
+      orders: items,
+      receipt: receipt,
+      date: date,
+    });
+    console.log('RAN WELL')
+  } catch (error) {
+    console.log('error creating the order', error.message);
+  }
+};
+
+
+
+
+
+
+
+
+
+
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
@@ -117,4 +158,4 @@ export const signOutUser = async () => await signOut(auth);
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
 
-export const checkoutButton = document.getElementById('checkout-button')
+export const checkoutButton = document.getElementById('checkout-button');

@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
@@ -7,9 +9,21 @@ import {
   selectCartTotal,
 } from '../../store/cart/cart.selector';
 
+// import { selectCurrentUser } from '../../store/user/user.selector';
+
 import { clearWholeCart } from '../../store/cart/cart.action';
 
+// import { selectOrders } from '../../store/orders/orders.selector';
+// import { addOrderToHistory } from '../../store/orders/orders.action';
+
 import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+
+import { db, createOrder } from '../../utils/firebase/firebase.utils'
+// import { createOrder } from '../../utils/firebase/firebase.utils';
+// import { addDoc, collection } from 'firebase/firestore';
+
+// import { v4 as uuid } from 'uuid';
 
 import './checkout.styles.scss';
 
@@ -17,9 +31,19 @@ const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 
-  const dispatch = useDispatch()
+  const [order, setOrder] = useState(null);
+  // const existingOrders = useSelector(selectOrders);
+  // const currentUser = useSelector(selectCurrentUser);
 
-  const purcheseHandler = async () => {
+  useEffect(() => {
+    setOrder(cartItems);
+  }, [cartItems]);
+
+  console.log('response.url -> cartItems', cartItems);
+
+  const dispatch = useDispatch();
+
+  const purchaseHandler = async () => {
     await fetch('http://localhost:4000/checkout', {
       method: 'POST',
       headers: {
@@ -28,12 +52,15 @@ const Checkout = () => {
       body: JSON.stringify({ items: cartItems }),
     })
       .then((response) => {
+        console.log('response', response);
         return response.json();
       })
       .then((response) => {
-        if (response.url) {
-          dispatch(clearWholeCart(cartItems))
-          window.location.assign(response.url);
+        if (response.url && cartItems) {
+          console.log('response.url -> the Order', cartItems);
+          createOrder(cartItems);
+          dispatch(clearWholeCart(cartItems));
+          // window.location.assign(response.url);
         }
       });
   };
@@ -79,12 +106,12 @@ const Checkout = () => {
               </div>
               <br />
 
-              {/* <PaymentForm /> */}
-
-              {/* <Link to={`order/${cartTotal}`} className="heart-container">
-                Purchase
-              </Link> */}
-              <button onClick={purcheseHandler}>Purchase</button>
+              <Button
+                buttonType={BUTTON_TYPE_CLASSES.wide}
+                onClick={purchaseHandler}
+              >
+                Proceed to checkout
+              </Button>
 
               <img
                 src={`${process.env.PUBLIC_URL}/images/bg/balloon.png`}

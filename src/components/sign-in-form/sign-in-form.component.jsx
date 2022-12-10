@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +13,8 @@ import {
 
 import { setIsLoggedIn } from '../../store/auth/auth.action';
 
+import { selectCurrentUser } from '../../store/user/user.selector';
+
 import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
@@ -23,6 +25,7 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const currentUser = useSelector(selectCurrentUser);
 
   const navigate = useNavigate();
 
@@ -45,7 +48,7 @@ const SignInForm = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
       dispatch(setIsLoggedIn());
-      navigate('/account');
+      navigate(`/account/${currentUser}`);
     } catch (error) {
       console.log('user sign in failed', error);
     }

@@ -40,13 +40,20 @@
         button,
         a {
           text-transform: uppercase;
-          margin-bottom: 2rem;
+          margin: 1rem 0;
           border: none;
           cursor: pointer;
           letter-spacing: 1.5px;
           font-size: 14px;
           font-weight: 300;
           color: #27160e;
+          // background: red;
+          padding: 0;
+        }
+
+        a {
+          margin-bottom: 0;
+          // background: green;
         }
 
         .order-history-btn-active {
@@ -75,6 +82,17 @@
       a {
         color: gray;
         font-size: 15px;
+      }
+
+      .orders-container {
+        text-align: left;
+
+        .order {
+          margin-bottom: 2rem;
+        }
+
+        .orders-items {
+        }
       }
     }
   }

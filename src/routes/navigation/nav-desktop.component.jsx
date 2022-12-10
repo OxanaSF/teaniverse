@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../store/user/user.selector';
+import { selectCurrentUser, selectCurrentUserName } from '../../store/user/user.selector';
 
 // import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
-
 
 import FavoriteIcon from '../../components/favorite-icon/favorite-icon.component';
 
@@ -19,17 +18,9 @@ import './nav-desktop.styles.scss';
 
 const NavDesktop = () => {
   const currentUser = useSelector(selectCurrentUser);
+  // const currentUserName = useSelector(selectCurrentUserName);
   const isCartOpen = useSelector(selectIsCartOpen);
 
-
-  // const navigate = useNavigate();
-
-  // const signOutUserHandler = () => {
-  //   // navigate('/')
-  //   signOutUser();
-  //   navigate('/');
-  // };
-// eslint-disable-next-line
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1100);
 
   const updateMedia = () => {
@@ -69,7 +60,9 @@ const NavDesktop = () => {
         <div className="top-level-navigation-right">
           {currentUser ? (
             // <Link as span onClick={signOutUserHandler} className="user-icon">
-            <Link  to="/account">
+            //  <Link to={`/account/${currentUserName}`}>
+             <Link to={`/account`}>
+       
               <img
                 src={`${process.env.PUBLIC_URL}/images/user.png`}
                 alt="user icon"
@@ -118,14 +111,22 @@ const NavDesktop = () => {
             <div>Search</div>
           </div>
           <div className="app-icons-container">
-            <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://web.whatsapp.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 className="app-icon"
                 src={`${process.env.PUBLIC_URL}/images/whatsapp.png`}
                 alt="telegram logo"
               />
             </a>
-            <a href="https://t.me/teaounce_bot" target="_blank" rel="noreferrer">
+            <a
+              href="https://t.me/teaounce_bot"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 className="app-icon"
                 src={`${process.env.PUBLIC_URL}/images/telegram.png`}

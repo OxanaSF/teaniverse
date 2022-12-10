@@ -7,6 +7,8 @@ import {
 } from '../../store/cart/cart.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
+// import { selectCurrentUserName } from '../../store/user/user.selector';
+
 import Button from '../button/button.component';
 import ShoppingCartItemDropdown from '../shopping-cart-item-dropdown/shopping-cart-item-dropdown.component';
 import { setIsCartOpen } from '../../store/cart/cart.action';
@@ -17,6 +19,7 @@ const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const isCartOpen = useSelector(selectIsCartOpen);
+  // const currentUser = useSelector(selectCurrentUserName);
 
   const dispatch = useDispatch();
 
@@ -24,7 +27,8 @@ const CartDropdown = () => {
 
   const goToCheckoutHandler = () => {
     dispatch(setIsCartOpen(!isCartOpen));
-    navigate('/checkout');
+    // navigate(`/checkout/${currentUser}`);
+    navigate(`checkout`);
   };
 
   const toggleIsShoppingCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
