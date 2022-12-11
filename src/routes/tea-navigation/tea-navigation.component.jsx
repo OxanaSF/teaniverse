@@ -15,7 +15,7 @@ const TeaNavigation = () => {
 
       <Link to="/delicious-tea" className="tea-nav-item">
         <img
-          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/sweet-tea-icon.webp`}
+          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/sweet-tea-icon.png`}
           alt=""
         />
         <p>Delicious</p>
@@ -23,7 +23,7 @@ const TeaNavigation = () => {
 
       <Link to="/real-life-tea" className="tea-nav-item">
         <img
-          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/expensive-tea-icon.webp`}
+          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/expensive-tea-icon.png`}
           alt=""
         />
         <p>Luxury</p>
@@ -31,7 +31,7 @@ const TeaNavigation = () => {
 
       <Link to="/curious-tea" className="tea-nav-item">
         <img
-          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/unusual-tea-icon.webp`}
+          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/unusual-tea-icon.png`}
           alt=""
         />
         <p>Curious</p>
@@ -39,7 +39,7 @@ const TeaNavigation = () => {
 
       <Link to="/relaxing-tea" className="tea-nav-item">
         <img
-          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/relaxing-tea-icon.webp`}
+          src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/relaxing-tea-icon.png`}
           alt=""
         />
         <p>Relaxing</p>

@@ -16,7 +16,7 @@ const FavoriteIcon = () => {
     <div className="heart-container">
       {/* <Link to="/account" className="heart-container"> */}
       {/* <Link to={`/account/${currentUser}`}> */}
-      <Link to={`/account`}>
+      <Link to={`/account`} className="heart-container">
         <img
           src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart.png`}
           alt="heart icon"
