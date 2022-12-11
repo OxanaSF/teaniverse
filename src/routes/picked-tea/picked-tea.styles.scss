@@ -33,7 +33,7 @@
 
   .picked-tea-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 2fr;
     column-gap: 30px;
 
     .axis-horizontal {
@@ -74,21 +74,19 @@
 
     .picked-tea-right-col {
       display: flex;
-      // justify-content: center;
-      align-items: center;
+      padding-right: 7rem;
+      // width: 90%;
 
       .product-card-footer {
-        border: 1px solid #e1e1e1;
-        width: 300px;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
+        width: 40%;
+
         justify-content: center;
+        align-items: center;
 
         .product-card-footer-price {
-          font-size: 1.8rem;
+          font-size: 1.2rem;
           font-weight: 300;
-          margin-bottom: 3rem;
+          margin-right: 1rem;
         }
 
         .bag-button {
@@ -96,8 +94,13 @@
           background-color: #47160e;
           border: none;
           cursor: pointer;
-          width: 80%;
-          margin: 0 auto;
+          width: 100%;
+          // margin: 0 auto;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 18px 30px;
 
           &:hover {
             background-color: #785448;
@@ -107,7 +110,7 @@
 
           img {
             width: 20px;
-            padding: 18px 30px;
+            // padding: 18px 30px;
           }
         }
 
@@ -134,10 +137,10 @@
         font-size: 15px;
 
         p {
-          width: 85%;
-          line-height: 1.7;
-          padding-bottom: 30px;
-          border-bottom: 1px solid #e1e1e1;
+          // width: 85%;
+          // line-height: 1.7;
+          // padding-bottom: 30px;
+          // border-bottom: 1px solid #e1e1e1;
         }
 
         .picked-tea-consist {
@@ -151,7 +154,7 @@
 
           .picked-tea-consist-items {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             row-gap: 3rem;
             column-gap: 4rem;
             .picked-tea-consist-item {
@@ -173,6 +176,9 @@
 
         .picked-tea-taste {
           border-top: 1px solid #e1e1e1;
+          padding-bottom: 30px;
+          margin-bottom: 30px;
+          border-bottom: 1px solid #e1e1e1;
           margin-top: 2rem;
           width: 85%;
 

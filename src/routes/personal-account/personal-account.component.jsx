@@ -8,24 +8,18 @@ import { useSelector } from 'react-redux';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
 
-// import { selectCurrentUser } from '../../store/user/user.selector';
-
-// import { selectOrders } from '../../store/orders/orders.selector';
-
 import WishList from '../../components/wish-list/wish-list.component';
 import Greeting from '../../components/greeting/greeting.component';
 
 import { db } from '../../utils/firebase/firebase.utils';
-import { getDoc, doc, query, collection, onSnapshot } from 'firebase/firestore';
+import { query, collection, onSnapshot } from 'firebase/firestore';
 
 import './personal-account.styles.scss';
 
 const PersonalAccount = () => {
   const currentUserName = useSelector(selectCurrentUserName);
-  // const orders = useSelector(selectOrders);
-  const [orders, setOrders] = useState(null);
 
-  // const [ordersHistory, setOrdersHistory] = useState(orders)
+  const [orders, setOrders] = useState(null);
 
   const [activeBtn, setActiveBtn] = useState(false);
 
@@ -39,8 +33,6 @@ const PersonalAccount = () => {
   const activateOrderBtnHandler = () => {
     setActiveBtn(!activeBtn);
   };
-
-  // console.log('ordersHistory ordersHistory ordersHistory!!!', orders);
 
   useEffect(() => {
     const q = query(collection(db, 'orders'));

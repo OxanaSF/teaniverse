@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import {
   selectCartItems,
@@ -19,29 +19,36 @@ import { clearWholeCart } from '../../store/cart/cart.action';
 import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
-import { db, createOrder } from '../../utils/firebase/firebase.utils'
-// import { createOrder } from '../../utils/firebase/firebase.utils';
+// import { db, createOrder } from '../../utils/firebase/firebase.utils';
+import { createOrder } from '../../utils/firebase/firebase.utils';
 // import { addDoc, collection } from 'firebase/firestore';
 
-// import { v4 as uuid } from 'uuid';
+import { setCurrentOrder } from '../../store/order/order.action';
+
+import { v4 as uuid } from 'uuid';
 
 import './checkout.styles.scss';
+import { useEffect } from 'react';
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 
-  const [order, setOrder] = useState(null);
+  // const [order, setOrder] = useState(null);
   // const existingOrders = useSelector(selectOrders);
   // const currentUser = useSelector(selectCurrentUser);
 
-  useEffect(() => {
-    setOrder(cartItems);
-  }, [cartItems]);
+  // useEffect(() => {
+  //   setOrder(cartItems);
+  // }, [cartItems]);
 
   console.log('response.url -> cartItems', cartItems);
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const receipt = uuid();
+  dispatch(setCurrentOrder(receipt));
 
   const purchaseHandler = async () => {
     await fetch('http://localhost:4000/checkout', {
@@ -56,13 +63,21 @@ const Checkout = () => {
         return response.json();
       })
       .then((response) => {
-        if (response.url && cartItems) {
-          console.log('response.url -> the Order', cartItems);
-          createOrder(cartItems);
+       
+          setCurrentOrder(createOrder(cartItems, receipt))
+          
+         
           dispatch(clearWholeCart(cartItems));
-          // window.location.assign(response.url);
-        }
-      });
+          navigate('/success')
+          //  window.location.assign(response.url);
+          
+         
+         
+       
+        // }
+
+        
+      })
   };
 
   return (

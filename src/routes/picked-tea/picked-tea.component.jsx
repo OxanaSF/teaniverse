@@ -109,18 +109,21 @@ const PickedTea = () => {
                 <span> {currentProduct.consist && currentProduct.taste}</span>
               </div>
             </div>
-          </div>
 
-          <div className="product-card-footer">
-            <p className="product-card-footer-price">${currentProduct.price}</p>
-            <button onClick={addProductToCartHandler} className="bag-button">
-              <img
-                src={`${process.env.PUBLIC_URL}/images/shopping-bag.png`}
-                alt="shopping bag icon"
-              />
-            </button>
+            <div className="product-card-footer">
+              <button onClick={addProductToCartHandler} className="bag-button">
+                <p className="product-card-footer-price">
+                  ${currentProduct.price}
+                </p>
 
-            <div className="favorite-icon-private-container"></div>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/shopping-bag.png`}
+                  alt="shopping bag icon"
+                />
+              </button>
+
+              <div className="favorite-icon-private-container"></div>
+            </div>
           </div>
         </div>
       </div>

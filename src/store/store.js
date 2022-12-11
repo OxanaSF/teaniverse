@@ -10,7 +10,7 @@ import { rootSaga } from './saga';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart', 'wishCart', 'product', 'orders'],
+  whitelist: ['cart', 'wishCart', 'product', 'order'],
 };
 
 const sagaMiddleware = createSagaMiddleware()

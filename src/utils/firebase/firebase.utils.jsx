@@ -1,3 +1,5 @@
+
+
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -23,6 +25,9 @@ import {
 } from 'firebase/firestore';
 
 import { v4 as uuid } from 'uuid';
+
+
+// import { setCurrentOrder } from '../../store/order/order.action';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBuRJHCHSH-6sJo3klHujYH3_7dLVSTNU0',
@@ -108,36 +113,29 @@ export const createUserDocumentFromAuth = async (
     } catch (error) {
       console.log('error creating the user', error.message);
     }
+
   }
 
   return userDocRef;
 };
 
-
-
-
-
-export const createOrder = async (items) => {
+export const createOrder = async (items, uuid) => {
   const date=new Date()
-  const receipt=uuid()
+  // const receipt=uuid()
   try {
     await addDoc(collection(db, 'orders'), {
       orders: items,
-      receipt: receipt,
+      receipt: uuid,
       date: date,
     });
     console.log('RAN WELL')
+    // return receipt
+    
   } catch (error) {
     console.log('error creating the order', error.message);
   }
+  
 };
-
-
-
-
-
-
-
 
 
 
