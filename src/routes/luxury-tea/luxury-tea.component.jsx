@@ -5,7 +5,7 @@ const LuxuryTea = () => {
     <div className="real-life-tea-container">
       <h2>Luxury</h2>
       <img
-        src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/expensive-tea-icon.webp`}
+        src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/expensive-tea-icon.png`}
         alt="polygon decoration"
       />
       <p>

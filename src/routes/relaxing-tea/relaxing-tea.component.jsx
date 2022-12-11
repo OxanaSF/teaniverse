@@ -1,24 +1,11 @@
-// import { useState, useContext, useEffect } from 'react';
-
-// import ProductCard from '../../components/product-card/product-card.components';
-
-// import { CategoriesContext } from '../../context/categories.context';
-
 import './relaxing-tea.styles.scss';
 
 const RelaxingTea = () => {
-  // const { categoriesMap } = useContext(CategoriesContext);
-  // const [teaProducts, setTeaProducts] = useState(categoriesMap['tea']);
-
-  // useEffect(() => {
-  //   setTeaProducts(categoriesMap['tea']);
-  // }, [categoriesMap]);
-
   return (
     <div className="real-life-tea-container">
       <h2>Relaxing</h2>
       <img
-        src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/relaxing-tea-icon.webp`}
+        src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/relaxing-tea-icon.png`}
         alt="plate of fruits"
       />
       <p>
@@ -28,20 +15,13 @@ const RelaxingTea = () => {
       </p>
 
       <div
-      className='relaxing-tea-page-bg'
+        className="relaxing-tea-page-bg"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/relaxing-tea.jpeg)`,
         }}
       >
         <div className="gradient-styled"></div>
       </div>
-
-      {/* <div className="tea-section-catalogue">
-        {teaProducts &&
-          teaProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </div> */}
     </div>
   );
 };

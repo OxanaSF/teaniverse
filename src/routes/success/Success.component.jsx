@@ -8,11 +8,12 @@ const Success = () => {
   const currentReceipt = useSelector(selectCurrentOrder);
   return (
     <section className="success-container">
-      <h1>Thank you for your purchase!</h1>
+      
       <img
         src={`${process.env.PUBLIC_URL}/images/gift-box-wood.jpg`}
         alt="gift box on woods"
       />
+      <h1>Thank you for your purchase!</h1>
       <h3>Your order is # {currentReceipt}</h3>
     </section>
   );
