@@ -37,7 +37,13 @@ const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
         className="cart-item-bag-close-container"
         onClick={clearItemFromCartHandler}
       >
-        <AiOutlineClose size={22} color={'#979797'} />
+      
+          <img
+            className="delete-btn"
+            src={`${process.env.PUBLIC_URL}/images/delete-brown.png`}
+            alt="trash can icon"
+          />
+     
       </button>
 
       <div className="cart-item-bag-description">

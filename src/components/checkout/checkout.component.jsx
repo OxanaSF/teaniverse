@@ -13,15 +13,10 @@ import {
 
 import { clearWholeCart } from '../../store/cart/cart.action';
 
-// import { selectOrders } from '../../store/orders/orders.selector';
-// import { addOrderToHistory } from '../../store/orders/orders.action';
-
 import ShoppingCartItemInOrder from '../shopping-cart-item-order/shopping-cart-item-order.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
-// import { db, createOrder } from '../../utils/firebase/firebase.utils';
 import { createOrder } from '../../utils/firebase/firebase.utils';
-// import { addDoc, collection } from 'firebase/firestore';
 
 import { setCurrentOrder } from '../../store/order/order.action';
 

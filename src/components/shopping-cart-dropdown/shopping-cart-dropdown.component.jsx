@@ -39,7 +39,9 @@ const CartDropdown = () => {
         {cartTotal === 0 && (
           <div className="cart-dropdown-container empty-container">
             <div>You Cart is Empty.</div>
+            <Button onClick={goToCheckoutHandler}>YOUR CART</Button>
           </div>
+          
         )}
       </>
 
@@ -57,7 +59,7 @@ const CartDropdown = () => {
               </div>
               <div className="cart-dropdown-total">Total: ${cartTotal}</div>
 
-              <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
+              <Button onClick={goToCheckoutHandler}>YOUR CART</Button>
             </div>
           )}
         </>

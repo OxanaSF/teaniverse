@@ -61,7 +61,8 @@ const WishListItem = ({ wishListItem }) => {
         </button>
         <button onClick={clearWishFromWishListHandler}>
           <img
-            src={`${process.env.PUBLIC_URL}/images/delete-brown.png`}
+            className="delete-btn"
+            src={`${process.env.PUBLIC_URL}/images/tea-type-icons/heart-active.png`}
             alt="trash can icon"
           />
         </button>
