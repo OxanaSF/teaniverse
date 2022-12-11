@@ -10,15 +10,15 @@ const BonusCardsSection = () => {
 
       <div className="card-fan">
         <img
-          src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card1.webp`}
+          src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card1.png`}
           alt="bonus card one"
         />
         <img
-          src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card2.webp`}
+          src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card2.png`}
           alt="bonus card one"
         />
         <img
-          src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card3.webp`}
+          src={`${process.env.PUBLIC_URL}/images/bonus-cards/bonus-card3.png`}
           alt="bonus card one"
         />
       </div>
