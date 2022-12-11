@@ -64,6 +64,7 @@ const NavDesktop = () => {
              <Link to={`/account`}>
        
               <img
+              className='user-icon'
                 src={`${process.env.PUBLIC_URL}/images/user.png`}
                 alt="user icon"
               />

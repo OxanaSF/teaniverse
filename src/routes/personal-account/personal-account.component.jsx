@@ -88,13 +88,14 @@ const PersonalAccount = () => {
           {activeBtn && (
             <>
               <div className="orders-container">
-                <h3>Items</h3>
-
                 {orders.map((id, index) => (
                   <div key={index} className="order">
-                    <div>ORDER #: {id.receipt}</div>
                     <div>
-                      Date:{' '}
+                      <span className="side-headers"> ORDER #:</span>{' '}
+                      {id.receipt}
+                    </div>
+                    <div>
+                      <span className="side-headers">Date:</span>
                       {id.date
                         .toDate()
                         .toString()
@@ -105,9 +106,19 @@ const PersonalAccount = () => {
 
                     {id.orders.map((order, index) => (
                       <div className="orders-items" key={index}>
-                        <div> price: ${order.price}</div>
-                        <div> item name: {order.name}</div>
-                        <div> quantity: {order.quantity}</div>
+                        <div>
+                          <span className="side-headers"> price:</span> $
+                          {order.price}
+                        </div>
+                        <div>
+                          {' '}
+                          <span className="side-headers">item name:</span>{' '}
+                          {order.name}
+                        </div>
+                        <div>
+                          <span className="side-headers"> quantity:</span>{' '}
+                          {order.quantity}
+                        </div>
                       </div>
                     ))}
                   </div>

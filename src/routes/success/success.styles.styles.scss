@@ -11,16 +11,23 @@
     border: 1px solid #532c12;
   }
 
-  h1 {
+  h1,
+  h3 {
     color: white;
     position: absolute;
     top: 20%;
-    left: 50%;
+    left: 60%;
+    width: 100%;
     transform: translate(-50%, -50%);
-
     font-size: 2rem;
     letter-spacing: 1px;
     font-weight: 300;
     font-family: 'IBM Plex Serif', serif;
+  }
+
+  h3 {
+    top: 10%;
+    left: 60%;
+    font-size: 1rem;
   }
 }

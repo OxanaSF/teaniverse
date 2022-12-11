@@ -22,6 +22,9 @@
   .personal-account-wrapper {
     display: flex;
     justify-content: space-between;
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-size: 0.8rem;
 
     .personal-account-navigation {
       flex: 30%;
@@ -79,6 +82,10 @@
       overflow: scroll;
       height: 25rem;
 
+      .return-to-catalogue {
+        color: #532c12;
+      }
+
       a {
         color: gray;
         font-size: 15px;
@@ -89,9 +96,16 @@
 
         .order {
           margin-bottom: 2rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px dotted rgb(225, 225, 225);
+
+          .side-headers {
+            font-weight: 700;
+          }
         }
 
-        .orders-items {
+        .return-to-catalogue {
+          color: red;
         }
       }
     }

@@ -19,7 +19,7 @@ const ShoppingCart = () => {
   return (
     <div className="cart-icon-container" onClick={toggleIsShoppingCartOpen}>
       <img
-        src={`${process.env.PUBLIC_URL}/images/shopping-bag-brown.png`}
+        src={`${process.env.PUBLIC_URL}/images/shopping-bag-brown2.png`}
         alt="shopping bag icon"
       />
       <span className="item-count">{cartCount}</span>
