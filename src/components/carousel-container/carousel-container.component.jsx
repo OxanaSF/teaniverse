@@ -1,5 +1,6 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Carousel from 'react-responsive-carousel/lib/js/components/Carousel/index';
+import Button from '../button/button.component'
 
 import './carousel-container.styles.scss';
 
@@ -49,7 +50,6 @@ const CarouselContainer = () => {
                 <h1>{slide.heroHeader}</h1>
                 <div className="line"></div>
               </div>
-
               <p>{slide.heroText}</p>
             </div>
           ))}

@@ -1,7 +1,6 @@
 .img-carousel-bg-container {
-  margin: 10rem 2rem 6rem 2rem;
+  margin: 7rem 2rem 6rem 2rem;
   height: 38rem;
-  // background: #0a2a4a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +34,7 @@
       h1 {
         color: white;
         padding: 0 3rem;
+        font-weight: 300;
       }
 
       .line {
@@ -52,7 +52,7 @@
       color: white;
       font-size: 1.7rem;
       letter-spacing: 1px;
-      font-weight: 300;
+      font-weight: 200;
       font-family: 'IBM Plex Serif', serif;
     }
   }

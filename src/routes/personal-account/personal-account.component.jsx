@@ -11,6 +11,8 @@ import { selectCurrentUserName } from '../../store/user/user.selector';
 import WishList from '../../components/wish-list/wish-list.component';
 import Greeting from '../../components/greeting/greeting.component';
 
+import { selectWishItems } from '../../store/wish/wish.selector';
+
 import { db } from '../../utils/firebase/firebase.utils';
 import { query, collection, onSnapshot } from 'firebase/firestore';
 
@@ -18,6 +20,7 @@ import './personal-account.styles.scss';
 
 const PersonalAccount = () => {
   const currentUserName = useSelector(selectCurrentUserName);
+  const wishList = useSelector(selectWishItems);
 
   const [orders, setOrders] = useState(null);
 

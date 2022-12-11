@@ -2,7 +2,6 @@ import { WISH_ACTION_TYPES } from './wish.types';
 
 const WISH_INITIAL_STATE = {
   wishItems: [],
-  // isWishChecked: false,
 };
 
 export const wishReducer = (state = WISH_INITIAL_STATE, action = {}) => {

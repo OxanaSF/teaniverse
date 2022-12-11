@@ -38,7 +38,7 @@ const SignInForm = () => {
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
     dispatch(setIsLoggedIn());
-    navigate('/');
+    navigate('/account');
   };
 
   const handleSubmit = async (event) => {
@@ -48,7 +48,8 @@ const SignInForm = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
       dispatch(setIsLoggedIn());
-      navigate(`/account/${currentUser}`);
+      // navigate(`/account/${currentUser}`);
+      navigate(`/account`);
     } catch (error) {
       console.log('user sign in failed', error);
     }

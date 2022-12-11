@@ -2,7 +2,6 @@ import { createAction } from '../../utils/reducer/reducer.utils';
 import { WISH_ACTION_TYPES } from './wish.types';
 
 const addRemoveWishItem = (wishItems, productToAdd) => {
-  console.log('ACTION wishItems', wishItems);
   const existingWishItem = wishItems.find(
     (wishItem) => wishItem.id === productToAdd.id
   );
@@ -33,6 +32,12 @@ console.log('existingWishItem', existingWishItem)
 }
 
 
+const clearWishItem = (wishItems, wishItemToClear) =>
+  wishItems.filter((wishItem) => wishItem.id !== wishItemToClear.id);
+
+
+
+
 
 export const addRemoveWish = (wishItems, productToAdd) => {
   const newWishItems = addRemoveWishItem(wishItems, productToAdd);
@@ -49,4 +54,8 @@ export const isWishClicked = (wishItems, wishToCheck) => {
   return createAction(WISH_ACTION_TYPES.SET_WISH_IS_CLICKED, wishPickedBoolean);
 };
 
+export const clearItemFromWishList = (wishItems, wishItemToClear) => {
+  const newWishItems = clearWishItem(wishItems, wishItemToClear);
+  return createAction(WISH_ACTION_TYPES.SET_WISH_ITEMS, newWishItems);
+};
 
