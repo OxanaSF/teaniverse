@@ -1,5 +1,3 @@
-// import { useState, useEffect } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,7 +7,7 @@ import {
   selectCartTotal,
 } from '../../store/cart/cart.selector';
 
-// import { selectCurrentUser } from '../../store/user/user.selector';
+import { selectCurrentUserName } from '../../store/user/user.selector';
 
 import { clearWholeCart } from '../../store/cart/cart.action';
 
@@ -23,21 +21,11 @@ import { setCurrentOrder } from '../../store/order/order.action';
 import { v4 as uuid } from 'uuid';
 
 import './checkout.styles.scss';
-import { useEffect } from 'react';
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
-
-  // const [order, setOrder] = useState(null);
-  // const existingOrders = useSelector(selectOrders);
-  // const currentUser = useSelector(selectCurrentUser);
-
-  // useEffect(() => {
-  //   setOrder(cartItems);
-  // }, [cartItems]);
-
-  console.log('response.url -> cartItems', cartItems);
+  const userName = useSelector(selectCurrentUserName);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -58,21 +46,14 @@ const Checkout = () => {
         return response.json();
       })
       .then((response) => {
-       
-          setCurrentOrder(createOrder(cartItems, receipt))
-          
-         
-          dispatch(clearWholeCart(cartItems));
-          navigate('/success')
-          //  window.location.assign(response.url);
-          
-         
-         
-       
-        // }
+        setCurrentOrder(createOrder(cartItems, receipt));
 
-        
-      })
+        dispatch(clearWholeCart(cartItems));
+        navigate('/success');
+        //  window.location.assign(response.url);
+
+        // }
+      });
   };
 
   return (
@@ -97,9 +78,11 @@ const Checkout = () => {
       ) : (
         <div className="checkout-bag-container">
           <div className="cart-items">
-            {cartItems.map((item, index) => (
-              <ShoppingCartItemInOrder key={index} shoppingCartItem={item} />
-            ))}
+            {cartItems
+              .filter((item) => item.userEmail === userName)
+              .map((item, index) => (
+                <ShoppingCartItemInOrder key={index} shoppingCartItem={item} />
+              ))}
           </div>
 
           <div className="checkout-process">

@@ -21,7 +21,7 @@ const WishListItem = ({ wishListItem }) => {
   const dispatch = useDispatch();
 
   const addProductToCartHandler = (event) => {
-    dispatch(addItemToCart(cartItems, wishListItem));
+    dispatch(addItemToCart(cartItems, wishListItem, 'some email'));
     setStyles(true);
     event.stopPropagation();
   };

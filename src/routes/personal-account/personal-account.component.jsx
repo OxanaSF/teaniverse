@@ -85,7 +85,10 @@ const PersonalAccount = () => {
           {activeBtn && (
             <>
               <div className="orders-container">
-                {orders.map((id, index) => (
+                {orders.filter(id => id.user === currentUserName).map((id, index) => (
+
+
+                    
                   <div key={index} className="order">
                     <div>
                       <span className="side-headers"> ORDER #:</span>{' '}
@@ -119,6 +122,9 @@ const PersonalAccount = () => {
                       </div>
                     ))}
                   </div>
+
+
+
                 ))}
               </div>
 

@@ -51,7 +51,7 @@ const PickedTea = () => {
   }, [name, dispatch, teaProducts]);
 
   const addProductToCartHandler = () => {
-    dispatch(addItemToCart(cartItems, currentProduct));
+    dispatch(addItemToCart(cartItems, currentProduct, 'some email'));
   };
 
   if (!currentProduct) {

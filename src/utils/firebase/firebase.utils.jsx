@@ -119,7 +119,7 @@ export const createUserDocumentFromAuth = async (
   return userDocRef;
 };
 
-export const createOrder = async (items, uuid) => {
+export const createOrder = async (items, uuid, user) => {
   const date=new Date()
   // const receipt=uuid()
   try {
@@ -127,6 +127,7 @@ export const createOrder = async (items, uuid) => {
       orders: items,
       receipt: uuid,
       date: date,
+      user: user
     });
     console.log('RAN WELL')
     // return receipt

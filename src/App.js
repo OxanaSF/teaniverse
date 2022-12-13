@@ -14,7 +14,7 @@ import {
 import { setCurrentUser } from './store/user/user.action';
 
 import { selectCurrentUser } from './store/user/user.selector';
-import { fetchCategoriesStart } from './store/categories/category.action';
+import { fetchCategoriesAsync } from './store/categories/category.action';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -49,9 +49,7 @@ const App = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
-      
       if (user) {
-        console.log('user user user!!!', user)
         createUserDocumentFromAuth(user);
       }
 
@@ -62,7 +60,7 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchCategoriesStart());
+    dispatch(fetchCategoriesAsync());
   }, [dispatch]);
 
   return (
@@ -90,7 +88,6 @@ const App = () => {
 
           {currentUser && (
             <Route path="account" element={<PersonalAccount />} />
-            // <Route path="account/:id" element={<PersonalAccount />} />
           )}
 
 <Route path="success" element={<Success />} />

@@ -18,7 +18,7 @@ import './nav-desktop.styles.scss';
 
 const NavDesktop = () => {
   const currentUser = useSelector(selectCurrentUser);
-  // const currentUserName = useSelector(selectCurrentUserName);
+
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1100);

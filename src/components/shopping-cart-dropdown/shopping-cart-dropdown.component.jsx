@@ -7,7 +7,8 @@ import {
 } from '../../store/cart/cart.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
-// import { selectCurrentUserName } from '../../store/user/user.selector';
+import { selectCurrentUserName } from '../../store/user/user.selector';
+
 
 import Button from '../button/button.component';
 import ShoppingCartItemDropdown from '../shopping-cart-item-dropdown/shopping-cart-item-dropdown.component';
@@ -19,7 +20,9 @@ const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const isCartOpen = useSelector(selectIsCartOpen);
-  // const currentUser = useSelector(selectCurrentUserName);
+ 
+  
+  const userEmail = useSelector(selectCurrentUserName);
 
   const dispatch = useDispatch();
 
@@ -50,7 +53,8 @@ const CartDropdown = () => {
           {cartTotal !== 0 && (
             <div className="cart-dropdown-container">
               <div className="cart-items">
-                {cartItems.map((item) => (
+                {cartItems.filter((cartItem) => cartItem.userEmail === userEmail)
+                .map((item) => (
                   <ShoppingCartItemDropdown
                     key={item.id}
                     shoppingCartItem={item}

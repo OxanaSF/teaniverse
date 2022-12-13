@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { selectWishItems } from '../../store/wish/wish.selector';
 
+import { selectCurrentUserName } from '../../store/user/user.selector';
+
 import { addRemoveWish } from '../../store/wish/wish.action';
 
 import './favorite-icon-private.styles.scss';
@@ -12,10 +14,12 @@ const FavoriteIconPrivate = ({ product }) => {
   const wishListItems = useSelector(selectWishItems);
   const [pickedProduct, setPickedProduct] = useState(null);
 
+  const userEmail = useSelector(selectCurrentUserName);
+
   const dispatch = useDispatch();
 
   const addWishHandler = (event) => {
-    dispatch(addRemoveWish(wishListItems, product));
+    dispatch(addRemoveWish(wishListItems, product, userEmail));
     event.stopPropagation();
   };
 
