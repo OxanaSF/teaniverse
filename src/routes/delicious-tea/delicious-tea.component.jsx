@@ -18,7 +18,7 @@ const DeliciousTea = () => {
       <div
         className="delicious-page-bg"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/delicious-tea-bg.jpeg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/delicious-tea-bg.png)`,
         }}
       >
         <div className="gradient-styled"></div>

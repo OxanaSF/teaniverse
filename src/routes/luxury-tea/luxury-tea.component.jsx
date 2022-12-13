@@ -17,7 +17,7 @@ const LuxuryTea = () => {
       <div
         className="real-life-page-bg"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/spoons.jpeg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/spoons.png)`,
         }}
       >
         <div className="gradient-styled"></div>
