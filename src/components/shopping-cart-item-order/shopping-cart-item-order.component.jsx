@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { selectCartItems } from '../../store/cart/cart.selector';
 
+import { selectCurrentUserName } from '../../store/user/user.selector';
+
 
 import {
   addItemToCart,
@@ -22,10 +24,12 @@ const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
 
   const cartItems = useSelector(selectCartItems);
 
+  const userEmail = useSelector(selectCurrentUserName)
+
   const dispatch = useDispatch();
 
   const addItemToCartHandler = () => {
-    dispatch(addItemToCart(cartItems, shoppingCartItem));
+    dispatch(addItemToCart(cartItems, shoppingCartItem, userEmail));
   };
   const removeItemFromCartHandler = () => {
     dispatch(removeItemFromCart(cartItems, shoppingCartItem));

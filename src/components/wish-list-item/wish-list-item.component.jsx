@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
 
+import { selectCurrentUserName } from '../../store/user/user.selector';
+
 import { selectWishItems } from '../../store/wish/wish.selector';
 import { clearItemFromWishList } from '../../store/wish/wish.action';
 
@@ -17,11 +19,12 @@ const WishListItem = ({ wishListItem }) => {
 
   const cartItems = useSelector(selectCartItems);
   const wishItems = useSelector(selectWishItems);
+  const userEmail = useSelector(selectCurrentUserName)
 
   const dispatch = useDispatch();
 
   const addProductToCartHandler = (event) => {
-    dispatch(addItemToCart(cartItems, wishListItem, 'some email'));
+    dispatch(addItemToCart(cartItems, wishListItem, userEmail));
     setStyles(true);
     event.stopPropagation();
   };

@@ -26,7 +26,7 @@ const FavoriteIconPrivate = ({ product }) => {
   useEffect(() => {
     product && console.log('product, wishListItems', product, wishListItems);
     const existingWishItem = wishListItems.find(
-      (element) => element.id === product.id
+      (element) => element.id === product.id 
     );
 
     setPickedProduct(existingWishItem);
