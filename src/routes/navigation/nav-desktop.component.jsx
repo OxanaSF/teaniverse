@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import { selectCurrentUser, selectCurrentUserName } from '../../store/user/user.selector';
+import {
+  selectCurrentUser,
+  selectCurrentUserName,
+} from '../../store/user/user.selector';
 
 // import { signOutUser } from '../../utils/firebase/firebase.utils';
 
@@ -61,10 +64,9 @@ const NavDesktop = () => {
           {currentUser ? (
             // <Link as span onClick={signOutUserHandler} className="user-icon">
             //  <Link to={`/account/${currentUserName}`}>
-             <Link to={`/account`}>
-       
+            <Link to={`/account`}>
               <img
-              className='user-icon'
+                className="user-icon"
                 src={`${process.env.PUBLIC_URL}/images/user.png`}
                 alt="user icon"
               />
