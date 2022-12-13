@@ -40,7 +40,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
   );
 };
 
-// cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
+
 
 const clearCartItem = (cartItems, cartItemToClear) =>
   cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);

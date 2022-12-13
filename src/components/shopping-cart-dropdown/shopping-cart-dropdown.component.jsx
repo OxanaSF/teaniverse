@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
   selectCartItems,
-  selectCartTotal,
+  // selectCartTotal,
 } from '../../store/cart/cart.selector';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 

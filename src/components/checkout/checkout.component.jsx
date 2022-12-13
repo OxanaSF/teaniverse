@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -23,8 +25,9 @@ import { v4 as uuid } from 'uuid';
 import './checkout.styles.scss';
 
 const Checkout = () => {
+  const [cartTotal, setCartTotal] = useState(0);
   const cartItems = useSelector(selectCartItems);
-  const cartTotal = useSelector(selectCartTotal);
+  // const cartTotal = useSelector(selectCartTotal);
   const userName = useSelector(selectCurrentUserName);
 
   const navigate = useNavigate();
@@ -32,6 +35,19 @@ const Checkout = () => {
 
   const receipt = uuid();
   dispatch(setCurrentOrder(receipt));
+
+  useEffect(() => {
+    const getTotal = cartItems
+      .filter((cartItem) => cartItem.userEmail === userName)
+      .reduce(
+        (total, currentItem) =>
+          total + currentItem.quantity * currentItem.price,
+        0
+      );
+
+    setCartTotal(getTotal);
+  }, [cartItems, userName]);
+
 
   const purchaseHandler = async () => {
     await fetch('http://localhost:4000/checkout', {

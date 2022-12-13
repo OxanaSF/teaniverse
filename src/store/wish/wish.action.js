@@ -53,7 +53,6 @@ export const clearItemFromWishList = (wishItems, wishItemToClear) => {
   return createAction(WISH_ACTION_TYPES.SET_WISH_ITEMS, newWishItems);
 };
 
-
 export const clearWholeWishList = (cartItems) => {
   cartItems.length = 0;
   return createAction(WISH_ACTION_TYPES.SET_CART_ITEMS, cartItems);
