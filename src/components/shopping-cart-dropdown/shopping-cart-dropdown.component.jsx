@@ -21,7 +21,7 @@ const CartDropdown = () => {
   const [cartTotal, setCartTotal] = useState(0);
 
   const cartItems = useSelector(selectCartItems);
-  // const cartTotal = useSelector(selectCartTotal);
+
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const userEmail = useSelector(selectCurrentUserName);
@@ -32,7 +32,6 @@ const CartDropdown = () => {
 
   const goToCheckoutHandler = () => {
     dispatch(setIsCartOpen(!isCartOpen));
-    // navigate(`/checkout/${currentUser}`);
     navigate(`checkout`);
   };
 

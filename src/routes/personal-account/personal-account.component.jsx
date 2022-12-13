@@ -4,9 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
+
+// import { clearWholeWishList } from '../../store/wish/wish.action';
 
 import WishList from '../../components/wish-list/wish-list.component';
 import Greeting from '../../components/greeting/greeting.component';
@@ -23,10 +25,13 @@ const PersonalAccount = () => {
 
   const [activeBtn, setActiveBtn] = useState(false);
 
+  const dispatch = useDispatch()
+
   const navigate = useNavigate();
 
   const signOutUserHandler = () => {
     signOutUser();
+    // dispatch(clearWholeWishList)
     navigate('/');
   };
 
