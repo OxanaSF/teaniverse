@@ -1,9 +1,4 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { setCurrentUser } from '../../store/user/user.action'; 
-
-import { selectCurrentUser } from '../../store/user/user.selector';
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
@@ -26,9 +21,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  // const currentUser = useSelector(selectCurrentUser);
-  const dispatch = useDispatch();
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -37,7 +29,7 @@ const SignUpForm = () => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("password doesn't match");
+      alert("password dosn't match");
       return;
     }
 
@@ -49,7 +41,6 @@ const SignUpForm = () => {
 
       await createUserDocumentFromAuth(user, { displayName });
       alert("You're successfully created an account");
-      // dispatch(setCurrentUser(user));
       resetFormFields();
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {

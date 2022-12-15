@@ -1,11 +1,6 @@
-import { useState, useEffect } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectCartItems } from '../../store/cart/cart.selector';
-
-import { selectCurrentUserName } from '../../store/user/user.selector';
-
 
 import {
   addItemToCart,
@@ -19,17 +14,15 @@ import { AiOutlineClose } from 'react-icons/ai';
 import './shopping-cart-item-order.styles.scss';
 
 const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
-  const { user, name, description, taste, imageUrl, price, quantity } =
+  const { name, description, taste, imageUrl, price, quantity } =
     shoppingCartItem;
 
   const cartItems = useSelector(selectCartItems);
 
-  const userEmail = useSelector(selectCurrentUserName)
-
   const dispatch = useDispatch();
 
   const addItemToCartHandler = () => {
-    dispatch(addItemToCart(cartItems, shoppingCartItem, userEmail));
+    dispatch(addItemToCart(cartItems, shoppingCartItem));
   };
   const removeItemFromCartHandler = () => {
     dispatch(removeItemFromCart(cartItems, shoppingCartItem));
@@ -44,21 +37,20 @@ const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
         className="cart-item-bag-close-container"
         onClick={clearItemFromCartHandler}
       >
-        <img
-          className="delete-btn"
-          src={`${process.env.PUBLIC_URL}/images/delete-brown.png`}
-          alt="trash can icon"
-        />
+      
+          <img
+            className="delete-btn"
+            src={`${process.env.PUBLIC_URL}/images/delete-brown.png`}
+            alt="trash can icon"
+          />
+     
       </button>
 
       <div className="cart-item-bag-description">
         <img src={imageUrl} alt={name} />
 
         <div className="item-info">
-          <h3>
-            {name}
-            {user}
-          </h3>
+          <h3>{name}</h3>
 
           <span className="item-description"> {description}</span>
           <p>
@@ -88,7 +80,7 @@ const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
       </div>
 
       <div className="cart-item-bag-heart-container">
-        <FavoriteIconPrivate product={shoppingCartItem} />
+        <FavoriteIconPrivate product={shoppingCartItem}/>
       </div>
     </div>
   );

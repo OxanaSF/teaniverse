@@ -16,7 +16,7 @@ const CarouselContainer = () => {
           animationHandler="fade"
           showArrows={false}
           showStatus={false}
-          interval={4000}
+          interval={3000}
           showThumbs={false}
         >
           {slides.map((slide, index) => (

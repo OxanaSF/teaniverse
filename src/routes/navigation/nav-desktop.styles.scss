@@ -107,6 +107,10 @@
     display: flex;
     justify-content: space-between;
 
+    .app-icon-phone {
+      padding-left: 1rem;
+    }
+
     img {
       width: 21px;
     }
@@ -119,7 +123,7 @@
 
 // Mobile
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1024px) {
   .mobile_btn {
     display: block;
     position: absolute;
@@ -129,13 +133,74 @@
     position: fixed;
   }
 
-  .active {
-    top: 0;
-  }
-
   .navigation {
+    padding: 0rem;
+    display: block;
+    overflow-x: hidden;
+    min-height: 14rem;
+    font-size: 12px;
+
+    .top-level-navigation {
+      flex-direction: column;
+      justify-content: center;
+      margin: 1rem 0;
+      font-size: 12px;
+      padding: 0;
+
+      .top-level-navigation-left {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 0.5rem;
+        column-gap: 0.5rem;
+      }
+
+      .top-level-navigation-left a {
+        padding: 0;
+      }
+
+      .top-level-navigation-right {
+        transform: translateY(-30px);
+        align-self: flex-end;
+        padding-right: 2.2rem;
+
+        img {
+          margin: 0;
+          padding: 0;
+          width: 22px;
+        }
+
+        .cart-icon-container {
+          transform: translateX(-12px);
+          padding-top: 0.5px;
+        }
+      }
+    }
+
     .bottom-level-navigation {
+      flex-direction: column;
+      display: block;
+      text-align: center;
+
       .logo-container {
+        padding: 0;
+      }
+
+      .bottom-level-navigation-left {
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .bottom-level-navigation-right {
+        margin-top: 1rem;
+
+        justify-content: center;
+
+        .app-icons-container {
+          .app-icon-phone {
+            padding-left: 1rem;
+          }
+        }
       }
     }
   }

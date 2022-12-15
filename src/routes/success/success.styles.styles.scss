@@ -31,3 +31,20 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 1024px) {
+  .success-container {
+    width: 90%;
+    margin: 2rem auto;
+
+    h1 {
+      top: 70%;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      top: 20%;
+      font-size: 15px;
+    }
+  }
+}

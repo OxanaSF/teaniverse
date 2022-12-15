@@ -1,19 +1,10 @@
-import React from 'react';
+import './read.styles.scss';
 
 const Read = () => {
   return (
-    <h2
-      style={{
-        margin: '10rem',
-        fontSize: '2.5rem',
-        fontWeight: '300',
-        textAlign: 'center',
-        color: '#27160e',
-        marginTop: '10rem',
-      }}
-    >
-      I am the READ page holder.
-    </h2>
+    <div className="read-container">
+      <h2>I am the READ page holder.</h2>
+    </div>
   );
 };
 

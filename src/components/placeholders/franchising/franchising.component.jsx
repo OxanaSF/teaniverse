@@ -1,19 +1,10 @@
-import React from 'react';
+import './franchising.styles.scss';
 
 const Franchising = () => {
   return (
-    <h2
-      style={{
-        margin: '10rem',
-        fontSize: '2.5rem',
-        fontWeight: '300',
-        textAlign: 'center',
-        color: '#27160e',
-        marginTop: '10rem',
-      }}
-    >
-      I am the FRANCHISING page holder.
-    </h2>
+    <div className="franchising-container">
+      <h2>I am the FRANCHISING page holder.</h2>
+    </div>
   );
 };
 

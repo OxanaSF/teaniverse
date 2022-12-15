@@ -4,13 +4,14 @@
   color: #47160e;
   max-width: 1300px;
   margin: auto;
+  // background: red;
 
   h2 {
     font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
     color: #27160e;
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 
   .tea-section-catalogue {
@@ -19,30 +20,25 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-    @media (min-width: 40rem) {
-      .tea-section-catalogue {
-        width: 50%;
-      }
-    }
   }
 
   .filter-container {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    transform: translateX(-50px);
     margin: 5rem 0 2rem 0;
   }
 
   .filter-container-buttons {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     button {
       border: none;
       margin-right: 1rem;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       color: #47160e;
 
       &:hover {
@@ -90,5 +86,59 @@
   }
   .article-container :nth-child(1) {
     margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .tea-section {
+    h2 {
+      margin-top: 2rem;
+    }
+
+    .filter-container {
+      display: flex;
+      flex-direction: column;
+      transform: translateX(0);
+      margin: 0;
+      margin-bottom: 1rem;
+      gap: 0.5rem;
+    }
+
+    .filter-container-buttons {
+      align-items: center;
+    }
+
+    .article-container {
+      // background: pink;
+      width: 85%;
+      margin: auto;
+      padding-bottom: 2rem;
+
+      h4 {
+        margin-bottom: 0;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    .tea-section-bottom-text {
+      margin: 2rem;
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 300;
+        text-align: center;
+        color: #27160e;
+        padding: 0 3rem;
+      }
+
+      .line {
+        height: 1.2px;
+      }
+    }
   }
 }

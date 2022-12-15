@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectCurrentUserName } from '../../store/user/user.selector';
-
 //Cart
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
@@ -19,15 +17,12 @@ const ProductCard = ({ product }) => {
   const [styles, setStyles] = useState(false);
 
   const cartItems = useSelector(selectCartItems);
-  const userEmail = useSelector(selectCurrentUserName)
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const addProductToCartHandler = (event) => {
-    console.log('userEmail', userEmail)
-    dispatch(addItemToCart(cartItems, product, userEmail));
-    console.log('userEmail', userEmail)
+    dispatch(addItemToCart(cartItems, product));
     setStyles(true);
     event.stopPropagation();
   };

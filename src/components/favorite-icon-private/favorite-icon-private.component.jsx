@@ -8,12 +8,16 @@ import { selectCurrentUserName } from '../../store/user/user.selector';
 
 import { addRemoveWish } from '../../store/wish/wish.action';
 
+
+import { createWish, deleteWish } from '../../utils/firebase/firebase.utils'
+
+import { db } from '../../utils/firebase/firebase.utils';
+
 import './favorite-icon-private.styles.scss';
 
 const FavoriteIconPrivate = ({ product }) => {
   const wishListItems = useSelector(selectWishItems);
   const [pickedProduct, setPickedProduct] = useState(null);
-
   const userEmail = useSelector(selectCurrentUserName);
 
   const dispatch = useDispatch();
@@ -24,12 +28,16 @@ const FavoriteIconPrivate = ({ product }) => {
   };
 
   useEffect(() => {
+    product && console.log('product, wishListItems', product, wishListItems);
     const existingWishItem = wishListItems.find(
-      (element) => element.id === product.id && element.userEmail === userEmail
+      (element) => element.id === product.id && element.user === userEmail
     );
-
     setPickedProduct(existingWishItem);
   }, [product, wishListItems, userEmail]);
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <button className="heart-btn" onClick={addWishHandler}>

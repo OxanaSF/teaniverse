@@ -2,7 +2,7 @@ import './relaxing-tea.styles.scss';
 
 const RelaxingTea = () => {
   return (
-    <div className="real-life-tea-container">
+    <div className="relaxing-tea-container">
       <h2>Relaxing</h2>
       <img
         src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/relaxing-tea-icon.png`}
@@ -17,7 +17,7 @@ const RelaxingTea = () => {
       <div
         className="relaxing-tea-page-bg"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/relaxing-tea.png)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg/relaxing-tea.jpeg)`,
         }}
       >
         <div className="gradient-styled"></div>

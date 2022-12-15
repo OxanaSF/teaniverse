@@ -1,7 +1,8 @@
-.real-life-tea-container {
+.luxury-tea-container {
   text-align: center;
 
   h2 {
+    margin: 10rem 0 5rem 0;
     font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
@@ -17,7 +18,7 @@
     margin-bottom: 3rem;
   }
 
-  .real-life-page-bg {
+  .luxury-page-bg {
     height: 20rem;
     background-position: center;
     background-size: cover;
@@ -36,5 +37,32 @@
   .tea-section-catalogue {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .luxury-tea-container {
+    text-align: center;
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    p {
+      width: 90%;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      width: 60px;
+    }
+
+    .luxury-page-bg {
+      height: 10rem;
+      margin-bottom: 2rem;
+    }
   }
 }

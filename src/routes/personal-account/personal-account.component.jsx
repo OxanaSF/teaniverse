@@ -1,15 +1,27 @@
 import { useState, useEffect } from 'react';
 
+import { useDispatch } from 'react-redux';
+
 import { Link, useNavigate } from 'react-router-dom';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+import { selectCartItems } from '../../store/cart/cart.selector';
+import { selectWishItems } from '../../store/wish/wish.selector';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
 
 import WishList from '../../components/wish-list/wish-list.component';
 import Greeting from '../../components/greeting/greeting.component';
+
+import { clearWholeCart } from '../../store/cart/cart.action';
+
+import {
+  clearWholeWishList,
+  setWishHistory,
+} from '../../store/wish/wish.action';
 
 import { db } from '../../utils/firebase/firebase.utils';
 import { query, collection, onSnapshot } from 'firebase/firestore';
@@ -17,7 +29,9 @@ import { query, collection, onSnapshot } from 'firebase/firestore';
 import './personal-account.styles.scss';
 
 const PersonalAccount = () => {
-  const currentUserName = useSelector(selectCurrentUserName);
+  const userEmail = useSelector(selectCurrentUserName);
+  const cartItems = useSelector(selectCartItems);
+  const wishItems = useSelector(selectWishItems);
 
   const [orders, setOrders] = useState(null);
 
@@ -25,8 +39,15 @@ const PersonalAccount = () => {
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
   const signOutUserHandler = () => {
     signOutUser();
+    // dispatch(setWishHistory(cartItems))
+    dispatch(clearWholeCart(cartItems));
+    // dispatch(clearWholeWishList(wishItems));
+
+    window.location.reload(false);
     navigate('/');
   };
 
@@ -41,17 +62,13 @@ const PersonalAccount = () => {
       querySnapshot.forEach((doc) => {
         ordersArr.push({ ...doc.data(), id: doc.id });
       });
-
-      ordersArr.sort(function (a, b) {
+      ordersArr.sort((a, b) => {
         return b.date - a.date;
       });
-
       setOrders(ordersArr);
     });
     return () => unsubscribe();
   }, []);
-
-  console.log('oredrs!!!', orders);
 
   return (
     <section className="personal-account-container">
@@ -60,7 +77,7 @@ const PersonalAccount = () => {
       <h3>
         <Greeting />
       </h3>
-      <h3>{currentUserName}</h3>
+      <h3>{userEmail}</h3>
 
       <div className="personal-account-wrapper">
         <div className="personal-account-navigation">
@@ -91,42 +108,49 @@ const PersonalAccount = () => {
             <>
               <div className="orders-container">
                 {orders
-                  .filter((id) => id.user === currentUserName)
+                  .filter((id) => id.user === userEmail)
                   .map((id, index) => (
                     <div key={index} className="order">
-                      <div>
-                        <span className="side-headers"> ORDER #:</span>{' '}
-                        {id.receipt}
-                      </div>
-                      <div>
-                        <span className="side-headers">Date:</span>
-                        {id.date
-                          .toDate()
-                          .toString()
-                          .split(' ')
-                          .slice(0, 4)
-                          .join(' ')}
-                      </div>
-
-                      {id.orders.map((order, index) => (
-                        <div className="orders-items" key={index}>
-                          <div>
-                            <span className="side-headers"> price:</span> $
-                            {order.price}
-                          </div>
-                          <div>
-                            {' '}
-                            <span className="side-headers">
-                              item name:
-                            </span>{' '}
-                            {order.name}
-                          </div>
-                          <div>
-                            <span className="side-headers"> quantity:</span>{' '}
-                            {order.quantity}
-                          </div>
+                      <div className="order-header">
+                        <div>
+                          <span className="side-headers"> ORDER #:</span>{' '}
+                          <span className="side-headers">{id.receipt}</span>
                         </div>
-                      ))}
+                        <div>
+                          <span className="side-headers">Date: </span>
+                          {id.date
+                            .toDate()
+                            .toString()
+                            .split(' ')
+                            .slice(0, 4)
+                            .join(' ')}
+                        </div>
+                      </div>
+                      <br />
+                      <ol>
+                        {id.orders.map((order, index) => (
+                          <li key={index}>
+                            <div className="orders-items" key={index}>
+                              <div>
+                                <span className="side-headers">
+                                  {' '}
+                                  Item name:
+                                </span>{' '}
+                                <span className="item">{order.name}</span>
+                              </div>
+                              <div>
+                                <span className="side-headers"> Price:</span> $
+                                <span className="item">{order.price}</span>
+                              </div>
+                              <div>
+                                <span className="side-headers"> Quantity:</span>{' '}
+                                <span className="item"> {order.quantity}</span>
+                              </div>
+                              <br />
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
                     </div>
                   ))}
               </div>

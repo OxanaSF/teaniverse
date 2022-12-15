@@ -1,9 +1,7 @@
 import { createAction } from '../../utils/reducer/reducer.utils';
 import { CART_ACTION_TYPES } from './cart.types';
 
-const addCartItem = (cartItems, productToAdd, userEmail) => {
-  // const addCartItem = (cartItems, productToAdd) => {
-
+const addCartItem = (cartItems, productToAdd) => {
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === productToAdd.id
   );
@@ -11,15 +9,16 @@ const addCartItem = (cartItems, productToAdd, userEmail) => {
   if (existingCartItem) {
     return cartItems.map((cartItem) =>
       cartItem.id === productToAdd.id
-        ? // cartItem.id === productToAdd.id
-          { ...cartItem, quantity: cartItem.quantity + 1 }
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
         : cartItem
     );
   }
 
-  return [...cartItems, { ...productToAdd, quantity: 1, userEmail: userEmail }];
-  // return [...cartItems, { ...productToAdd, quantity: 1 }];
+  return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
+
+
+
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
   // find the cart item to remove
@@ -40,13 +39,11 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
   );
 };
 
-
-
 const clearCartItem = (cartItems, cartItemToClear) =>
   cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
-export const addItemToCart = (cartItems, productToAdd, userEmail) => {
-  const newCartItems = addCartItem(cartItems, productToAdd, userEmail);
+export const addItemToCart = (cartItems, productToAdd) => {
+  const newCartItems = addCartItem(cartItems, productToAdd);
   return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
 };
 
@@ -65,14 +62,10 @@ export const clearWholeCart = (cartItems) => {
   return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, cartItems);
 };
 
+
+
+
 export const setIsCartOpen = (boolean) =>
   createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean);
 
-export const cartItemsCount = (cartItems, userName) => {
-  return Number(
-    cartItems
-      .filter((cartItem) => cartItem.userEmail === userName)
-      .map((cartItem) => cartItem.quantity)
-      .reduce((total, cur) => total + cur.quantity, 0)
-  );
-};
+

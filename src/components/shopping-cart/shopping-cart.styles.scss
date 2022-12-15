@@ -6,10 +6,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  
-  img {
-    padding-top: 1.8px;
-  }
 
   .item-count {
     position: absolute;
@@ -17,5 +13,17 @@
     font-weight: bold;
     bottom: 12px;
     padding-right: 4px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cart-icon-container {
+    padding-right: 0;
+
+    .item-count {
+      font-size: 11.5px;
+      padding-bottom: 3px;
+      padding-left: 4px;
+    }
   }
 }

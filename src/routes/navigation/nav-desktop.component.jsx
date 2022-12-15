@@ -1,14 +1,7 @@
-import { useState, useEffect } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import {
-  selectCurrentUser,
-  selectCurrentUserName,
-} from '../../store/user/user.selector';
-
-// import { signOutUser } from '../../utils/firebase/firebase.utils';
+import { selectCurrentUser } from '../../store/user/user.selector';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
@@ -21,19 +14,7 @@ import './nav-desktop.styles.scss';
 
 const NavDesktop = () => {
   const currentUser = useSelector(selectCurrentUser);
-
   const isCartOpen = useSelector(selectIsCartOpen);
-
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1100);
-
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > 1100);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', updateMedia);
-    return () => window.removeEventListener('resize', updateMedia);
-  });
 
   return (
     <nav className="navigation">
@@ -62,8 +43,6 @@ const NavDesktop = () => {
 
         <div className="top-level-navigation-right">
           {currentUser ? (
-            // <Link as span onClick={signOutUserHandler} className="user-icon">
-            //  <Link to={`/account/${currentUserName}`}>
             <Link to={`/account`}>
               <img
                 className="user-icon"
@@ -137,7 +116,7 @@ const NavDesktop = () => {
               />
             </a>
 
-            <div className="app-icon">1 800 555 77 88</div>
+            <div className="app-icon-phone">1 800 555 77 88</div>
           </div>
         </div>
       </div>

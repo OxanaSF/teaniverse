@@ -36,3 +36,16 @@
   }
   
 }
+
+
+@media screen and (max-width: 900px) {
+  .hover-slideshow-container {
+    height: 15rem;
+    overflow-y: hidden;
+    margin-top: 3rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}

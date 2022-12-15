@@ -1,0 +1,47 @@
+.order-form {
+
+  min-height: 39rem;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 4rem;
+
+  h3 {
+    color: #552f1c;
+    letter-spacing: 1.2px;
+    margin-bottom: 1rem;
+  }
+
+  .form-items {
+    width: 70%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    input {
+      width: 100%;
+      height: 2rem;
+      border-style: hidden;
+      border-style: 0.5px solid #552f1c;
+      border: 0.5px solid #d8cdc7;
+      margin-bottom: 0.2rem;
+    }
+
+    input::placeholder {
+      padding-left: 1rem;
+      color: #552f1c;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .order-form {
+    width: 95%;
+  }
+
+}

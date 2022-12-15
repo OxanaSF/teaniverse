@@ -17,7 +17,7 @@ const SlideShowHover = () => {
         width="700px"
         height="600px"
         display="flex"
-        alignItems="center"
+        // alignItems="center"
         
       ></HoverSlideshow>
     </section>

@@ -18,10 +18,23 @@ nav {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   nav {
-    display: flex;
+    padding-top: 2rem;
+    height: 220px;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 1rem;
+
+    .tea-nav-item {
+      img {
+        width: 3rem;
+      }
+
+      p {
+        color: #47160e;
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
   }
 }

@@ -1,0 +1,19 @@
+.coffee-container {
+  h2 {
+    margin: 10rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #27160e;
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .coffee-container {
+    h2 {
+      margin: 2rem;
+      font-size: 20px;
+    }
+  }
+}

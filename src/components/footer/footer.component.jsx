@@ -15,7 +15,7 @@ const Footer = () => {
             <li> View all</li>
             <li>Black tea</li>
             <li>Green tea</li>
-            <li>Green related tea</li>
+            <li>Green tea</li>
             <li>White tea</li>
             <li>Yellow tea</li>
             <li>Oolong</li>

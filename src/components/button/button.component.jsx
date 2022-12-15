@@ -4,6 +4,7 @@ export const BUTTON_TYPE_CLASSES = {
   google: 'google-sign-in',
   inverted: 'inverted',
   wide: 'wide',
+  checkout: 'checkout'
 };
 
 const Button = ({ children, buttonType, ...otherProps }) => {

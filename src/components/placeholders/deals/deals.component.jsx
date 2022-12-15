@@ -1,19 +1,10 @@
-import React from 'react';
+import './deals.styles.scss';
 
 const Deals = () => {
   return (
-    <h2
-      style={{
-        margin: '10rem',
-        fontSize: '2.5rem',
-        fontWeight: '300',
-        textAlign: 'center',
-        color: '#27160e',
-        marginTop: '10rem',
-      }}
-    >
-      I am the DEALS page holder.
-    </h2>
+    <div className="deals-container">
+      <h2>I am the DEALS page holder.</h2>
+    </div>
   );
 };
 

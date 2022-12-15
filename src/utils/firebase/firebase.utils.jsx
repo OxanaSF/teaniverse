@@ -16,6 +16,7 @@ import {
   getFirestore,
   doc,
   addDoc,
+  deleteDoc,
   getDoc,
   setDoc,
   collection,
@@ -137,6 +138,25 @@ export const createOrder = async (items, uuid, user) => {
   }
   
 };
+
+
+export const createWish = async (wish) => {
+  try {
+    await addDoc(collection(db, 'wishes'), {
+      wishes: wish,
+    });
+    console.log('RAN WELL')
+    
+  } catch (error) {
+    console.log('error creating the wish', error.message);
+  }
+  
+};
+
+export const deleteWish = async (id) => {
+  await deleteDoc(doc(db, 'wishes', id));
+};
+
 
 
 

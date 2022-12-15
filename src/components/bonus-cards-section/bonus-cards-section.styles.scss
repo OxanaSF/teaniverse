@@ -64,9 +64,7 @@
 .card-fan {
   height: 356px;
   width: 700px;
-  //   margin: 2rem auto 0;
   position: relative;
-  //   padding: 0 3rem;
 }
 .card-fan img {
   position: absolute;
@@ -86,4 +84,47 @@
 }
 .card-fan:hover img:last-child {
   transform: rotate(-20deg);
+}
+
+@media screen and (max-width: 900px) {
+  .action-section {
+    // background: red;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+
+    .btn {
+      margin: 0 auto 2rem auto;
+
+      min-width: 150px;
+    }
+
+    .action-section-text {
+      padding-left: 0;
+      width: 100%;
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1rem;
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
+
+  .card-fan {
+    height: 350px;
+  }
+
+  .card-fan img {
+    position: absolute;
+    left: 130px;
+    top: 60px;
+    transform-origin: center 400px;
+    transition: all 0.6s linear;
+  }
 }

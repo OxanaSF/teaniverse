@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Navigate } from 'react-router-dom';
 
-// import { loadStripe } from '@stripe/stripe-js';
+import './app.scss';
 
 import {
   onAuthStateChangedListener,
@@ -14,7 +14,7 @@ import {
 import { setCurrentUser } from './store/user/user.action';
 
 import { selectCurrentUser } from './store/user/user.selector';
-import { fetchCategoriesAsync } from './store/categories/category.action';
+import { fetchCategoriesStart } from './store/categories/category.action';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -23,6 +23,7 @@ import Home from './routes/home/home.component';
 import Authentication from './routes/authentication/authentication.component';
 import Tea from './routes/tea/tea.component';
 import Checkout from './components/checkout/checkout.component';
+import CheckoutForm from './components/checkout-form/checkout-form.component';
 import LuxuryTea from './routes/luxury-tea/luxury-tea.component';
 import DeliciousTea from './routes/delicious-tea/delicious-tea.component';
 import ClassicTea from './routes/classic-tea/classic-tea.component';
@@ -50,6 +51,7 @@ const App = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
+        console.log('user user user!!!', user);
         createUserDocumentFromAuth(user);
       }
 
@@ -60,11 +62,11 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchCategoriesAsync());
+    dispatch(fetchCategoriesStart());
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="app">
       <Routes>
         <Route path="/" element={<Navigation />}>
           {/* Paths from the Home page */}
@@ -85,22 +87,14 @@ const App = () => {
           <Route path="stores" element={<Stores />} />
 
           {currentUser && <Route path="checkout" element={<Checkout />} />}
+          <Route path="checkout-form" element={<CheckoutForm />} />
 
           {currentUser && (
             <Route path="account" element={<PersonalAccount />} />
           )}
 
-<Route path="success" element={<Success />} />
-<Route path="cancel" element={<Cancel />} />
-
-          {/* 
-          {isLoggedIn && (
-            <Route path="checkout/order/:order" element={<Order />} />
-          )} */}
-
-          {/* <Route path="checkout/order/:order" element={<Order />} /> */}
-
-          {/* {currentUser && <Route path="account" element={<WishList />} />} */}
+          <Route path="success" element={<Success />} />
+          <Route path="cancel" element={<Cancel />} />
 
           {/* Paths of the Tea Navigation */}
           <Route path="classic-tea" element={<ClassicTea />} />

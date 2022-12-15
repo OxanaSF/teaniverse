@@ -57,3 +57,29 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .img-carousel-bg-container {
+    margin: 2rem;
+    height: 20rem;
+
+    .carousel {
+      .h1-container {
+        h1 {
+          padding: 0 3rem;
+          font-weight: 300;
+          font-size: 2rem;
+        }
+
+        .line {
+          height: 0;
+        }
+      }
+
+      p {
+        top: 65%;
+        font-size: 18px;
+      }
+    }
+  }
+}

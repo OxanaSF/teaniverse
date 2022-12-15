@@ -2,7 +2,7 @@ import './classic-tea.styles.scss';
 
 const ClassicTea = () => {
   return (
-    <div className="real-life-tea-container">
+    <div className="classic-tea-container">
       <h2>Breakfast club</h2>
       <img
         src={`${process.env.PUBLIC_URL}/images/tea-navigation-icons/breakfast-bg.png`}

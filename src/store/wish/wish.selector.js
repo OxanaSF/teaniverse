@@ -7,6 +7,11 @@ export const selectWishItems = createSelector(
   (wishCart) => wishCart.wishItems
 );
 
+// export const selectWishHistory = createSelector(
+//   [selectWishReducer],
+//   (wishCart) => wishCart.wishHistory
+// );
+
 export const selectWishCount = createSelector(
   [selectWishReducer],
   (wishCart) => wishCart.wishItems.length
