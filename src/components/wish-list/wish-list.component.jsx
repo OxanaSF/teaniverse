@@ -1,9 +1,4 @@
-import { useState, useEffect } from 'react';
-
 import { useSelector } from 'react-redux';
-
-import { db } from '../../utils/firebase/firebase.utils';
-import { query, collection, onSnapshot } from 'firebase/firestore';
 
 import { selectWishItems } from '../../store/wish/wish.selector';
 

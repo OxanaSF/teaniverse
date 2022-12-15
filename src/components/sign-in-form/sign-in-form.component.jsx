@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -15,8 +15,6 @@ import {
 
 import { setIsLoggedIn } from '../../store/auth/auth.action';
 
-import { selectCurrentUser } from '../../store/user/user.selector';
-
 import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
@@ -27,7 +25,6 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  const currentUser = useSelector(selectCurrentUser);
 
 
   const navigate = useNavigate();

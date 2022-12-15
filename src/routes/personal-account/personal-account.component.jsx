@@ -9,7 +9,6 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 import { useSelector } from 'react-redux';
 
 import { selectCartItems } from '../../store/cart/cart.selector';
-import { selectWishItems } from '../../store/wish/wish.selector';
 
 import { selectCurrentUserName } from '../../store/user/user.selector';
 
@@ -18,10 +17,6 @@ import Greeting from '../../components/greeting/greeting.component';
 
 import { clearWholeCart } from '../../store/cart/cart.action';
 
-import {
-  clearWholeWishList,
-  setWishHistory,
-} from '../../store/wish/wish.action';
 
 import { db } from '../../utils/firebase/firebase.utils';
 import { query, collection, onSnapshot } from 'firebase/firestore';
@@ -31,7 +26,7 @@ import './personal-account.styles.scss';
 const PersonalAccount = () => {
   const userEmail = useSelector(selectCurrentUserName);
   const cartItems = useSelector(selectCartItems);
-  const wishItems = useSelector(selectWishItems);
+
 
   const [orders, setOrders] = useState(null);
 

@@ -8,11 +8,6 @@ import { selectCurrentUserName } from '../../store/user/user.selector';
 
 import { addRemoveWish } from '../../store/wish/wish.action';
 
-
-import { createWish, deleteWish } from '../../utils/firebase/firebase.utils'
-
-import { db } from '../../utils/firebase/firebase.utils';
-
 import './favorite-icon-private.styles.scss';
 
 const FavoriteIconPrivate = ({ product }) => {

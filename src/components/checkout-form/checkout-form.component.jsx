@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -43,7 +43,7 @@ const CheckoutForm = () => {
   });
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const receipt = uuid();
   dispatch(setCurrentOrder(receipt));

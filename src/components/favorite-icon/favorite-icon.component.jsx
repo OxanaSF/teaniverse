@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-// import { selectCurrentUser } from '../../store/user/user.selector';
-
-// import { selectWishCount } from '../../store/wish/wish.selector';
 import { selectWishItems } from '../../store/wish/wish.selector';
 import { selectCurrentUserName } from '../../store/user/user.selector';
 
@@ -15,7 +12,7 @@ import './favorite-icon.styles.scss';
 const FavoriteIcon = () => {
   const [count, setCount] = useState(0);
 
-  // const wishListCount = useSelector(selectWishCount);
+
   const wishItems = useSelector(selectWishItems);
   const userEmail = useSelector(selectCurrentUserName);
 

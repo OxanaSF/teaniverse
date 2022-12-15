@@ -25,7 +25,6 @@ import {
   getDocs,
 } from 'firebase/firestore';
 
-import { v4 as uuid } from 'uuid';
 
 
 // import { setCurrentOrder } from '../../store/order/order.action';

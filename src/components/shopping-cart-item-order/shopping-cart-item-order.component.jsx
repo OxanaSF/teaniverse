@@ -10,7 +10,6 @@ import {
 
 import FavoriteIconPrivate from '../../components/favorite-icon-private/favorite-icon-private.component';
 
-import { AiOutlineClose } from 'react-icons/ai';
 import './shopping-cart-item-order.styles.scss';
 
 const ShoppingCartItemInBag = ({ shoppingCartItem }) => {
