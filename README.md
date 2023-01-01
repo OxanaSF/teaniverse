@@ -8,7 +8,6 @@
   - [Design](#designs)
   - [Screenshots](#screenshots)
 - [Our process](#our-process)
-  - [What We Learned](#what-we-learned)
 
 ## Author
 
@@ -35,7 +34,7 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
     <td><b>Home Page</td>     
   </tr>
   <tr>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036015-a580da45-4264-45c2-b31c-eb9610e89e94.png" width="300" /></td>
+    <td valign="top"><img src="<img width="1243" alt="hero_1" src="https://user-images.githubusercontent.com/49917973/210161139-7f6c9ce3-8b0c-4f4c-93db-ed0db5952d01.png">" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036089-3016abe7-ecab-46ce-9c0b-e6f8160d233f.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036104-e38e722d-6d42-497e-8420-32f30f41ecce.png" width="300" /></td>
   </tr>
@@ -84,7 +83,3 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
 
 - [Express](https://www.npmjs.com/package/express)
 - [Firebase](https://firebase.google.com/)
-
-### What we learned
-
-This project was a great opportunity to work in a team and create the balance when I needed to push my ideas and listen to others' opinion. My goal was to create an app from scratch to deployment that works well and looks good on different devises. It was important to me to find the balance in which stretching goals are set up and achieved, but not affected the deadlines. I was able to deep dive into following topics and technologies: express js, API data fetching and css. Additionally I started learning how github works in team projects.
