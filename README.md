@@ -1,4 +1,4 @@
-# [Live Healthy](https://we-live-healthy.netlify.app/)
+# [Teaniverse](https://main.d2dvl9mudwuexj.amplifyapp.com/tea)
 
 ## Table of contents
 
@@ -10,17 +10,7 @@
 - [Our process](#our-process)
   - [What We Learned](#what-we-learned)
 
-## Authors
-
-- **Johnson Thieu - Software Engineer**
-
-  - [Website](https://mynameisjohnson.github.io/react-portfolio/)
-  - [LinkedIn](https://www.linkedin.com/in/johnson-thieu/)
-
-- **Mike Villa - Software Engineer**
-
-  - [Website](https://mikegv.github.io/portfolio/)
-  - [LinkedIn](https://www.linkedin.com/in/michael-villa-338a0567/)
+## Author
 
 - **Oxana Howard - Software Engineer**
   - [Website](https://oxana-howard.com/)
@@ -36,7 +26,7 @@ This is a desktop and mobile version website that offers information about livin
 
 ### Designs
 
-Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built. Big thanks to [Oxhana](https://oxana-howard.com/) for initiating the designs.
+Portionally cloned from and Portionally inspired by https://www.chay.info/.
 
 ### Screenshots
 
