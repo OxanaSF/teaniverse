@@ -31,12 +31,12 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
 
 <table>
   <tr>
-    <td><b>Home Page</td>     
+    <td><b>Home Page Hero</td>     
   </tr>
   <tr>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161139-7f6c9ce3-8b0c-4f4c-93db-ed0db5952d01.png">" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161161-60ee7aa1-f514-418a-9ecf-303cd0d6d652.png">" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036104-e38e722d-6d42-497e-8420-32f30f41ecce.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161139-7f6c9ce3-8b0c-4f4c-93db-ed0db5952d01.png"> width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161161-60ee7aa1-f514-418a-9ecf-303cd0d6d652.png"> width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036104-e38e722d-6d42-497e-8420-32f30f41ecce.png width="300" /></td>
   </tr>
   <tr>
     <td><b>Air Quaility Page</td>
