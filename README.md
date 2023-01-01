@@ -59,7 +59,7 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
       
   <tr>
-    <td><b>Wishlist, Order History, Order Form, Successful Purchase Page </td>
+    <td><b>Wishlist, Order History, Successful Purchase Page </td>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161777-b687b8ec-08e6-47f0-a6e9-deecc4e467bd.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161782-a3d5f741-25e5-4f25-b9a0-ae135717e843.png" width="300" /></td>
@@ -68,9 +68,11 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
       
   <tr>
-    <td><b>Footer</td>     
+    <td><b>Footer, Order Form, Sign-in </td>     
   </tr>
   <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
   </tr>
       
