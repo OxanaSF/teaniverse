@@ -44,7 +44,7 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161281-1f4d3197-4ba4-455b-81ce-a63dd3a79b6c.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161161-60ee7aa1-f514-418a-9ecf-303cd0d6d652.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161305-3ad5c3bc-5951-4cdb-99f7-cc4cfa4ba3b2.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161189-741a997b-ff4d-4f8a-9c73-e9ee955ee268.png" width="300"/></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161223-ba33952f-a9ed-4f7e-b2ae-52e6c8c21912.png" width="300"/></td>
   </tr>
