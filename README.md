@@ -63,7 +63,6 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161777-b687b8ec-08e6-47f0-a6e9-deecc4e467bd.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161782-a3d5f741-25e5-4f25-b9a0-ae135717e843.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161790-8b05c41f-a58a-42cc-807d-7e84cd2b6231.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161797-31bec9a8-ad5b-4cd8-839e-25f4272f5c7d.png" width="300" /></td>
   </tr>
       
@@ -72,8 +71,7 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161790-8b05c41f-a58a-42cc-807d-7e84cd2b6231.png" width="300" /></td>
   </tr>
       
       
