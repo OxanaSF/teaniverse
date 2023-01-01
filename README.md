@@ -48,17 +48,22 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161327-551de589-79ab-434a-a2c5-d24c31f9c681.png" width="300"/></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161345-7eaa95f1-f77a-4868-a4c6-5700e17a59a7.png" width="300"/></td>
   </tr>
+ 
+  <tr>
+    <td><b>Tea catalogue, Tea details </td>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161411-38a7f491-1b20-4a2e-8c9a-fc63f264d8fc.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161477-f6a4092d-6d18-4d0a-b4e1-58d9e5bfd456.png" width="300" /></td>
+  </tr>
+      
   <tr>
     <td><b>Footer</td>     
   </tr>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
   </tr>
-  <tr>
-    <td><b>Tea Page</td>
-  <tr>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161411-38a7f491-1b20-4a2e-8c9a-fc63f264d8fc.png" width="300" /></td>
-  </tr>
+      
+      
  </table>
 
 ### Links
