@@ -44,8 +44,8 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161281-1f4d3197-4ba4-455b-81ce-a63dd3a79b6c.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161305-3ad5c3bc-5951-4cdb-99f7-cc4cfa4ba3b2.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161189-741a997b-ff4d-4f8a-9c73-e9ee955ee268.png" width="300"/></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161305-3ad5c3bc-5951-4cdb-99f7-cc4cfa4ba3b2.png" width="500" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161327-551de589-79ab-434a-a2c5-d24c31f9c681.png" width="300"/></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161223-ba33952f-a9ed-4f7e-b2ae-52e6c8c21912.png" width="300"/></td>
   </tr>
   <tr>
