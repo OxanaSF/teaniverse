@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The goals](#the-goals)
   - [Links](#links)
   - [Design](#designs)
   - [Screenshots](#screenshots)
@@ -17,11 +17,23 @@
 
 ## Overview
 
-This is a desktop and mobile version website that offers information about living a healthy lifestyle. It features includes: Nutrition, Fitness, Clean-air and Mental health.
+This is a desktop and mobile version website multi-page e-commerce app with tea section developed (scalable for other product sections such as coffee and gifts).
 
-### The challenge
+### The goals:
 
-- Develop a website in a team environment. Use a Content Management System (CMS), to keep track of all activity and assigned work.
+- Use React with Redux;
+Use Firebase;
+Apply authentication;
+Deployed on AWS;
+Apply fully fleshed out shopping cart with the following features:
+    Browse the items;
+    Fill The cart;
+    Check out with subtotal and itemized receipt;
+    Make a wish list;
+    See the full wish list;
+    Ability to navigate away from shopping cart and not lose the items;
+    Create the receipt number.
+
 
 ### Designs
 
