@@ -26,13 +26,13 @@ Use Firebase;
 Apply authentication;
 Deployed on AWS;
 Apply fully fleshed out shopping cart with the following features:
-    Browse the items;
-    Fill The cart;
-    Check out with subtotal and itemized receipt;
-    Make a wish list;
-    See the full wish list;
-    Ability to navigate away from shopping cart and not lose the items;
-    Create the receipt number.
+    - Browse the items;
+    - Fill The cart;
+    - Check out with subtotal and itemized receipt;
+    - Make a wish list;
+    - See the full wish list;
+    - Ability to navigate away from shopping cart and not lose the items;
+    - Create the receipt number.
 
 
 ### Designs
