@@ -50,12 +50,21 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
  
   <tr>
-    <td><b>Tea catalogue, Tea details, Cart </td>
+    <td><b>Tea Catalogue, Tea Details, Cart </td>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161411-38a7f491-1b20-4a2e-8c9a-fc63f264d8fc.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161506-87a00c63-82cc-45e3-ae49-513ea53063ab.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161477-f6a4092d-6d18-4d0a-b4e1-58d9e5bfd456.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161727-21bc758d-454f-4dcc-acc0-de6c925e263b.png" width="300" /></td>
+  </tr>
+      
+  <tr>
+    <td><b>Wishlist, Order History, Order Form, Successful Purchase Page </td>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161777-b687b8ec-08e6-47f0-a6e9-deecc4e467bd.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161782-a3d5f741-25e5-4f25-b9a0-ae135717e843.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161790-8b05c41f-a58a-42cc-807d-7e84cd2b6231.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161797-31bec9a8-ad5b-4cd8-839e-25f4272f5c7d.png" width="300" /></td>
   </tr>
       
   <tr>
