@@ -50,11 +50,12 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   </tr>
  
   <tr>
-    <td><b>Tea catalogue, Tea details </td>
+    <td><b>Tea catalogue, Tea details, Cart </td>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161411-38a7f491-1b20-4a2e-8c9a-fc63f264d8fc.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161506-87a00c63-82cc-45e3-ae49-513ea53063ab.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161477-f6a4092d-6d18-4d0a-b4e1-58d9e5bfd456.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161727-21bc758d-454f-4dcc-acc0-de6c925e263b.png" width="300" /></td>
   </tr>
       
   <tr>
