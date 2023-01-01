@@ -73,6 +73,7 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161790-8b05c41f-a58a-42cc-807d-7e84cd2b6231.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161890-1dc739c6-6317-4d81-9674-147768aa8bce.png" width="300" /></td>
   </tr>
       
       
