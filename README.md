@@ -49,11 +49,10 @@ Portionally cloned from and Portionally inspired by https://www.chay.info/.
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161345-7eaa95f1-f77a-4868-a4c6-5700e17a59a7.png" width="300"/></td>
   </tr>
   <tr>
-    <td><b>Nutrition Page</td>     
+    <td><b>Footer</td>     
   </tr>
   <tr>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036117-d0cb9977-8b44-4294-a969-f45266062fe1.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179050441-2f44de96-d52c-4d4b-bb47-20b400e58c97.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/210161381-9b91e0c2-f2f0-4dc4-9f64-386b38efaba1.png" width="300" /></td>
   </tr>
   <tr>
     <td><b>Fitness Page</td>
